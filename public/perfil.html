@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang= "es">
+<head>
+	<meta charset="utf-8">
+	<title>Perfil de usuario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/icono.png">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/cssMarco.css">
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src ="js/perfil.js"></script>
+	<script>
+		$(document).ready(function(){
+			$( "#header" ).load('navegadores/loginHome.html');
+			$( "#footer" ).load('footer/footer.html');
+		});
+	</script>
+
+	<style>
+		.titulo {
+		  margin-bottom: 85px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="header">
+	</div>
+
+	<!-- Contenido -->
+	<div id = "contenido">
+		<div class = "container">
+			<div class = "row">
+				<!-- Modal -->
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
+						<img  id ="foto_perfil" src="img/yorkshi.jpg" alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
+					</div>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Conóceme más</h4>
+								</div>
+								<div id ="desc" class="modal-body">
+									Hola me llamo Yorkshi, soy un Yorshire Terrier de pura raza y tengo 9 años. Soy un perro muy simpático al que le encanta
+									jugar y comer. Me dan pavor los fuegos artificiales, me pongo a templar y a veces de hago pis del miedo. Estoy deseando conocer
+									amigos.
+								</div>
+								<div class="modal-footer">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="col-lg-4 col-sm-4 col-xs-4"></div>
+				<div class="col-lg-4 col-sm-4 col-xs-4" id="popover" rel="popover" data-placement="right" data-original-title="Conóceme más" data-content="Pincha en la imagen para conocerme más" data-trigger="hover">
+					<h1 id="nombre_edad"> Yorkshi, 9 años </h1>
+				</div>
+				<div class="col-lg-4 col-sm-4 col-xs-4"></div>
+			</div>
+
+			<div class = "row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<p class = "titulo"> Intereses compartidos </p>
+				</div>
+			</div>
+
+			<div  id="etiquetas">
+				<div class = "row">
+					<div class="col-lg-4 col-sm-4 col-xs-4">
+						<span class= "fade-in"> Pasear </span>
+					</div>
+					<div class="col-lg-4 col-sm-4 col-xs-4">
+						<span class= "fade-in"> Comer </span>
+					</div>
+					<div class="col-lg-4 col-sm-4 col-xs-4">
+						<span class= "fade-in"> Jugar </span>
+					</div>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<p  id="ubicacion" class = "titulo"> Cobeña, Madrid </p>
+				</div>
+			</div>
+
+			<div class = "row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+					<div id="map">
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id ="footer">
+		</div>
+
+		<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmOcKc6wTUdeM3H82I2QwljLDTPIL0hck&libraries=places&callback=initAutocomplete"></script>
+
+	</div>
+
+</body>
+</html>

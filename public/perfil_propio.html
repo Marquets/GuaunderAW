@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang= "es">
+<head>
+	<meta charset="utf-8">
+	<title>Perfil de usuario</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/icono.png">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/cssMarco.css">
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src ="js/perfil_propio.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			$( "#header" ).load('navegadores/loginHome.html');
+			$( "#footer" ).load('footer/footer.html');
+		});
+	</script>
+
+
+</head>
+<body>
+
+	<div id="header">
+	</div>
+
+	<!-- Contenido -->
+	<div id = "contenido">
+		<div class = "container">
+			<div class = "row">
+				<!-- Modal -->
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
+						<img  id ="foto_perfil" src="img/yorkshi.jpg" alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
+						<span id="rueda_foto" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-foto"></span>
+						<div class="modal fade" id="modal-foto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel1">Subir Foto de perfil</h4>
+									</div>
+									<div class="modal-body">
+										<input type="file" name="fileToUpload" id="fileToUpload">
+										<input type="submit" value="Upload Image" name="submit">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel2">Conóceme más</h4>
+										<span id="rueda_modal" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+									</div>
+									<div id="desc" class="modal-body">
+										Hola me llamo Yorkshi, soy un Yorshire Terrier de pura raza y tengo 9 años. Soy un perro muy simpático al que le encanta
+										jugar y comer. Me dan pavor los fuegos artificiales, me pongo a templar y a veces de hago pis del miedo. Estoy deseando conocer
+										amigos.
+									</div>
+									<div class="modal-footer">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class = "row">
+					<div class="col-lg-4 col-sm-4 col-xs-4"></div>
+					<div class="col-lg-4 col-sm-4 col-xs-4">
+						<div id="data_name_age">
+							<h1 id="nombre"> Yorkshi </h1>
+							<span id="rueda_nombre" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							<h1 id="edad"> 9 años </h1>
+							<span id="rueda_edad" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</div>
+
+					</div>
+
+					<div class="col-lg-4 col-sm-4 col-xs-4"></div>
+				</div>
+
+				<div class = "row">
+					<div class="col-lg-12 col-sm-12 col-xs-12">
+						<p class = "titulo"> Intereses compartidos<span id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>  </p>
+
+							<div class="modal fade" id="ModalSettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel3">Cambiar intereses</h4>
+										</div>
+										<div class="modal-body">
+											<button id="btn-erase" type="button" class="btn btn-primary btn-lg">
+												Borrar intereses
+											</button>
+											<button id="btn-añadir" type="button" class="btn btn-primary btn-lg">
+												Añadir interés
+											</button>
+										</div>
+										<div id="modal-footer" class="modal-footer">
+										</div>
+	s								</div>
+								</div>
+							</div>
+					</div>
+				</div>
+
+				<div  id="etiquetas">
+					<div class ="row">
+						<div class="col-lg-4 col-sm-4 col-xs-4">
+							<span class= "fade-in"> Pasear </span>
+						</div>
+						<div class="col-lg-4 col-sm-4 col-xs-4">
+							<span class= "fade-in"> Comer </span>
+						</div>
+						<div class="col-lg-4 col-sm-4 col-xs-4">
+							<span class= "fade-in"> Jugar </span>
+						</div>
+					</div>
+				</div>
+
+				<div class = "row">
+					<div class="col-lg-12 col-sm-12 col-xs-12">
+						<p id="ubicacion" class = "titulo"> Cobeña, Madrid </p>
+						<span id="rueda_ubi" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+
+					</div>
+				</div>
+
+				<div class = "row">
+					<div class="col-lg-12 col-sm-12 col-xs-12">
+						<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+						<div id="map"> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+	</div>
+
+	<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmOcKc6wTUdeM3H82I2QwljLDTPIL0hck&libraries=places&callback=initAutocomplete"></script>
+
+
+
+</body>
+</html>

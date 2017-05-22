@@ -1,0 +1,90 @@
+/*-----------------Ayoub-----------------------------*/
+#header {
+  background-color: #60EF4F;
+}
+
+
+#blockcentral {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #60EF4F;
+  margin-top: 10px;
+}
+
+.form-inline input {
+  background: white;
+  border-radius: 10px;
+}
+
+.fotoyvideo{
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+#sidebarR{
+  width: 25%;
+  background: #333;
+  color: #fff;
+  outline: 1px solid #60EF4F;
+  margin-top: 10px;
+}
+
+#sidebarR h3{
+  text-align: left;
+  margin: 0;
+  padding: 0px;
+  background: #60EF4F;
+
+}
+#sidebarR ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#sidebarR li{
+  outline: 1px solid #60EF4F;
+  transition: border 0.3s;
+}
+
+#sidebarR li:hover{
+  background: #444;
+  border-left: 5px solid #eee;
+}
+#sidebarR a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+}
+.destacado-texto{
+  word-wrap: break-word;
+}
+
+.destacado-img{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-top: auto;
+}
+.destacado-img img {
+  min-height: 30px;
+  min-width: 50px;
+  max-height: 100px;
+  max-width: 200px;
+  width: 100%;
+}
+
+.bloque-admin {
+  background-color: white;
+  margin-top: 20px;
+}
+
+
+@media (min-width: 1px) and (max-width: 500px) {
+  #sidebarR{
+    display: none;
+  }
+}

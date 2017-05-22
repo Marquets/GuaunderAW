@@ -1,0 +1,473 @@
+/*
+ * Globals
+ */
+
+#header {
+  background-color: #60EF4F;
+}
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #00d667;
+}
+
+/* Custom default button */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #00d667;
+  border: 1px solid #00d667;
+}
+
+
+/*
+ * Base structure
+ */
+
+html {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+  background-color: #fcf4ed;
+  color: #333;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.cuerpo{
+  background-color: #fcf4ed;
+  /*box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+  padding: 60px;
+}
+
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-bottom: 20px;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #00d667;
+}
+
+.masthead-nav > .activeLogin > a{
+  color: #333;
+  border-bottom-color: #00d667;
+  padding-bottom: 20px;
+}
+
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #333;
+  border-bottom-color: #00d667;
+  padding-bottom: 20px;
+}
+
+/*
+ * background-attachment: fixed;
+ */
+
+.perrete {
+    background-image: url(../img/perrete.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 36px;
+}
+.perrete .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  color: #333; /* IE8 proofing */
+  color: #333;
+}
+
+
+/*
+ * Affix and center
+ */
+
+.caja {
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  background: #00d667;
+  padding: 9px;
+  margin-top: 300px;
+  width: 348px;
+  float: right;
+  margin-right: 0px;
+  margin-bottom: 13px;
+  text-align: right;
+}
+
+.mini-separator{
+  margin-bottom: 20px;
+  height: 1px;
+  width: 105px;
+  background-color: #333;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logo{
+  padding-left: 7px;
+  width: 170px;
+}
+
+#huella{
+  width: 37px;
+}
+
+.navegador{
+  padding-top: 44px;
+}
+
+.botonesTop{
+  padding-top: 44px;
+}
+
+h1{
+  color: #00d667;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-size: 38px;
+ /* text-align: left;*/
+}
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.pegato{
+  text-align: left;
+  font-size: 20px;
+}
+
+.titulo{
+  top: 50%;
+}
+
+footer{
+  background-color: #333;
+}
+
+.guautres{
+  background-color: #24b64f;
+}
+
+.ultimo{
+   margin-bottom: 80px;
+}
+
+.app{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.apps{
+  color: #fff;
+}
+
+.final{
+  color: #bbb;
+  text-align: left;
+  border-bottom: 1px solid #555557;
+  padding-bottom: 10px;
+}
+
+.footers{
+  padding-top: 25px;
+}
+
+.contenido{
+  color: #bbb;
+  text-align: left;
+}
+
+.boton{
+  background-color: #00d667;
+  color: #fff;
+  border-radius: 0;
+}
+
+.footerdos .form-group{
+  background: #606163;
+  color: #bbb;
+}
+
+.navegadorultimo{
+  text-align: left;
+}
+
+.liultimo{
+  border-bottom: 1px solid #555557;
+}
+
+.aguau{
+  color: #bbb;
+}
+
+.aguau:hover{
+  background-color: transparent!important;
+}
+
+.footerdos input,
+.footerdos textarea{
+  border-radius: 0;
+  background: #606163;
+  border-color: #606163;
+}
+
+.button{
+  text-align: left;
+}
+
+.linea{
+  margin-bottom: 0px;
+  border-top: 1px solid #bbb;
+}
+
+.creadores{
+  padding: 35px 112px;
+}
+
+.acreadores{
+  color: #00d667;
+}
+
+.guau-heading{
+  color: #00d667;
+}
+
+#perrogato{
+  width: 500px;
+}
+
+.perroagua{
+  width: 500px;
+}
+
+.negrito{
+  font-weight: bold;
+}
+
+/*VERSION MOVIL*/
+@media (min-width: 300px) and (max-width: 767px){
+  .perrete{
+    width: 100%;
+    height: 100%;
+    padding-right: 9px;
+  }
+  .botonesTop{
+    padding-left: 0px;
+  }
+
+  .navegador{
+    margin-left: 0px;
+    padding-bottom: 20px;
+  }
+
+  .caja{
+    margin-top: 150px;
+    width: 60%;
+    margin-right: 0px;
+    margin-bottom: 9px;
+  }
+
+  .mini-separator{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .featurette{
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+
+  .app{
+    margin-right: 0px;
+  }
+
+  .compra{
+    padding-right: 5px;
+    padding-left: 24px;
+  }
+
+  .apple{
+    margin-bottom: 25px;
+  }
+
+  .footers{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .guau-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  }
+
+  .masthead-brand {
+    float: left;
+  }
+
+  .masthead-nav {
+    float: right;
+  }
+
+  .perrete{
+    width: 100%;
+    height: 100%;
+    padding-right: 9px;
+  }
+
+  .caja{
+    margin-top: 150px;
+    margin-right: 110px;
+    margin-bottom: 9px;
+    width: 334px;
+  }
+
+  .featurette-heading {
+    text-align: left;
+  }
+
+  .footers{
+    margin-left: 0px;
+    margin-right: 16px;
+  }
+
+  .botonesTop{
+    padding-top: 18px;
+  }
+
+  .apple{
+    padding-bottom: 10px;
+    padding-top: 5px;
+  }
+
+  .navegador{
+    padding-bottom: 12px;
+  }
+}
+
+/*VERSION ORDENADOR*/
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .guau-container {
+    width: 90%;
+  }
+  .container{
+    width: 100%;
+  }
+  .perrete{
+    margin-top: 50px;
+    background-size: 997px 540px;
+  }
+  .caja{
+    width: 334px;
+  }
+
+  .featurette-heading {
+    text-align: left;
+  }
+
+  .creadores{
+    text-align: left;
+  }
+
+  .botonesTop{
+    padding-right: 30px;
+  }
+
+  .apps{
+    text-align: left;
+  }
+}
+
+@media print{
+
+}

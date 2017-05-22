@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Principal Guaunder</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/icono.png">
+	<link rel="stylesheet" type="text/css" href="css/cssSamu.css"/>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$( "#header" ).load('navegadores/loginHome.html');
+		});
+	</script>
+</head>
+<body>
+
+	<div id="header"></div>
+
+	<div class="center-block" id="principalBlock">
+		<div id="barra-boton-top">
+			<button class="btn btn-1"><span class="glyphicon glyphicon-lock"></span></button>
+			<button class="btn btn-1"><span class="fa fa-paw"></span></button>
+			<button class="btn btn-1"><span class="fa fa-users"></span></button>
+			<a role="button" class="btn btn-1" href="chats.html">
+				<span class="fa fa-commenting"></span>
+			</a>
+			<span class="badge badge-btn-1">2</span>
+		</div>
+
+		<div class="usuario-vista">
+			<div id="carousel-usuario" class="carousel slide" data-interval="false">
+				<div class="carousel-inner" role="listbox">
+
+					<div class="item active">
+						<div class="usuario-foto">
+							<img src="img/Rodolfo.jpg" class="img-responsive img-rounded centro" alt="Perro Rodolfo">
+						</div>
+						<div class="carousel-caption">
+							<a href="perfil.html"><span class="nombre-edad">Rodolfo, 4 años</span></a>
+							<span class="localizacion">
+								<i class="fa fa-map-marker">
+								Lavapiés
+								</i>
+							</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="usuario-foto">
+							<img src="img/perro2.png" class="img-responsive img-rounded centro" alt="Perro Pierre">
+						</div>
+						<div class="carousel-caption">
+							<a href="perfil.html"><span class="nombre-edad">Pierre, 10 años</span></a>
+							<span class="localizacion">
+								<i class="fa fa-map-marker">
+								Serrano
+								</i>
+							</span>
+						</div>
+					</div>
+					<div class="item">
+						<div class="usuario-foto">
+							<img src="img/perro3.jpg" class="img-responsive img-rounded centro" alt="Perro Django">
+						</div>
+						<div class="carousel-caption">
+							<a href="perfil.html"><span class="nombre-edad">Django, 3 años</span></a>
+							<span class="localizacion">
+								<i class="fa fa-map-marker">
+								Móstoles
+								</i>
+							</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="barra-boton-bottom">
+			<button class="btn btn-1"><span class="fa fa-repeat"></span></button>
+			<a class="btn btn-1" role="button" id="cross-btn">
+				<span class="fa fa-remove"></span>
+			</a>
+			<button class="btn btn-1" id="bolt-btn"><span class="fa fa-bolt"></span></button>
+			<a class="btn btn-1" role="button" id="heart-btn">
+				<span class="fa fa-heart"></span>
+			</a>
+			<a class="btn btn-1" role="button" id="star-btn">
+				<span class="fa fa-star-o"></span>
+			</a>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+
+	<script>
+		$(document).ready(function(){
+			$( "#footer" ).load('footer/footer.html');
+		});
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/pagPrincipal.js"></script>
+
+</body>
+</html>
