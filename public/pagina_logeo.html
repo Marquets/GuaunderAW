@@ -9,19 +9,21 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/cssDaniel.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/cssDaniel.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/cssPrincipal.css">
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
 		$(function(){
-			$( "#header" ).load('navegadores/noLoginHome.html');
+			$( "#header" ).load('noLoginHome.html');
 		});
 	</script>
 </head>
 <body>
 	<div id="header"></div>
-	<form action="pagina_logeo.html">
+
+	<form action="pagina_logeo.html" id="formulario_login">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4 col-sm-3 col-xs-1"></div>
@@ -61,7 +63,7 @@
 
 	<script>
 		$(function(){
-			$( "#footer" ).load('footer/footer.html');
+			$( "#footer" ).load('footer.html');
 		});
 	</script>
 	<script src="js/validacion_inicio.js"></script>

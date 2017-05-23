@@ -1,0 +1,999 @@
+/*-----------------------------------------------------SAMU-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fcf4ed;
+}
+
+#header,
+#navegador {
+  background-color: #60EF4F;
+}
+
+#navbarHome ul li {
+  font-size: 24px;
+}
+
+/*--------------------LIGAR GUAUNDER----------------------*/
+@media only screen and (max-width: 768px) {
+  #principalBlock {
+    max-height: 80%;
+  }
+
+  #principalBlock button {
+    font-size: 14px;
+  }
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+#principalBlock {
+  width: 50%;
+  height: 80%;
+  min-width: 350px;
+  margin-bottom: 80px;
+  margin-top: 20px;
+}
+
+#principalBlock button {
+  font-size: 20px;
+}
+
+#principalBlock button:focus {
+  outline:0;
+}
+
+.btn.btn-1 {
+  border-radius: 50%;
+  outline: none;
+  border: solid;
+  border-color: #00d667;
+  border-width: 7px;
+  background-color: #fcf4ed;
+}
+
+.badge-btn-1{
+   background-color: rgb(0, 160, 76);
+   position: relative;
+   top: +10px;
+   left: +55px;
+   float: right;
+}
+
+#principalBlock button:hover,
+#principalBlock a:hover {
+  background-color: #e0e0e0;
+}
+
+#barra-boton-top {
+  text-align: center;
+}
+
+#barra-boton-top button:first-of-type {
+  float: left;
+}
+
+#barra-boton-top a {
+  float: right;
+  color: black;
+}
+
+#barra-boton-bottom {
+  text-align: center;
+  padding-top: 10px;
+}
+
+#barra-boton-bottom button:first-of-type {
+  float: left;
+}
+
+#barra-boton-bottom #star-btn {
+  float: right;
+}
+
+#barra-boton-bottom #cross-btn {
+  font-size: 45px;
+  width: 90px;
+  height: 85px;
+  color: red;
+}
+#barra-boton-bottom #cross-btn:hover {
+  background-color: #ffcccc;
+}
+#barra-boton-bottom #bolt-btn {
+  height: 48px;
+  font-size: 18px;
+  background-color: grey;
+  border-color: #e6e6e6;
+  color: yellow;
+}
+#barra-boton-bottom #heart-btn {
+  font-size: 40px;
+  padding-top: 10px;
+  height: 90px;
+  width: 90px;
+  color: #70db70;
+}
+#barra-boton-bottom #heart-btn:hover {
+  background-color: #d6f5d6;
+}
+
+.centro {
+  margin: auto;
+}
+
+.usuario-vista {
+  margin-top: 10px;
+  border-color: #00d667;
+  border-style: groove;
+  border-width: 3px;
+  min-height: 330px;
+  max-height: 360px;
+  height: 70%;
+  background-color: #fcf4ed;
+}
+
+.carousel-caption {
+  background-color: #00d667;
+  opacity: 0.35;
+}
+.carousel-caption:hover {
+  opacity: 0.80;
+}
+
+.carousel-caption .nombre-edad {
+  font-size: 25px;
+  text-shadow: -1px 1.5px white;
+  color: black;
+  padding-right: 10px;
+}
+.carousel-caption .localizacion {
+  color: black;
+  font-size: 25px;
+  text-shadow: 1px 1px white;
+}
+
+#carousel-usuario .item {
+  height: 310px;
+}
+
+.carousel-caption a:hover {
+  color: #29a329;
+  text-decoration: none;
+}
+.carousel-caption a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.usuario-foto img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 90%;
+  max-height: 300px;
+  vertical-align: middle;
+}
+
+/*---------------------- CHATS ------------------------*/
+
+#chat-box {
+  width: 60%;
+  height: 500px;
+  min-width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.heading-medium {
+  font-size: 20px;
+  vertical-align: middle;
+  color: black;
+}
+
+#chat-box .panel-default .panel-heading {
+  background-color: rgb(0,214,102)!important;
+}
+
+.chat-convers {
+  height: 390px;
+}
+
+.chat-conver {
+  padding: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+  height: 12%;
+  border-radius: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chat-conver:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.nick {
+  vertical-align: middle;
+}
+
+.glyphicon-plus-sign {
+  float: right;
+  font-size: 26px;
+}
+
+.msg-new {
+  border-color: rgb(0,214,102);
+  border-width: 3px;
+  background-color: #b7ffb7;
+}
+
+.msg-preview-new {
+  opacity: 0.9;
+  padding-right: 5px;
+}
+.msg-preview-old {
+  opacity: 0.5;
+}
+
+#nuevo-chat {
+  background-color: white;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+}
+#nuevo-chat-icono {
+  color: black;
+}
+
+.modalsChats .modal-content .modal-header{
+  background-color: rgb(0,214,102);
+}
+.modalsChats .modal.content .modal-body {
+  background-color: #e0e2e1;
+  border-radius: 10px;
+  display: block;
+}
+
+/*-----------------------------------------------------MARCO-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+
+#contenido {
+  background-color: #fcf4ed;
+  color: rgb(0,214,102);
+  position: relative;
+  text-align: center;
+}
+
+#foto_perfil {
+  width: 230px;
+  height: 230px;
+  border-radius: 70%;
+  margin-top: 146px;
+  cursor: pointer;
+
+}
+
+.titulo {
+  color: rgb(0,214,102);
+  font-size: 50px;
+}
+
+#etiquetas {
+  margin-bottom: 80px;
+}
+
+
+.fade-in {
+  background-color: rgb(0,214,102);
+  border-radius: 10%;
+  color: white;
+  font-size: 30px;
+  padding:14px;
+}
+
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+  margin-bottom: 40px;
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+#target {
+  width: 345px;
+}
+
+
+/*-----------------------------------------------------AYOUB-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+.pager li > a{
+  color: #333;
+}
+
+#blockcentral {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #60EF4F;
+  margin-top: 10px;
+}
+
+#busqueda_fotosyvideos input {
+  background: white;
+  border-radius: 10px;
+}
+
+.fotoyvideo{
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+
+#sidebarR{
+  width: 25%;
+  background: #333;
+  color: #fff;
+  outline: 1px solid #60EF4F;
+  margin-top: 10px;
+}
+
+#sidebarR h3{
+  text-align: left;
+  margin: 0;
+  padding: 0px;
+  background: #60EF4F;
+
+}
+#sidebarR ul{
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#sidebarR li{
+  outline: 1px solid #60EF4F;
+  transition: border 0.3s;
+}
+
+#sidebarR li:hover{
+  background: #444;
+  border-left: 5px solid #eee;
+}
+#sidebarR a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+}
+.destacado-texto{
+  word-wrap: break-word;
+}
+
+.destacado-img{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-top: auto;
+}
+.destacado-img img {
+  min-height: 30px;
+  min-width: 50px;
+  max-height: 100px;
+  max-width: 200px;
+  width: 100%;
+}
+
+.bloque-admin {
+  background-color: white;
+  margin-top: 20px;
+}
+
+
+@media (min-width: 1px) and (max-width: 768px) {
+  #sidebarR{
+    display: none;
+  }
+}
+
+/*-----------------------------------------------------DANIEL-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+#formulario_login {
+  margin-bottom: 15px;
+}
+
+.costado_izq {
+  height: 100%;
+  width: 25%;
+}
+
+.letra_titulo {
+  font-family: fantasy;
+  text-align: center;
+  color: #6A5ACD;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #00d667;
+  border-color: #00d667;
+}
+
+.fotos_ejemplo {
+  border-color: #8bd3a6;
+  background-color: #66CDAA;
+  border-style: inset;
+  border-width: 7px;
+  height: 150px;
+}
+
+.fotos_ejemplo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height:  100%;
+}
+
+#logear {
+  display: block;
+}
+
+.g-recaptcha {
+  display: none;
+}
+
+#okIconEmail {
+  display: none;
+}
+#errorIconEmail {
+  display: none;
+}
+#okIconPass {
+  display: none;
+}
+#errorIconPass {
+  display: none;
+}
+
+#caja {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/*-----------------------------------------------------FOOTER-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+footer {
+  background-color: #333;
+}
+
+.footers{
+  padding-top: 25px;
+}
+
+.final{
+  color: #bbb;
+  text-align: left;
+  border-bottom: 1px solid #555557;
+  padding-bottom: 10px;
+}
+
+.contenido{
+  color: #bbb;
+  text-align: left;
+}
+
+.footerdos .form-group{
+  background: #606163;
+  color: #bbb;
+}
+
+.footerdos input,
+.footerdos textarea{
+  border-radius: 0;
+  background: #606163;
+  border-color: #606163;
+}
+
+.navegadorultimo{
+  text-align: left;
+}
+
+.liultimo{
+  border-bottom: 1px solid #555557;
+}
+
+.linea{
+  margin-bottom: 0px;
+  border-top: 1px solid #bbb;
+}
+
+.inner {
+  padding: 60px;
+}
+
+.creadores{
+  text-align: left;
+  padding: 35px 112px;
+}
+
+.boton{
+  background-color: #2fc15a;
+  color: #fff;
+  border-radius: 0;
+}
+
+footer a:hover {
+  color: #00c200;
+}
+
+.aguau{
+  color: #bbb;
+}
+
+.aguau:hover{
+  background-color: transparent!important;
+}
+
+/*-----------------------------------------------------NAV-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+/*.cuerpo{
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}*/
+
+/*@media (min-width: 992px) { AA
+  .guau-container {
+    width: 90%;
+  }
+}*/
+
+.navegador{
+  padding-top: 5px;
+}
+
+#logo{
+  padding-left: 7px;
+  width: 170px;
+}
+
+.botonesTop{
+  padding-top: 18px;
+}
+
+@media (min-width: 768px) {
+  .masthead-nav {
+    float: right;
+  }
+}
+
+#huella{
+  width: 37px;
+}
+
+.masthead-nav > .activeLogin > a{
+  color: #333;
+  border-bottom-color: #00c200;
+  padding-bottom: 28px;
+}
+
+.masthead-nav {
+  display:inline-block;
+}
+
+.navbar-header button {
+  background-color: rgb(0,214,102);
+}
+
+/*-----------------------------------------------------ALEX-----------------------------*/
+/*--------------------------------------------------------------------------------------*/
+
+/*
+ * Globals
+ */
+
+/* Links */
+.footertres a,
+.creadores a {
+  color: white;
+}
+.footertres a:focus,
+.creadores a:focus,
+.footertres a:hover,
+.creadores a:hover {
+  color: #00d667;
+}
+
+/*
+ * Base structure
+ */
+
+#body-index {
+  color: #333;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.cuerpo{
+  background-color: #fcf4ed;
+  /*box-shadow: inset 0 0 100px rgba(0,0,0,.5);*/
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+/*.site-wrapper { AA
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}*/
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-bottom: 20px;
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #00d667;
+}
+
+.masthead-nav > .activeLogin > a{
+  color: #333;
+  border-bottom-color: #00d667;
+  padding-bottom: 20px;
+}
+
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #333;
+  border-bottom-color: #00d667;
+  padding-bottom: 20px;
+}
+
+/*
+ * background-attachment: fixed;
+ */
+
+.perrete {
+    background-image: url(../img/perrete.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 36px;
+}
+.perrete .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/*
+ * Affix and center
+ */
+
+.caja {
+  font-size: 22px;
+  font-weight: 400;
+  color: #fff;
+  background: #00d667;
+  padding: 9px;
+  margin-top: 300px;
+  width: 348px;
+  float: right;
+  margin-right: 0px;
+  margin-bottom: 13px;
+  text-align: right;
+}
+
+.mini-separator{
+  margin-bottom: 20px;
+  height: 1px;
+  width: 105px;
+  background-color: #333;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*.navegador{ AA
+  padding-top: 44px;
+}*/
+
+/*.botonesTop{ AA
+  padding-top: 44px;
+}*/
+
+h1{
+  color: #00d667;
+}
+
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-size: 38px;
+ /* text-align: left;*/
+}
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.pegato{
+  text-align: left;
+  font-size: 20px;
+}
+
+.title{
+  top: 50%;
+}
+
+.guautres{
+  background-color: #24b64f;
+}
+
+.ultimo{
+   margin-bottom: 80px;
+}
+
+.app{
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.apps{
+  color: #fff;
+}
+
+.button{
+  text-align: left;
+}
+
+.guau-heading{
+  color: #00d667;
+}
+
+#perrogato{
+  width: 500px;
+}
+
+.perroagua{
+  width: 500px;
+}
+
+.negrito{
+  font-weight: bold;
+}
+
+/*VERSION MOVIL*/
+@media (min-width: 300px) and (max-width: 767px){
+  .perrete{
+    width: 100%;
+    height: 100%;
+    padding-right: 9px;
+  }
+  .botonesTop{
+    padding-left: 0px;
+  }
+
+  .navegador{
+    margin-left: 0px;
+    padding-bottom: 20px;
+  }
+
+  .caja{
+    margin-top: 150px;
+    width: 60%;
+    margin-right: 0px;
+    margin-bottom: 9px;
+  }
+
+  .mini-separator{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .featurette{
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+
+  .app{
+    margin-right: 0px;
+  }
+
+  .compra{
+    padding-right: 5px;
+    padding-left: 24px;
+  }
+
+  .apple{
+    margin-bottom: 25px;
+  }
+
+  .footers{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Pull out the header and footer */
+
+  .mastfoot {
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .guau-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    height: 100%; /* For at least Firefox */
+    min-height: 100%;
+  }
+
+  .masthead-brand {
+    float: left;
+  }
+
+  .masthead-nav {
+    float: right;
+  }
+
+  .perrete{
+    width: 100%;
+    height: 100%;
+    padding-right: 9px;
+  }
+
+  .caja{
+    margin-top: 150px;
+    margin-right: 110px;
+    margin-bottom: 9px;
+    width: 334px;
+  }
+
+  .featurette-heading {
+    text-align: left;
+  }
+
+  .footers{
+    margin-left: 0px;
+    margin-right: 16px;
+  }
+
+  .botonesTop{
+    padding-top: 18px;
+  }
+
+  .apple{
+    padding-bottom: 10px;
+    padding-top: 5px;
+  }
+
+  .navegador{
+    padding-bottom: 12px;
+  }
+}
+
+/*VERSION ORDENADOR*/
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .guau-container {
+    width: 90%;
+  }
+  .container{
+    width: 100%;
+  }
+  .perrete{
+    margin-top: 50px;
+    background-size: 997px 540px;
+  }
+  .caja{
+    width: 334px;
+  }
+
+  .featurette-heading {
+    text-align: left;
+  }
+
+  .creadores{
+    text-align: left;
+  }
+
+  .botonesTop{
+    padding-right: 30px;
+  }
+
+  .apps{
+    text-align: left;
+  }
+}
+
+@media print{
+
+}
+
+/*--------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------*/

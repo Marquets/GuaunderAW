@@ -5,13 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/icono.png">
-	<link rel="stylesheet" type="text/css" href="css/cssSamu.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/cssSamu.css"/> -->
+	<link rel="stylesheet" type="text/css" href="css/cssPrincipal.css"/>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$( "#header" ).load('navegadores/loginHome.html');
+			$( "#header" ).load('loginHome.html');
 		});
 	</script>
 </head>
@@ -21,10 +22,10 @@
 
 	<div class="center-block" id="principalBlock">
 		<div id="barra-boton-top">
-			<button class="btn btn-1"><span class="glyphicon glyphicon-lock"></span></button>
-			<button class="btn btn-1"><span class="fa fa-paw"></span></button>
-			<button class="btn btn-1"><span class="fa fa-users"></span></button>
-			<a role="button" class="btn btn-1" href="chats.html">
+			<button class="btn btn-1" title="Compra" ><span class="glyphicon glyphicon-lock"></span></button>
+			<button title="Inicio" class="btn btn-1"><span class="fa fa-paw"></span></button>
+			<button title="Quedada" class="btn btn-1"><span class="fa fa-users"></span></button>
+			<a title="Chats" role="button" class="btn btn-1" href="chats.html">
 				<span class="fa fa-commenting"></span>
 			</a>
 			<span class="badge badge-btn-1">2</span>
@@ -79,15 +80,15 @@
 		</div>
 
 		<div id="barra-boton-bottom">
-			<button class="btn btn-1"><span class="fa fa-repeat"></span></button>
-			<a class="btn btn-1" role="button" id="cross-btn">
+			<button title="Deshacer" class="btn btn-1"><span class="fa fa-repeat"></span></button>
+			<a title="No me gusta" class="btn btn-1" role="button" id="cross-btn">
 				<span class="fa fa-remove"></span>
 			</a>
-			<button class="btn btn-1" id="bolt-btn"><span class="fa fa-bolt"></span></button>
-			<a class="btn btn-1" role="button" id="heart-btn">
+			<button title="Rayo" class="btn btn-1" id="bolt-btn"><span class="fa fa-bolt"></span></button>
+			<a title="Me gusta" class="btn btn-1" role="button" id="heart-btn">
 				<span class="fa fa-heart"></span>
 			</a>
-			<a class="btn btn-1" role="button" id="star-btn">
+			<a title="Superlike" class="btn btn-1" role="button" id="star-btn">
 				<span class="fa fa-star-o"></span>
 			</a>
 		</div>
@@ -97,7 +98,7 @@
 
 	<script>
 		$(document).ready(function(){
-			$( "#footer" ).load('footer/footer.html');
+			$( "#footer" ).load('footer.html');
 		});
 	</script>
 	<script src="js/bootstrap.min.js"></script>

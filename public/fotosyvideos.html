@@ -5,12 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/icono.png">
-	<link rel="stylesheet" href="css/cssAyoub.css">
+	<!-- <link rel="stylesheet" href="css/cssAyoub.css"> -->
+	<link rel="stylesheet" href="css/cssPrincipal.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
-			$( "#header" ).load('navegadores/loginHome.html');
+			$( "#header" ).load('loginHome.html');
 		});
 	</script>
 </head>
@@ -61,16 +62,16 @@
 				</div>
 			</div>
 			<div class="col-md-1 col-sm-1 col-xs-1"> </div>
-			<div class="col-md-6 col-sm-6 col-xs-6" id="blockcentral">
+			<div class="col-md-6 col-sm-6 col-xs-12" id="blockcentral">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-1 col-sm-0"></div>
+						<div class="col-md-1 col-xs-0 col-sm-0"></div>
 						<div class="col-md-2 col-xs-4 col-sm-4"><a class="btn btn-link" href="#" role="button">Todos</a></div>
 						<div class="col-md-2 col-xs-4 col-sm-4"><a class="btn btn-link" href="#" role="button">Fotos</a></div>
 						<div class="col-md-2 col-xs-4 col-sm-4"><a class="btn btn-link" href="#" role="button">Vídeos</a></div>
 						<div class="col-md-3 col-xs-12 col-sm-12">
-							<form class="navbar-form" role="search">
-					  			<div class="form-inline">
+							<form class="navbar-form form-inline" id="busqueda_fotosyvideos" role="search">
+					  			<div>
 					    			<input type="text" class="form-control" placeholder="Search">
 					    		</div>
 							</form>
@@ -125,7 +126,7 @@
 
 	<script>
 		$(document).ready(function(){
-			$( "#footer" ).load('footer/footer.html');
+			$( "#footer" ).load('footer.html');
 		});
 	</script>
 
