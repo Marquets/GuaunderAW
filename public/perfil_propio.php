@@ -6,8 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="img/icono.png">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/cssMarco.css"> -->
-	<link rel="stylesheet" type="text/css" href="css/cssPrincipal.css">
+	<link rel="stylesheet" type="text/css" href="css/cssMarco.css">
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src ="js/perfil_propio.js"></script>
@@ -33,7 +32,30 @@
 				<!-- Modal -->
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
-						<img  id ="foto_perfil" src="img/yorkshi.jpg" alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
+						<img  id ="foto_perfil" src=
+						<?php
+							$db = @mysqli_connect('localhost','root','','guaunder');
+							if ($db) {
+								/*echo 'Conexión realizada correctamente.<br />';
+								echo 'Información sobre el servidor: ',
+								mysqli_get_host_info($db),'<br />';
+								echo 'Versión del servidor: ',
+								mysqli_get_server_info($db),'<br />';*/
+
+								$sql="SELECT foto_perfil FROM usuario";
+								$consulta = mysqli_query($db, $sql);
+								$cat = mysqli_fetch_assoc($consulta);
+
+								echo  $cat['foto_perfil'];
+
+							}
+							 else {
+								printf(
+									'Error %d: %s.<br />',
+									mysqli_connect_errno(),mysqli_connect_error());
+							}
+							@mysqli_close($db);
+						 ?>  alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
 						<span id="rueda_foto" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-foto"></span>
 						<div class="modal fade" id="modal-foto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
 							<div class="modal-dialog" role="document">
@@ -43,8 +65,34 @@
 										<h4 class="modal-title" id="myModalLabel1">Subir Foto de perfil</h4>
 									</div>
 									<div class="modal-body">
-										<input type="file" name="fileToUpload" id="fileToUpload">
-										<input type="submit" value="Upload Image" name="submit">
+										<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
+											<input type="file" name="fileToUpload">
+											<input type="submit" value="Upload Image" name="submit">
+										</form>
+										<?php
+											$db = @mysqli_connect('localhost','root','','guaunder');
+											if ($db) {
+												
+											
+											if(isset($_FILES["fileToUpload"]["name"])) {
+												$target_dir = "img/";
+												$target_file = utf8_decode($target_dir . $_FILES["fileToUpload"]["name"]);
+											   	move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+											   	$ruta = '"'. $target_file . '"';
+											   	$sql=" UPDATE usuario SET foto_perfil = '$ruta' WHERE nick_us = 'Yorkshi1'";
+												$consulta = mysqli_query($db, $sql);
+											    
+											}
+
+											}
+											 else {
+												printf(
+													'Error %d: %s.<br />',
+													mysqli_connect_errno(),mysqli_connect_error());
+											}
+											@mysqli_close($db);
+
+										?>
 									</div>
 								</div>
 							</div>
@@ -58,9 +106,30 @@
 										<span id="rueda_modal" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 									</div>
 									<div id="desc" class="modal-body">
-										Hola me llamo Yorkshi, soy un Yorshire Terrier de pura raza y tengo 9 años. Soy un perro muy simpático al que le encanta
-										jugar y comer. Me dan pavor los fuegos artificiales, me pongo a templar y a veces de hago pis del miedo. Estoy deseando conocer
-										amigos.
+										<?php
+											$db = @mysqli_connect('localhost','root','','guaunder');
+											if ($db) {
+												/*echo 'Conexión realizada correctamente.<br />';
+												echo 'Información sobre el servidor: ',
+												mysqli_get_host_info($db),'<br />';
+												echo 'Versión del servidor: ',
+												mysqli_get_server_info($db),'<br />';*/
+
+												$sql="SELECT descripcion FROM usuario";
+												$consulta = mysqli_query($db, $sql);
+												$cat = mysqli_fetch_assoc($consulta);
+
+												echo  $cat['descripcion'];
+
+											}
+											 else {
+												printf(
+													'Error %d: %s.<br />',
+													mysqli_connect_errno(),mysqli_connect_error());
+											}
+											@mysqli_close($db);
+
+										?>
 									</div>
 									<div class="modal-footer">
 									</div>
@@ -86,7 +155,7 @@
 
 				<div class = "row">
 					<div class="col-lg-12 col-sm-12 col-xs-12">
-						<p class = "titulo"> Intereses compartidos<span id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>  </p>
+						<p title= "Añade tus intereses" intereses" class = "titulo"> Intereses<span id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>  </p>
 
 							<div class="modal fade" id="ModalSettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
 								<div class="modal-dialog" role="document">
@@ -105,7 +174,7 @@
 										</div>
 										<div id="modal-footer" class="modal-footer">
 										</div>
-	s								</div>
+									</div>
 								</div>
 							</div>
 					</div>
