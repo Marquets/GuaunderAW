@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2017 a las 11:58:35
+-- Tiempo de generación: 24-05-2017 a las 19:21:20
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -97,10 +97,17 @@ CREATE TABLE `usuario` (
   `ubicacion` varchar(40) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Añade tu ubicación',
   `email` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_creacion` date NOT NULL,
-  `ult_conexión` date NOT NULL,
+  `ULT_CONEXION` varchar(90) COLLATE utf8_spanish_ci DEFAULT NULL,
   `foto_perfil` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
-  `descripción` varchar(255) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Añade una descripción para que la gente te conozca más'
+  `descripcion` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `edad`, `clave_us`, `ubicacion`, `email`, `fecha_creacion`, `ULT_CONEXION`, `foto_perfil`, `descripcion`) VALUES
+(1, 'jefe', 'daniel', 5, '123', '', 'daniel.fer333@gmail.com', '0000-00-00', '2011-11-01', '', 'Primer usuariooooo');
 
 --
 -- Índices para tablas volcadas
@@ -144,7 +151,8 @@ ALTER TABLE `multimedia`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `nick_us` (`nick_us`);
+  ADD UNIQUE KEY `nick_us` (`nick_us`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -164,7 +172,7 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --

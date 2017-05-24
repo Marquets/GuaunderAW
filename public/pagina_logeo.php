@@ -1,7 +1,33 @@
 <?php
 	session_start();
 
+	$no_encontrado=isset($_SESSION['no_encontrado'])? $_SESSION['no_encontrado']: false;
+	$error_bd=isset($_SESSION['error_bd'])? $_SESSION['error_bd']: false;
+	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
+	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
 	if(isset($_SESSION['ID_USUARIO']) and $_SESSION['estado'] == 'Autenticado'){
+		header("Location: pagina_logeo.html");
+	}
+	elseif($no_encontrado==true){?>
+		<script type="text/javascript">alert("Usuario y/o contraseña no encotrados")</script>
+	<?php ;
+		$_SESSION['no_encontrado']=false;
+	}
+	elseif($error_bd==true){?>
+		<script type="text/javascript">alert("Error al conectar base de datos")</script>
+	<?php ;
+		$_SESSION['error_bd']=false;
+	}
+	elseif($incompletos==true){?>
+		<script type="text/javascript">alert("Hay campos incompletos")</script>
+	<?php ;
+		$_SESSION['incompletos']=false;
+	}
+	elseif($error_post==true){?>
+		<script type="text/javascript">alert("Error, consulte con el administrador de la página")</script>
+	<?php ;
+		$_SESSION['error_post']=false;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +54,7 @@
 <body>
 	<div id="header"></div>
 
-	<form action="login.php" id="formulario_login">
+	<form action="login.php" id="formulario_login" method="post">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4 col-sm-3 col-xs-1"></div>
@@ -37,7 +63,7 @@
 						<div class="panel-heading"> INICIE SESION </div>
 						<div class="panel-body">
 							<div class="form-group">
-								<input type="text" name ="nick" id="nick" class="form-control">
+								<input type="text" name ="nick" id="nick" placeholder="Nick" class="form-control">
 								<span id="okIconEmail" class="glyphicon glyphicon-ok pull-right"></span>
 								<span id="errorIconEmail" class="glyphicon glyphicon-remove pull-right"></span>
 								<br>
@@ -55,7 +81,7 @@
 								</label><br>
 							</div>
 							<div class="g-recaptcha" id="captcha" data-callback="noRobot" data-sitekey="6LcncB4UAAAAACgbQNpjy7Qr-UiXAVRufuLjWSbV"></div><br>
-							<button type="button" id="logear" class="btn btn-success" value="Acceder" onclick="return validaInicioSesion(this.form);">Acceder</button>
+							<input type="submit" class="btn btn-success" value="Acceder" id="logear">
 							<span id="estadoInicioSesion"></span><br>
 						</div>
 					</div>
@@ -71,6 +97,6 @@
 			$( "#footer" ).load('footer.html');
 		});
 	</script>
-	<script src="js/validacion_inicio.js"></script>
+	<!--<script src="js/validacion_inicio.js"></script>-->
 </body>
 </html>
