@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2017 a las 19:21:20
+-- Tiempo de generación: 24-05-2017 a las 20:42:07
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -92,22 +92,22 @@ CREATE TABLE `usuario` (
   `ID` int(11) NOT NULL,
   `nick_us` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `nombre_us` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `edad` int(11) NOT NULL,
+  `fecha_nacimiento` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `clave_us` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `ubicacion` varchar(40) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Añade tu ubicación',
   `email` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_creacion` date NOT NULL,
-  `ULT_CONEXION` varchar(90) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `foto_perfil` varchar(90) COLLATE utf8_spanish_ci NOT NULL,
-  `descripcion` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL
+  `ult_conexion` date NOT NULL,
+  `foto_perfil` varchar(90) COLLATE utf8_spanish_ci NOT NULL DEFAULT '"img/foto_defecto.jpg"',
+  `descripcion` varchar(255) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Añade una descripción para que la gente te conozca más'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `edad`, `clave_us`, `ubicacion`, `email`, `fecha_creacion`, `ULT_CONEXION`, `foto_perfil`, `descripcion`) VALUES
-(1, 'jefe', 'daniel', 5, '123', '', 'daniel.fer333@gmail.com', '0000-00-00', '2011-11-01', '', 'Primer usuariooooo');
+INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_us`, `ubicacion`, `email`, `fecha_creacion`, `ult_conexion`, `foto_perfil`, `descripcion`) VALUES
+(1, 'Yorkshi1', 'Ayoub', '0', '', 'CobeÃ±a', '', '0000-00-00', '0000-00-00', '\"img/60419dd0-78c4-46d7-9d71-ae7cdb9a8b85.jpg\"', 'Añade una descripción para que la gente te conozca más');
 
 --
 -- Índices para tablas volcadas
@@ -172,7 +172,7 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Restricciones para tablas volcadas
 --
