@@ -515,6 +515,11 @@ footer {
   padding-top: 25px;
 }
 
+.footers .footerdos input,
+.footers .footerdos textarea {
+  color: white;
+}
+
 .final{
   color: #bbb;
   text-align: left;

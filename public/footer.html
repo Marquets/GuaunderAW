@@ -17,28 +17,28 @@
     <footer>
 
       <div class="footers row">
-        <div class="col-md-1"></div>
-        <div class="footeruno col-md-3">
+        <div class="col-md-1 col-sm-0 col-xs-0"></div>
+        <div class="footeruno col-md-3 col-sm-12 col-xs-12">
           <h3 class="final">Bienvenidos a Guaunder</h3>
           <div class="contenido"><p>Es momento de estar unidos. Es momento de mejorar las cosas. Únete a la plataforma social Guaunder y comparte con tus vecinos acontecimientos de interés. Alerta de peligros, comunica novedades positivas, entérate de eventos relacionados con aquello que más importa, tu mascota. Encuentra cualquier servicio disponible en la zona con nuestro directorio de empresas basado en la proximidad. Participa en campañas sociales que mejoren su calidad de vida. Todo útil, fácil y divertido.</p>
-          <p><strong>Cuenta con nosotros, contamos contigo.</strong></p>
+          <p class="negrito">Cuenta con nosotros, contamos contigo.</p>
           </div>
 
         </div>
-        <div class="footerdos col-md-3">
+        <div class="footerdos col-md-3 col-sm-12 col-xs-12">
           <h3 class="final">Contacta con nosotros</h3>
-          <form>
+          <form method="post" action="send.php">
             <div class="form-group">
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+              <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="e-mail">
+              <input type="text" class="form-control" id="mail" placeholder="e-mail" name="mail">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="asunto" placeholder="Asunto">
+              <input type="text" class="form-control" id="asunto" placeholder="Asunto" name="asunto">
             </div>
             <div class="form-group">
-              <textarea class="form-control" id="mensaje" placeholder="Mensaje" rows="4"></textarea>
+            <textarea class="form-control" id="mensaje" placeholder="Mensaje" rows="4" name="mensaje"></textarea>
             </div>
             <div class="button">
               <button type="submit" class="btn boton">Enviar</button>
@@ -46,7 +46,8 @@
 
           </form>
         </div>
-        <div class="footertres col-md-3">
+
+        <div class="footertres col-md-3 col-sm-12 col-xs-12">
           <h3 class="final">Más información</h3>
           <nav>
             <ul class="nav nav-stacked navegadorultimo">
@@ -66,6 +67,7 @@
       <div class="inner creadores">
         <p class="aguau">Creado por alumnos de <a class="acreadores" href="https://www.ucm.es">UCM</a>, by <a class="acreadores">@GrupoGuaunder</a>.</p>
       </div>
+
     </footer>
 
 </body>
