@@ -14,28 +14,20 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/cssAlex.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/cssPrincipal.css">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/cssAlex.css">
 
     <script src="js/jquery-3.2.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
       $(document).ready(function(){
-        $( "#header" ).load('noLoginHome.html');
+        $( "#header" ).load('navegadores/noLoginHome.html');
       });
     </script>
 
 </head>
 <!-- NAVBAR
 ================================================== -->
-<body id="body-index">
+<body>
 
     <div id="header"></div>
 
@@ -63,7 +55,7 @@
 
       <div class="row featurette">
         <div class="col-md-1 col-sm-0 col-xs-0"></div>
-        <div class="title col-md-5 col-sm-12 col-xs-12">
+        <div class="titulo col-md-5 col-sm-12 col-xs-12">
           <h2 class="featurette-heading">Como se adquieren perros y gatos en España. <span class="text-muted">Te sorprenderá.</span></h2>
           <p class="pegato">Veamos las cifras oficiales de donde proceden los perros y gatos que integramos en las familias, de como adquirimos el nuevo miembro del hogar.</p>
         </div>
@@ -77,7 +69,7 @@
 
       <div class="row featurette ultimo">
         <div class="col-md-1 col-sm-0 col-xs-0"></div>
-        <div class="title col-md-5 col-md-push-5 col-sm-12 col-xs-12">
+        <div class="titulo col-md-5 col-md-push-5 col-sm-12 col-xs-12">
           <h2 class="featurette-heading">Quiero un Perro de Agua Español, <span class="text-muted">qué necesito saber.</span></h2>
           <p class="pegato">Un perro muy alegre, vivo, fiel y equilibrado. Es inteligente, obediente y aprende con facilidad. Le encanta jugar, que le acaricien y podría pasarse horas correteando y brincando a orillas del mar. Se lleva especialmente bien con los niños..</p>
         </div>
@@ -116,18 +108,18 @@
         </div>
         <div class="footerdos col-md-3 col-sm-12 col-xs-12">
           <h3 class="final">Contacta con nosotros</h3>
-          <form>
+          <form method="post" action="send.php">
             <div class="form-group">
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+              <input type="text" class="form-control" id="name" placeholder="Nombre" name="name">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="e-mail">
+              <input type="text" class="form-control" id="mail" placeholder="e-mail" name="mail">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="asunto" placeholder="Asunto">
+              <input type="text" class="form-control" id="asunto" placeholder="Asunto" name="asunto">
             </div>
             <div class="form-group">
-            <textarea class="form-control" id="mensaje" placeholder="Mensaje" rows="4"></textarea>
+            <textarea class="form-control" id="mensaje" placeholder="Mensaje" rows="4" name="mensaje"></textarea>
             </div>
             <div class="button">
               <button type="submit" class="btn boton">Enviar</button>
@@ -135,6 +127,7 @@
 
           </form>
         </div>
+
         <div class="footertres col-md-3 col-sm-12 col-xs-12">
           <h3 class="final">Más información</h3>
           <nav>
