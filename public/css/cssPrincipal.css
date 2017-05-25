@@ -517,7 +517,7 @@ footer {
 
 .footers .footerdos input,
 .footers .footerdos textarea {
-  color: white;
+  color: #bbb;
 }
 
 .final{
@@ -644,7 +644,7 @@ footer a:hover {
 /* Links */
 .footertres a,
 .creadores a {
-  color: white;
+  color: #bbb;
 }
 .footertres a:focus,
 .creadores a:focus,
