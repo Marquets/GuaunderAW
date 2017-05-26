@@ -584,6 +584,10 @@ footer a:hover {
   background-color: transparent!important;
 }
 
+#tercerfoot{
+  width: 380px;
+}
+
 /*-----------------------------------------------------NAV-----------------------------*/
 /*--------------------------------------------------------------------------------------*/
 
@@ -694,6 +698,10 @@ footer a:hover {
   margin-bottom: 10px;
 }
 
+#borde{
+  border-top: 1px solid #afafaf;
+}
+
 .masthead-nav > li {
   display: inline-block;
 }
@@ -773,18 +781,22 @@ footer a:hover {
   margin-right: auto;
 }
 
-/*.navegador{ AA
-  padding-top: 44px;
-}*/
-
-/*.botonesTop{ AA
-  padding-top: 44px;
-}*/
-
 h1{
   color: #00d667;
 }
 
+#tituloindex{
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+#indexh2{
+  color: #333;
+}
+
+#indexp{
+  color: #333;
+}
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
@@ -843,6 +855,11 @@ h1{
 
 .negrito{
   font-weight: bold;
+}
+
+.guaudos{
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 /*VERSION MOVIL*/
@@ -977,6 +994,7 @@ h1{
   }
   .caja{
     width: 334px;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
   }
 
   .featurette-heading {
