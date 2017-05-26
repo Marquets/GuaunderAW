@@ -1,31 +1,19 @@
+document.getElementById('formulario_login').addEventListener("submit",function(event){
+	if(document.getElementById('nick').value=='' && document.getElementById('contrasenia').value==''){
+		alert("Por favor, rellene el nick y la contraseña");
+		event.preventDefault();
+	}
+	else if(document.getElementById('nick').value==''){
+		alert('Por favor, introduzca un nick');
+		event.preventDefault();
+	}
+	else if(document.getElementById('contrasenia').value=='' ){
+		alert('Por favor, introduzca una contraseña');
+		event.preventDefault();
+	}
+});
 
-
-//Expresión regular para validar el correo:
-exprMail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-//validar e-mail
-document.getElementById('email').addEventListener("change", function () {
-    if (!exprMail.test(this.value) && this.value != ('admin'||'administrador'||'Admin'||'Administrador')) {
-        alert("La dirección de correo electrónico " + this.value + " es incorrecta.");
-
-        var email = document.getElementById('email');
-        email.style.border = "1px solid red";
-        var iconError = document.getElementById('errorIconEmail');
-	    iconError.style.display = 'block';
-	    var iconOk = document.getElementById('okIconEmail');
-	    iconOk.style.display = 'none';
-
-        this.focus();//mueve la página a donde esté el error
-    } else {
-        document.getElementById('email').style.border = "1px solid green";
-        var iconOk = document.getElementById('okIconEmail');
-	    iconOk.style.display = 'block';
-	    var iconError = document.getElementById('errorIconEmail');
-	    iconError.style.display = 'none';
-    }
-}, false);
-
-var numAccesos = 0;
+/*var numAccesos = 0;
 
 //validar todos los campos del formulario de inicio de sesión
 function validaInicioSesion(form) {
@@ -62,7 +50,7 @@ function validaInicioSesion(form) {
 var noRobot = function() {
 	//document.getElementById('logear').style.display = 'block';
 	document.getElementById('logear').removeAttribute("disabled");
-}
+}*/
 
 
 

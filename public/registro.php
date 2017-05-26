@@ -26,6 +26,22 @@
 				//Realizamos la consulta SQL
 				$sql="INSERT INTO `usuario`(`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_us`, `ubicacion`, `email`, `fecha_creacion`, `ult_conexion`, `foto_perfil`, `descripcion`) VALUES ('','$nick','$nombre_usuario','$fecha_nacimiento','$hashed_clave','','$mail','$date','$date','','')";
 				$consulta=mysqli_query($db,$sql);
+
+				//El usuario se ha logeado de forma correcta, se guardan sus datos en variables de sesión
+				//Iniciamos sesión con los datos del usuario
+
+				$_SESSION['estado'] = 'Autenticado';
+				$_SESSION['id']=$fila['ID'];
+				$_SESSION['nick']=$fila['NICK_US'];
+				$_SESSION['nombre']=$fila['NOMBRE_US'];
+				$_SESSION['fecha_nacimiento']=$fila['FECHA_NACIMIENTO'];
+				$_SESSION['ubicacion']=$fila['UBICACION'];
+				$_SESSION['email']=$fila['EMAIL'];
+				$_SESSION['fecha_creacion']=$fila['FECHA_CREACION'];
+				$_SESSION['fecha_conexion']=$fila['ULT_CONEXIÓN'];
+				$_SESSION['foto_perfil']=$fila['FOTO_PERFIL'];
+				$_SESSION['descripcion']=$fila['DESCRIPCIÓN'];
+
 				header("Location: perfil_propio.php");
 			}
 			//La base de datos no se ha abierto correctamente

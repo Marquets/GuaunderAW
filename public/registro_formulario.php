@@ -53,7 +53,7 @@
 					<div class="panel-heading">REGISTRATE</div>
 					<div id="caja" class="panel-body">
 						<div class="center-block">
-							<form id="formulario" action="registro.php" class="form" method="post">
+							<form id="formulario" name="formulario" action="registro.php" class="form" method="post">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon">
@@ -100,7 +100,7 @@
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
 									</div>
-									<input type="password" class="form-control" id="confirma" placeholder="Confirma contraseña" name="confirma" value="" />
+									<input type="password" class="form-control" id="clave_repetida" placeholder="Confirma contraseña" name="clave_repetida" value="" />
 									</div>
 								</div>
 								<br>
@@ -135,7 +135,7 @@
 			$( "#footer" ).load('footer.html');
 		});
 	</script>
-	<script src="js/formulario_registro.js"></script>
+	<script src="js/validar_registro.js"></script>
 
 </body>
 </html>

@@ -10,7 +10,24 @@
 	}
 	elseif($no_encontrado==true){?>
 		<script type="text/javascript">alert("Usuario y/o contraseña no encotrados")</script>
+
 	<?php ;
+
+		if(isset($_SESSION['numero_acessos'])){
+			echo $_SESSION['numero_acessos'];
+			$_SESSION['numero_acessos']++;
+			if($_SESSION['numero_acessos']>2){
+				/*echo "<script>";
+				echo "document.getElementById('captcha').style.display = 'block'";
+				echo "grecaptcha.reset();";
+				echo "document.getElementById('logear').disabled=true;";
+				echo "</script>";*/
+			}
+		}
+		else{
+			$_SESSION['numero_acessos']=0;
+		}
+
 		$_SESSION['no_encontrado']=false;
 	}
 	elseif($error_bd==true){?>
@@ -42,7 +59,6 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="css/cssPrincipal.css">
-	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<script src="js/jquery-3.2.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
@@ -80,9 +96,8 @@
 									Olvidé mi contraseña
 								</label><br>
 							</div>
-							<div class="g-recaptcha" id="captcha" data-callback="noRobot" data-sitekey="6LcncB4UAAAAACgbQNpjy7Qr-UiXAVRufuLjWSbV"></div><br>
-							<input type="submit" class="btn btn-success" value="Acceder" id="logear">
-							<span id="estadoInicioSesion"></span><br>
+							<!--<div class="g-recaptcha" id="captcha" data-callback="noRobot" data-sitekey="6LcncB4UAAAAACgbQNpjy7Qr-UiXAVRufuLjWSbV"></div><br>-->
+							<input type="submit" class="btn btn-success" value="Acceder" id="logear" name="logear">
 						</div>
 					</div>
 				</div>
@@ -97,6 +112,7 @@
 			$( "#footer" ).load('footer.html');
 		});
 	</script>
-	<!--<script src="js/validacion_inicio.js"></script>-->
+	<script src="js/validar_login.js"></script>
+	<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 </body>
 </html>
