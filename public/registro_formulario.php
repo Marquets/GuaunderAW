@@ -1,3 +1,28 @@
+<?php
+	session_start();
+
+	$error_bd=isset($_SESSION['error_bd'])? $_SESSION['error_bd']: false;
+	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
+	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
+	if(isset($_SESSION['ID_USUARIO']) and $_SESSION['estado'] == 'Autenticado'){
+		header("Location: pagPrincipal.html");
+	}
+	elseif($error_bd==true){?>
+		<script type="text/javascript">alert("Error al conectar base de datos")</script>
+	<?php ;
+		$_SESSION['error_bd']=false;
+	}
+	elseif($incompletos==true){?>
+		<script type="text/javascript">alert("Hay campos incompletos")</script>
+	<?php ;
+		$_SESSION['incompletos']=false;
+	}
+	elseif($error_post==true){?>
+		<script type="text/javascript">alert("Error, consulte con el administrador de la página")</script>
+	<?php ;
+		$_SESSION['error_post']=false;
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,6 +40,7 @@
 			$( "#header" ).load('noLoginHome.html');
 		});
 	</script>
+
 </head>
 <body>
 	<div id="header"></div>
@@ -27,9 +53,8 @@
 					<div class="panel-heading">REGISTRATE</div>
 					<div id="caja" class="panel-body">
 						<div class="center-block">
-							<form id="formulario" action="registro.php" class="form">
+							<form id="formulario" action="registro.php" class="form" method="post">
 								<div class="form-group">
-									<label for="Nombre"><!-- Nombre AA --></label><br>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -39,7 +64,6 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<label for="Mail"><!-- Mail AA --></label>
 									<br>
 									<div class="input-group">
 										<div class="input-group-addon">
@@ -50,7 +74,6 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<label for="Usuario"><!-- Usuario AA --></label>
 									<br>
 									<div class="input-group">
 										<div class="input-group-addon">
@@ -61,7 +84,6 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<label for="Contraseña"><!-- Contraseña AA --></label>
 									<br>
 									<div class="input-group">
 										<div class="input-group-addon">
@@ -79,6 +101,16 @@
 											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
 									</div>
 									<input type="password" class="form-control" id="confirma" placeholder="Confirma contraseña" name="confirma" value="" />
+									</div>
+								</div>
+								<br>
+								<div class="form-group">
+									<label>Fecha de nacimiento</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+										</div>
+										<input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d");?>"/>
 									</div>
 								</div>
 								<br>

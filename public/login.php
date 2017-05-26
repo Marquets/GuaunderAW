@@ -1,6 +1,15 @@
 <?php
+	//Nos aseguramos de que las variables no estan vacías
 	$nick=isset($_POST['nick'])? $_POST['nick']: null;
 	$clave=isset($_POST['contrasenia'])? $_POST['contrasenia']: null;
+
+	//Ponemos al principio todas las variables de error a false
+	session_start();
+	$_SESSION['no_encontrado']=false;
+	$_SESSION['error_bd']=false;
+	$_SESSION['incompletos']=false;
+	$_SESSION['error_post']=false;
+
 	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if($nick!=null && $clave!=null){
 			$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
@@ -9,13 +18,6 @@
 				$consulta=mysqli_query($db,$sql);
 				$fila=mysqli_fetch_assoc($consulta);
 				$encontrado=false;
-
-				//Ponemos al principio todas las variables de error a false
-				session_start();
-				$_SESSION['no_encontrado']=false;
-				$_SESSION['error_bd']=false;
-				$_SESSION['incompletos']=false;
-				$_SESSION['error_post']=false;
 
 				//Buscamos el usuario en la bd
 				while(!$encontrado && $fila){
