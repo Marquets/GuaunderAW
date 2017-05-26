@@ -14,7 +14,7 @@
 		if($nick!=null && $clave!=null){
 			$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
 			if($db){
-				$sql="SELECT ID, NICK_US, NOMBRE_US, EDAD, CLAVE_US, UBICACION, EMAIL, FECHA_CREACION, ULT_CONEXION, FOTO_PERFIL, DESCRIPCION FROM USUARIO";
+				$sql="SELECT ID, NICK_US, NOMBRE_US, FECHA_NACIMIENTO, CLAVE_US, UBICACION, EMAIL, FECHA_CREACION, ULT_CONEXION, FOTO_PERFIL, DESCRIPCION FROM USUARIO";
 				$consulta=mysqli_query($db,$sql);
 				$fila=mysqli_fetch_assoc($consulta);
 				$encontrado=false;
@@ -32,12 +32,12 @@
 				if(!$encontrado){
 					//Cargar variable de sesión para mostrar error pues no se encontro el usuario y/o contraseña
 					$_SESSION['no_encontrado']=true;
-					header("Location: pagina_logeo.php");
+					header("Location: login_formulario.php");
 				}
 				//Se encontró el nick del usuario
 				else{
 					//La clave coincide con el nick del usuario
-					if($fila['CLAVE_US']==$clave){
+					if(password_verify($clave, $fila['CLAVE_US'])){
 						//Obtenermos el id del usuario
 						$id=$fila['ID'];
 
@@ -48,7 +48,7 @@
 						$_SESSION['id']=$fila['ID'];
 						$_SESSION['nick']=$fila['NICK_US'];
 						$_SESSION['nombre']=$fila['NOMBRE_US'];
-						$_SESSION['edad']=$fila['EDAD'];
+						$_SESSION['fecha_nacimiento']=$fila['FECHA_NACIMIENTO'];
 						$_SESSION['ubicacion']=$fila['UBICACION'];
 						$_SESSION['email']=$fila['EMAIL'];
 						$_SESSION['fecha_creacion']=$fila['FECHA_CREACION'];
@@ -61,7 +61,7 @@
 					else{
 						////Cargar variable de sesión para mostrar error pues no se encontro el usuario y/o contraseña
 						$_SESSION['no_encontrado']=true;
-						header("Location: pagina_logeo.php");
+						header("Location: login_formulario.php");
 					}
 				}
 			}
@@ -69,20 +69,20 @@
 			else{
 				//Cargar en variable sesión para mostrar error al abrir base de datos
 				$_SESSION['error_bd']=true;
-				header("Location: pagina_logeo.php");
+				header("Location: login_formulario.php");
 			}
 		}
 		//Algun campo vale null
 		else{
 			//Cargar en variable sesión para mostrar que alguno de los campos están incompletos
 			$_SESSION['incompletos']=true;
-			header("Location: pagina_logeo.php");
+			header("Location: login_formulario.php");
 		}
 	}
 	//El método no es POST
 	else{
 		//Cargar en variable sesión que se esperaba el método POST
 		$_SESSION['error_post']=true;
-		header("Location: pagina_logeo.php");
+		header("Location: login_formulario.php");
 	}
 ?>

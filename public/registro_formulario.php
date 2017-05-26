@@ -4,7 +4,7 @@
 	$error_bd=isset($_SESSION['error_bd'])? $_SESSION['error_bd']: false;
 	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
 	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
-	if(isset($_SESSION['ID_USUARIO']) and $_SESSION['estado'] == 'Autenticado'){
+	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
 		header("Location: pagPrincipal.html");
 	}
 	elseif($error_bd==true){?>
