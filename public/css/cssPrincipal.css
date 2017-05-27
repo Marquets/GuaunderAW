@@ -638,14 +638,11 @@ footer a:hover {
   background-color: rgb(0,214,102);
 }
 
-/*-----------------------------------------------------ALEX-----------------------------*/
+/*------------------------------------ALEX----------------------------------------------*/
 /*--------------------------------------------------------------------------------------*/
 
-/*
- * Globals
- */
+/*-----------------------------------INDEX---------------------------------------------------*/
 
-/* Links */
 .footertres a,
 .creadores a {
   color: #bbb;
@@ -862,6 +859,10 @@ h1{
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
+.separador{
+  margin-top: 20px;
+}
+
 /*VERSION MOVIL*/
 @media (min-width: 300px) and (max-width: 767px){
   .perrete{
@@ -1016,6 +1017,29 @@ h1{
 
 @media print{
 
+}
+
+/*--------------------------------QUEESGUAUNDER------------------------------------------------------*/
+
+.acerca{
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+#acercaimg{
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.acercatext{
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.acercap{
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 /*--------------------------------------------------------------------------------------*/
