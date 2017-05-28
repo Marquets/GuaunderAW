@@ -285,6 +285,9 @@ body {
   margin-bottom: 80px;
 }
 
+#tags_intereses {
+  margin-left: 10px; 
+}
 
 .fade-in {
   background-color: rgb(0,214,102);

@@ -1,61 +1,6 @@
 $(document).ready(function(){
 
 
-// Cuando se hace click en la rueda, aparece un input para cambiar el nombre
-  $("#rueda_nombre").click(function(){
-    $("#nombre").html('<input id="name" type="text" name="nombre">');
-    $("#name").change(function(){
-       var nombre = $("#name").val();
-      $("#nombre").html(nombre);
-    });
-  });
-
-
-// Cuando se hace click en la rueda, aparece un input para cambiar la edad
-  $("#rueda_edad").click(function(){
-   $("#edad").html('<input id="age" type="text" name="edad">');
-    $("#age").change(function(){
-      var edad = $("#age").val();
-      $("#edad").html(edad);
-    });  
-   });
-
-
-// Cuando se hace click en la rueda, aparece un input para cambiar la información personal del modal
-  $("#rueda_modal").click(function(){
-   $("#desc").html('<input id="info" type="text" name="info">');
-    $("#info").change(function(){
-      var info = $("#info").val();
-      $("#desc").html(info);
-    });  
-   });
-
-// Elimina las etiquetas de intereses
-  $("#btn-erase").click(function(){
-   $("#etiquetas").html('');
-  });
-
-
-// Cuando se hace click en la rueda, aparece un input para cambiar los intereses
-  $("#btn-añadir").click(function(){
-    $("#modal-footer").html('<input id="interes" type="text" name="interes">');
-    $("#interes").change(function(){
-      var interes = $("#interes").val();
-      $("#etiquetas").append('<div id="new_row" class="row"></div>');
-      $("#new_row").append('<div class="col-lg-4 col-sm-4 col-xs-4"> <span class= "fade-in">' + interes + '</span></div>');
-    });   
-  });
-
-
-// Cuando se hace click en la rueda, aparece un input para cambiar la ubicación
-   $("#rueda_ubi").click(function(){
-   $("#ubicacion").html('<input id="ubi" type="text" name="ubi">');
-    $("#ubi").change(function(){
-      var ubi = $("#ubi").val();
-    $("#ubicacion").html(ubi);
-    });  
-   });
-
 
 }); 
 
