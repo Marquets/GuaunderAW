@@ -249,7 +249,7 @@ document.getElementById("boton1").addEventListener("click", function() {
         return submit;
     }
     else {
-    	window.location="pagPrincipal.html";
+    	window.location="pagPrincipal.php";
         return submit;
     }
 

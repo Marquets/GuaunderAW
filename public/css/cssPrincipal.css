@@ -80,17 +80,7 @@ body {
 #barra-boton-bottom {
   text-align: center;
   padding-top: 10px;
-}
-
-#barra-boton-bottom button:first-of-type {
-  float: left;
-}
-
-#barra-boton-bottom #star-btn {
-  float: right;
-  font-size: 25px;
-  background-color: lightgreen;
-  color: black;
+  margin-bottom: 20px;
 }
 
 #barra-boton-bottom #cross-btn {
@@ -244,6 +234,10 @@ body {
   color: black;
 }
 
+.modalsChats {
+    min-width: 700px;
+
+}
 .modalsChats .modal-content .modal-header{
   background-color: rgb(0,214,102);
 }
@@ -251,9 +245,23 @@ body {
   background-color: #e0e2e1;
   border-radius: 10px;
   display: block;
+  overflow-y: scroll;
 }
-.modalsChats DONDESEMUESTRENLOSMENSAJES {
+.modalChats table.chatMessages {
+  overflow-y: scroll;
+}
+
+.modalsChats .sentMessage {
   white-space: pre;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  background-color: rgba(183, 255, 183, 0.4);
+}
+.modalsChats .receivedMessage {
+  white-space: pre;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  background-color: rgba(183, 255, 183, 0.8);
 }
 
 /*-----------------------------------------------------MARCO-----------------------------*/

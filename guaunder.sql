@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2017 a las 04:25:57
+-- Tiempo de generación: 28-05-2017 a las 17:03:38
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.5.19
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 CREATE TABLE IF NOT EXISTS `intereses` (
   `ID` int(11) NOT NULL,
-  `intereses_us` varchar(10) COLLATE utf8_spanish_ci NOT NULL
+  `intereses_us` varchar(20) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Pasear'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -52,20 +52,19 @@ CREATE TABLE IF NOT EXISTS `intereses` (
 
 CREATE TABLE IF NOT EXISTS `matches_guau` (
   `us_like` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `us_target` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `super_like` int(1) NOT NULL DEFAULT '0'
+  `us_target` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `matches_guau`
 --
 
-INSERT INTO `matches_guau` (`us_like`, `us_target`, `super_like`) VALUES
-('samgar01', 'victoria', 0),
-('samgar01', 'hola', 0),
-('victoria', 'samgar01', 0),
-('prueba', 'samgar01', 0),
-('samgar01', 'prueba', 0);
+INSERT INTO `matches_guau` (`us_like`, `us_target`) VALUES
+('samgar01', 'victoria'),
+('samgar01', 'hola'),
+('victoria', 'samgar01'),
+('prueba', 'samgar01'),
+('samgar01', 'prueba');
 
 -- --------------------------------------------------------
 
@@ -79,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `mensajes` (
   `Remitente` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Cuerpo` longtext COLLATE utf8_spanish_ci NOT NULL,
   `fecha` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `mensajes`
@@ -90,10 +89,13 @@ INSERT INTO `mensajes` (`ID_MS`, `Destinatario`, `Remitente`, `Cuerpo`, `fecha`)
 (4, 'victoria', 'samgar01', 'Recibiste mi mensaje?\r\n\r\nGracias', '2017-05-28 00:00:00'),
 (5, 'samgar01', 'victoria', 'Hola Samuel!', '2017-05-28 01:40:00'),
 (6, 'samgar01', 'victoria', 'Qué tal?', '2017-05-28 01:41:00'),
-(9, 'victoria', 'samgar01', 'QuÃ© tal el finde??', '2017-05-28 01:41:34'),
+(9, 'victoria', 'samgar01', 'Qué tal el finde??', '2017-05-28 01:41:34'),
 (10, 'samgar01', 'prueba', 'Soy prueba', '2017-05-28 02:04:00'),
 (11, 'samgar01', 'prueba', 'Y soy fantástico', '2017-05-28 02:04:10'),
-(13, 'samgar01', 'victoria', 'Adoro los chicles', '2017-05-28 02:04:50');
+(13, 'samgar01', 'victoria', 'Adoro los chicles', '2017-05-28 02:04:50'),
+(16, 'victoria', 'samgar01', 'Lo mismo digo jajajaja', '2017-05-28 15:35:02'),
+(20, 'prueba', 'samgar01', 'Yo sí que soy fantástico', '2017-05-28 16:04:19'),
+(21, 'prueba', 'samgar01', 'Ey que pasa', '2017-05-28 16:17:24');
 
 -- --------------------------------------------------------
 
@@ -190,7 +192,7 @@ MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-MODIFY `ID_MS` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `ID_MS` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --

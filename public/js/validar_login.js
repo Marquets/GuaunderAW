@@ -41,7 +41,7 @@ function validaInicioSesion(form) {
             location.href="usuariosregistrados.html";
         }
         else{
-        	location.href="pagPrincipal.html";
+        	location.href="pagPrincipal.php";
         }
 	}
 }

@@ -5,7 +5,7 @@
 	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
 	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
-		header("Location: pagPrincipal.html");
+		header("Location: pagPrincipal.php");
 	}
 	elseif($error_bd==true){?>
 		<script type="text/javascript">alert("Error al conectar base de datos")</script>

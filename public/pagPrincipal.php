@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	$error_bd=isset($_SESSION['error_bd'])? $_SESSION['error_bd']: false;
+
+	if($error_bd){?>
+		<script type="text/javascript">alert("Error al conectar base de datos")</script>
+	<?php ;
+		$_SESSION['error_bd']=false;
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,12 +30,6 @@
 	<div id="header"></div>
 
 	<div class="center-block" id="principalBlock">
-		<!--<div id="barra-boton-top">
-			<a title="Chats" role="button" class="btn btn-1" href="chats.php">
-				<span class="fa fa-commenting"></span>
-			</a>
-			<span class="badge badge-btn-1">2</span>
-		</div> -->
 
 		<div class="usuario-vista">
 			<div id="carousel-usuario" class="carousel slide" data-interval="false">
@@ -76,16 +80,14 @@
 		</div>
 
 		<div id="barra-boton-bottom">
-			<button title="Deshacer" class="btn btn-1"><span class="fa fa-arrow-left"></span></button>
-			<a title="No me gusta" class="btn btn-1" role="button" id="cross-btn">
-				<span class="fa fa-remove"></span>
-			</a>
-			<a title="Me gusta" class="btn btn-1" role="button" id="heart-btn">
-				<span class="fa fa-heart"></span>
-			</a>
-			<a title="Superlike" class="btn btn-1" role="button" id="star-btn">
-				<span class="fa fa-star-o"></span>
-			</a>
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<a title="No me gusta" class="btn btn-1" role="button" id="cross-btn">
+					<span class="fa fa-remove"></span>
+				</a>
+				<a title="Me gusta" class="btn btn-1" role="button" id="heart-btn">
+					<span class="fa fa-heart"></span>
+				</a>
+			</div>
 		</div>
 	</div>
 

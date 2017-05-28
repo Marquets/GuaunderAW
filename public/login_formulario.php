@@ -6,7 +6,7 @@
 	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
 	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
-		header("Location: pagPrincipal.html");
+		header("Location: pagPrincipal.php");
 	}
 	elseif($no_encontrado==true){?>
 		<script type="text/javascript">alert("Usuario y/o contraseña no encotrados")</script>

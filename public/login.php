@@ -55,7 +55,7 @@
 						$_SESSION['fecha_conexion']=$fila['ULT_CONEXIÓN'];
 						$_SESSION['foto_perfil']=$fila['FOTO_PERFIL'];
 						$_SESSION['descripcion']=$fila['DESCRIPCIÓN'];
-						header("Location: pagPrincipal.html");
+						header("Location: pagPrincipal.php");
 					}
 					//La clave no coincide con el nick del usuario
 					else{
