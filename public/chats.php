@@ -51,7 +51,7 @@
                                                     <select type="select" class="form-control" id="select_destinatary" name="select_destinatary">
                                                     	<?php
                                                     		$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
-                                                    		$sql="select g1.us_like as g1Like, g1.us_target from matches_guau g1, matches_guau g2 where g1.us_like=g2.us_target and g1.us_target=g2.us_like and g1.us_like <> '".$_SESSION['nick']."'";
+                                                    		$sql="select distinct g1.us_like as g1Like, g1.us_target from matches_guau g1, matches_guau g2 where g1.us_like=g2.us_target and g1.us_target=g2.us_like and g1.us_like <> '".$_SESSION['nick']."'";
                                                     		$consulta=mysqli_query($db,$sql);
 
                                                     		echo '<option value="" disabled selected>Selecciona el destinatario</option>';
@@ -186,6 +186,8 @@
 			<?php
 				$i++;
 				}
+
+				@mysqli_close($db);
 			?>
 			</div>
 			<div class="panel-footer">
