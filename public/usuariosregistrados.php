@@ -1,8 +1,14 @@
 <?php
 
 $db = @mysqli_connect('localhost','root','','guaunder');
+if ($db) {
+	$usuario = $_SESSION['nick'];
+	$sql="SELECT * FROM usuario WHERE nick_us = '$usuario'";
+	$consulta = mysqli_query($db, $sql);
+	echo  $cat['usuario'];
+}
 
-if ($_POST[Editar]) {
+if ($_POST['Editar']) {
 	
 mysql_query("UPDATE usuarios SET email='$email' WHERE id_usuario='$id'");
 mysql_query("UPDATE usuarios SET nick_us='$nick_us' WHERE id_usuario='$id'");
@@ -15,7 +21,7 @@ mysql_query("UPDATE usuarios SET descrpcion='$descrpcion' WHERE id_usuario='$id'
 
 }
 
-if ($_POST[Borrar]){
+if ($_POST['Borrar']){
 	
 mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 
@@ -60,10 +66,15 @@ mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 						<td>Sabueso2</td>
 						<td>M</td>
 						<td>Desconectado</td>
+						<form action="usuariosregistrados.php" name="Editar" method="post">
 						<td> <button type="submit" class="btn btn-warning" value="Editar">
 						<span class="glyphicon glyphicon-pencil"></span></button>
+						</form action="usuariosregistrados.php" name="Borrar" method="post">
+						<form>
 						<button type="submit" class="btn btn-danger" value="Borrar">
 						<span class="glyphicon glyphicon-remove"></span></button> </td>
+						</form>
+
 					</tr>
 					<tr>
 						<td>Lucky</td>
@@ -102,6 +113,7 @@ mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 						<span class="glyphicon glyphicon-remove"></span></button> </td>
 					</tr>
 				</table>
+			</form>	
 
 			</div>
 
@@ -112,8 +124,8 @@ mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 				  	</button>
 
 					<ul class="dropdown-menu">
-					<li><a href="">Género</a></li>
-					<li><a href="">Estado</a></li>
+					<li><a href="usuariosregistrados.php">Género</a></li>
+					<li><a href="usuariosregistrados.php">Estado</a></li>
 					</ul>
 				<?php
 

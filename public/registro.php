@@ -25,7 +25,7 @@
 				//Realizamos la consulta SQL
 				$sql="INSERT INTO `usuario`(`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_us`, `email`, `fecha_creacion`, `ult_conexion`) VALUES ('','$nick','$nombre_usuario','$fecha_nacimiento','$hashed_clave','$mail','$date','$date')";
 				$consulta=mysqli_query($db,$sql);
-
+				
 				//El usuario se ha logeado de forma correcta, por lo tanto se guardan sus datos en variables de sesión
 				$_SESSION['estado'] = 'Autenticado';
 				$_SESSION['id']=$fila['ID'];
