@@ -44,7 +44,7 @@
 								mysqli_get_server_info($db),'<br />';*/
 
 								$usuario = $_SESSION['nick'];
-								$sql="SELECT foto_perfil FROM usuario WHERE nick_us = '$_usuario'";
+								$sql="SELECT foto_perfil FROM usuario WHERE nick_us = '$usuario'";
 								$consulta = mysqli_query($db, $sql);
 								$cat = mysqli_fetch_assoc($consulta);
 
