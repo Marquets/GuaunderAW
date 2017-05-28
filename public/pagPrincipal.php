@@ -40,7 +40,7 @@
 							<img src="img/Rodolfo.jpg" class="img-responsive img-rounded centro" alt="Perro Rodolfo">
 						</div>
 						<div class="carousel-caption">
-							<a href="perfil.html"><span class="nombre-edad">Rodolfo, 4 años</span></a>
+							<a href="perfil.php"><span class="nombre-edad">Rodolfo, 4 años</span></a>
 							<span class="localizacion">
 								<i class="fa fa-map-marker">
 								Lavapiés
@@ -53,7 +53,7 @@
 							<img src="img/perro2.png" class="img-responsive img-rounded centro" alt="Perro Pierre">
 						</div>
 						<div class="carousel-caption">
-							<a href="perfil.html"><span class="nombre-edad">Pierre, 10 años</span></a>
+							<a href="perfil.php"><span class="nombre-edad">Pierre, 10 años</span></a>
 							<span class="localizacion">
 								<i class="fa fa-map-marker">
 								Serrano
@@ -66,7 +66,7 @@
 							<img src="img/perro3.jpg" class="img-responsive img-rounded centro" alt="Perro Django">
 						</div>
 						<div class="carousel-caption">
-							<a href="perfil.html"><span class="nombre-edad">Django, 3 años</span></a>
+							<a href="perfil.php"><span class="nombre-edad">Django, 3 años</span></a>
 							<span class="localizacion">
 								<i class="fa fa-map-marker">
 								Móstoles
