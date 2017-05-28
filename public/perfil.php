@@ -41,7 +41,7 @@
 								echo 'Versión del servidor: ',
 								mysqli_get_server_info($db),'<br />';*/
 
-								$usuario = $_SESSION['nick'];
+								$usuario = $_GET['nick'];
 								$sql="SELECT foto_perfil FROM usuario WHERE nick_us = '$usuario'";
 								$consulta = mysqli_query($db, $sql);
 								$cat = mysqli_fetch_assoc($consulta);
@@ -73,7 +73,7 @@
 											mysqli_get_host_info($db),'<br />';
 											echo 'Versión del servidor: ',
 											mysqli_get_server_info($db),'<br />';*/
-											$usuario = $_SESSION['nick'];
+											$usuario = $_GET['nick'];
 											$sql="SELECT descripcion FROM usuario WHERE nick_us = '$usuario'";
 											$consulta = mysqli_query($db, $sql);
 											$cat = mysqli_fetch_assoc($consulta);
@@ -106,7 +106,7 @@
 						$db = @mysqli_connect('localhost','root','','guaunder');
 						if ($db) {
 
-							$usuario = $_SESSION['nick'];
+							$usuario = $_GET['nick'];
 							$sql=" SELECT nombre_us, fecha_nacimiento FROM usuario WHERE nick_us = '$usuario'";
 							$consulta = mysqli_query($db, $sql);
 							$cat = mysqli_fetch_assoc($consulta);
@@ -141,7 +141,7 @@
 						$db = @mysqli_connect('localhost','root','','guaunder');
 						if ($db) {
 
-							$usuario = $_SESSION['nick'];
+							$usuario = $_GET['nick'];
 							$sql=" SELECT intereses_us FROM intereses NATURAL JOIN usuario  WHERE nick_us = '$usuario'";
 							$consulta = mysqli_query($db, $sql);
 							while ($cat = mysqli_fetch_assoc($consulta)) {
@@ -165,7 +165,7 @@
 					<?php
 						$db = @mysqli_connect('localhost','root','','guaunder');
 						if ($db) {
-							$usuario = $_SESSION['nick'];
+							$usuario = $_GET['nick'];
 							$sql=" SELECT ubicacion FROM usuario WHERE nick_us = '$usuario'";
 							$consulta = mysqli_query($db, $sql);
 							$cat = mysqli_fetch_assoc($consulta);
