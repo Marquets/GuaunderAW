@@ -48,9 +48,17 @@
 											<div class="form-group">
                                                 <label class="control-label col-sm-3" for="select_destinatary">Para:</label>
                                                 <div class="col-sm-9">
-                                                    <select multiple type="select" class="form-control" id="select_destinatary" name="select_destinatary[]">
+                                                    <select type="select" class="form-control" id="select_destinatary" name="select_destinatary">
                                                     	<?php
+                                                    		$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
+                                                    		$sql="select g1.us_like as g1Like, g1.us_target, g1.super_like from matches_guau g1, matches_guau g2 where g1.us_like=g2.us_target and g1.us_target=g2.us_like and g1.us_like <> 'samgar01'";
+                                                    		$consulta=mysqli_query($db,$sql);
 
+                                                    		echo '<option value="" disabled selected>Selecciona el destinatario</option>';
+                                                    		while ($matches = mysqli_fetch_assoc($consulta)) {
+                                                    			echo "<option value=".$matches['g1Like'].">".$matches['g1Like']."</option>";
+                                                    		}
+                                                    		@mysqli_close($db);
                                                     	?>
                                                     </select>
                                                 </div>
@@ -63,7 +71,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-offset-8 col-sm-2">
-                                                    <button type="submit" id="enviarMensajeGlobal" class="btn btn-success" disabled="disabled">Enviar!</button>
+                                                    <button type="submit" id="enviarMensaje" class="btn btn-success" disabled="disabled">Enviar!</button>
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
@@ -79,110 +87,54 @@
 				</div>
 			</div>
 			<div class="panel-body chat-convers container-fluid">
-				<div class="chat-conver msg-new" data-toggle="modal" data-target="#daniModal">
-					<div class="col-md-3 col-xs-4">
-						<span class="negrita nick">Daniel</span>
-					</div>
-					<div class="col-md-6 col-xs-4">
-						<span class="msg-preview-new">Hola Samuel, espero que pases una buena semana santa por las tierras gallegas...</span>
-					</div>
-				</div>
-				<div id="daniModal" class="modal fade modalsChats container-fluid" role="dialog">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">Mensaje de Dani:</h4>
-				      </div>
-				      <div class="modal-body">
-				        <span>Hola Samuel, espero que pases una buena semana santa por las tierras gallegas...</span>
-				      </div>
-				      <div class="modal-footer">
-				      	<button type="button" class="btn btn-success" data-dismiss="modal">Responder</button>
-				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
+			<?php
+				$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
+				//$sql="select distinct Remitente from mensajes where Destinatario=".$_SESSION['nick'];
+				$sql="select distinct Remitente from mensajes where Destinatario='samgar01'";
+				$consulta=mysqli_query($db,$sql);
 
-				<div class="chat-conver msg-new" data-toggle="modal" data-target="#ayoubModal">
-					<div class="col-md-3 col-xs-4">
-						<span class="negrita nick">Ayoub</span>
+				while ($chats = mysqli_fetch_assoc($consulta)){
+					$remitente = $chats['Remitente'];
+			?>
+					<div class="chat-conver msg-new" data-id="<?php echo $remitente; ?>" data-toggle="modal" data-target="#chatModal">
+						<div class="col-md-3 col-xs-4">
+							<span class="negrita nick">
+								<?php
+									echo $remitente;
+								?>
+							</span>
+						</div>
+						<div class="col-md-6 col-xs-4">
+							<span class="msg-preview-new">
+								<?php
+									$sql2="select Cuerpo, fecha from mensajes where Destinatario='samgar01' and Remitente='".$chats['Remitente']."'	 order by fecha desc limit 1";
+									$consulta2=mysqli_query($db,$sql2);
+									$ultMensaje = mysqli_fetch_assoc($consulta2);
+									echo utf8_encode($ultMensaje['Cuerpo']);
+								?>
+							</span>
+						</div>
 					</div>
-					<div class="col-md-6 col-xs-4">
-						<span class="msg-preview-new">Samueeer, pronto tendré acabado mi trabajo!</span>
-					</div>
-				</div>
-				<div id="ayoubModal" class="modal fade modalsChats" role="dialog">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">Mensaje de Ayoub:</h4>
-				      </div>
-				      <div class="modal-body">
-				        <span>Samueeer, pronto tendré acabado mi trabajo!</span>
-				      </div>
-				      <div class="modal-footer">
-				      	<button type="button" class="btn btn-success" data-dismiss="modal">Responder</button>
-				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
+			<?php
+				}
+			?>
+					<div id="chatModal" class="modal fade modalsChats container-fluid" role="dialog">
+						<div class="modal-dialog">
+					    	<div class="modal-content">
+					    		<div class="modal-header">
+					        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+					        		<h4 class="modal-title"></h4>
+					      		</div>
+					      		<div class="modal-body">
 
-				<div class="chat-conver" data-toggle="modal" data-target="#alexModal">
-					<div class="col-md-3 col-xs-4">
-						<span class="nick">Alejandro</span>
+					    		</div>
+					    		<div class="modal-footer">
+					      			<button type="button" class="btn btn-success" data-dismiss="modal">Responder</button>
+					        		<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+					    		</div>
+					    	</div>
+						</div>
 					</div>
-					<div class="col-md-6 col-xs-6">
-						<span class="msg-preview-old">Quieres un quiche???</span>
-					</div>
-				</div>
-				<div id="alexModal" class="modal fade modalsChats" role="dialog">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">Mensaje de Alex:</h4>
-				      </div>
-				      <div class="modal-body">
-				        <span>Quieres un quiche???</span>
-				      </div>
-				      <div class="modal-footer">
-				      	<button type="button" class="btn btn-success" data-dismiss="modal">Responder</button>
-				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-
-				<div class="chat-conver" data-toggle="modal" data-target="#marcoModal">
-					<div class="col-md-3 col-xs-4">
-						<span class="nick">Marco</span>
-					</div>
-					<div class="col-md-6 col-xs-6">
-						<span class="msg-preview-old">SAMU!! HAY UN BUG EN THOMANN, 0€ ENVÍO!!</span>
-					</div>
-				</div>
-				<div id="marcoModal" class="modal fade modalsChats" role="dialog">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				      <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
-				        <h4 class="modal-title">Mensaje de Marco:</h4>
-				      </div>
-				      <div class="modal-body">
-				        <span>SAMU!! HAY UN BUG EN THOMANN, 0€ ENVÍO!!</span>
-				      </div>
-				      <div class="modal-footer">
-				      	<button type="button" class="btn btn-success" data-dismiss="modal">Responder</button>
-				        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-
 			</div>
 			<div class="panel-footer">
 				<span>Conectado como: Samuel</span>

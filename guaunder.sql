@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.2.11
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2017 a las 14:17:28
--- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Tiempo de generación: 28-05-2017 a las 04:25:57
+-- Versión del servidor: 5.5.40
+-- Versión de PHP: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `guaunder`
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `admin`
 --
 
-CREATE TABLE `admin` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `admin` (
+`ID` int(11) NOT NULL,
   `nick_ad` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `clave_ad` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(30) COLLATE utf8_spanish_ci NOT NULL
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 -- Estructura de tabla para la tabla `intereses`
 --
 
-CREATE TABLE `intereses` (
+CREATE TABLE IF NOT EXISTS `intereses` (
   `ID` int(11) NOT NULL,
   `intereses_us` varchar(10) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -50,11 +50,22 @@ CREATE TABLE `intereses` (
 -- Estructura de tabla para la tabla `matches_guau`
 --
 
-CREATE TABLE `matches_guau` (
+CREATE TABLE IF NOT EXISTS `matches_guau` (
   `us_like` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `us_target` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
   `super_like` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `matches_guau`
+--
+
+INSERT INTO `matches_guau` (`us_like`, `us_target`, `super_like`) VALUES
+('samgar01', 'victoria', 0),
+('samgar01', 'hola', 0),
+('victoria', 'samgar01', 0),
+('prueba', 'samgar01', 0),
+('samgar01', 'prueba', 0);
 
 -- --------------------------------------------------------
 
@@ -62,13 +73,27 @@ CREATE TABLE `matches_guau` (
 -- Estructura de tabla para la tabla `mensajes`
 --
 
-CREATE TABLE `mensajes` (
-  `ID_MS` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mensajes` (
+`ID_MS` int(11) NOT NULL,
   `Destinatario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Remitente` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Cuerpo` longtext COLLATE utf8_spanish_ci NOT NULL,
-  `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `fecha` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `mensajes`
+--
+
+INSERT INTO `mensajes` (`ID_MS`, `Destinatario`, `Remitente`, `Cuerpo`, `fecha`) VALUES
+(3, 'victoria', 'samgar01', 'Hola Victoria!!', '2017-05-28 00:00:00'),
+(4, 'victoria', 'samgar01', 'Recibiste mi mensaje?\r\n\r\nGracias', '2017-05-28 00:00:00'),
+(5, 'samgar01', 'victoria', 'Hola Samuel!', '2017-05-28 01:40:00'),
+(6, 'samgar01', 'victoria', 'Qué tal?', '2017-05-28 01:41:00'),
+(9, 'victoria', 'samgar01', 'QuÃ© tal el finde??', '2017-05-28 01:41:34'),
+(10, 'samgar01', 'prueba', 'Soy prueba', '2017-05-28 02:04:00'),
+(11, 'samgar01', 'prueba', 'Y soy fantástico', '2017-05-28 02:04:10'),
+(13, 'samgar01', 'victoria', 'Adoro los chicles', '2017-05-28 02:04:50');
 
 -- --------------------------------------------------------
 
@@ -76,7 +101,7 @@ CREATE TABLE `mensajes` (
 -- Estructura de tabla para la tabla `multimedia`
 --
 
-CREATE TABLE `multimedia` (
+CREATE TABLE IF NOT EXISTS `multimedia` (
   `ID` int(11) NOT NULL,
   `referencia` varchar(80) COLLATE utf8_spanish_ci NOT NULL,
   `tipo` varchar(10) COLLATE utf8_spanish_ci NOT NULL
@@ -88,27 +113,29 @@ CREATE TABLE `multimedia` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuario` (
+`ID` int(11) NOT NULL,
   `nick_us` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `nombre_us` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_nacimiento` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `clave_us` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `ubicacion` varchar(40) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Añade tu ubicación',
   `email` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `fecha_creacion` date NOT NULL,
-  `ult_conexion` date NOT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  `ult_conexion` datetime NOT NULL,
   `foto_perfil` varchar(90) COLLATE utf8_spanish_ci NOT NULL DEFAULT '"img/foto_defecto.jpg"',
   `descripcion` varchar(255) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'Añade una descripción para que la gente te conozca más'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_us`, `ubicacion`, `email`, `fecha_creacion`, `ult_conexion`, `foto_perfil`, `descripcion`) VALUES
-(11, 'victoria', 'daniel', '2017-05-26', '$2y$10$33oIlGZer8eSM0ScXt4NIO.ocMiP2rqEaJuxN6ofdpm2TjrxkxUP.', '', 'sdjf', '2017-05-26', '2017-05-26', '', ''),
-(12, 'hola', 'dfas', '2017-05-26', '$2y$10$tzLUD8NK2xk0qmqNitY5tOMPcFbC5ZRA/73Qog8bulBl2wN1BOHJi', '', '123', '2017-05-26', '2017-05-26', '', '');
+(11, 'victoria', 'daniel', '2017-05-26', '$2y$10$33oIlGZer8eSM0ScXt4NIO.ocMiP2rqEaJuxN6ofdpm2TjrxkxUP.', '', 'sdjf', '2017-05-26 00:00:00', '2017-05-26 00:00:00', '', ''),
+(12, 'hola', 'dfas', '2017-05-26', '$2y$10$tzLUD8NK2xk0qmqNitY5tOMPcFbC5ZRA/73Qog8bulBl2wN1BOHJi', '', '123', '2017-05-26 00:00:00', '2017-05-26 00:00:00', '', ''),
+(13, 'samgar01', 'Samuel', '1996-12-25', '$2y$10$fqtBgvg3Q106F2KO7dLkT.GCGlu.afaT02bW/D5YpnRRPIORYLVd6', '', 'samugarcia9696@gmail.com', '2017-05-28 00:00:00', '2017-05-28 00:00:00', '', ''),
+(14, 'prueba', 'Prueba', '1990-05-10', '$2y$10$J5lAuWCojRm63bhz.ErHv.bb0AzxbIXCd4rg2yXQncoDlMBkTNe/W', '', 'prueba@gmail.com', '2017-05-28 02:01:55', '2017-05-28 02:01:55', '', '');
 
 --
 -- Índices para tablas volcadas
@@ -118,42 +145,37 @@ INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_
 -- Indices de la tabla `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ID`);
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `intereses`
 --
 ALTER TABLE `intereses`
-  ADD PRIMARY KEY (`ID`,`intereses_us`);
+ ADD PRIMARY KEY (`ID`,`intereses_us`);
 
 --
 -- Indices de la tabla `matches_guau`
 --
 ALTER TABLE `matches_guau`
-  ADD KEY `like` (`us_like`),
-  ADD KEY `target` (`us_target`);
+ ADD KEY `like` (`us_like`), ADD KEY `target` (`us_target`);
 
 --
 -- Indices de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  ADD PRIMARY KEY (`ID_MS`),
-  ADD KEY `Destinatario` (`Destinatario`),
-  ADD KEY `Remitente` (`Remitente`);
+ ADD PRIMARY KEY (`ID_MS`), ADD KEY `Destinatario` (`Destinatario`), ADD KEY `Remitente` (`Remitente`);
 
 --
 -- Indices de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
-  ADD PRIMARY KEY (`ID`,`referencia`);
+ ADD PRIMARY KEY (`ID`,`referencia`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `nick_us` (`nick_us`),
-  ADD UNIQUE KEY `email` (`email`);
+ ADD PRIMARY KEY (`ID`), ADD UNIQUE KEY `nick_us` (`nick_us`), ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -163,17 +185,17 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `ID_MS` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `ID_MS` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- Restricciones para tablas volcadas
 --
@@ -182,27 +204,27 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `intereses`
 --
 ALTER TABLE `intereses`
-  ADD CONSTRAINT `intereses_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`);
+ADD CONSTRAINT `intereses_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`);
 
 --
 -- Filtros para la tabla `matches_guau`
 --
 ALTER TABLE `matches_guau`
-  ADD CONSTRAINT `like` FOREIGN KEY (`us_like`) REFERENCES `usuario` (`nick_us`),
-  ADD CONSTRAINT `target` FOREIGN KEY (`us_target`) REFERENCES `usuario` (`nick_us`);
+ADD CONSTRAINT `like` FOREIGN KEY (`us_like`) REFERENCES `usuario` (`nick_us`),
+ADD CONSTRAINT `target` FOREIGN KEY (`us_target`) REFERENCES `usuario` (`nick_us`);
 
 --
 -- Filtros para la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`Destinatario`) REFERENCES `usuario` (`nick_us`),
-  ADD CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`Remitente`) REFERENCES `usuario` (`nick_us`);
+ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`Destinatario`) REFERENCES `usuario` (`nick_us`),
+ADD CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`Remitente`) REFERENCES `usuario` (`nick_us`);
 
 --
 -- Filtros para la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
-  ADD CONSTRAINT `multimedia_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`);
+ADD CONSTRAINT `multimedia_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

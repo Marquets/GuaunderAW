@@ -64,7 +64,7 @@ body {
    position: relative;
    top: +10px;
    left: +55px;
-   float: right;
+   float: left;
 }
 
 #principalBlock button:hover,
@@ -72,18 +72,10 @@ body {
   background-color: #e0e0e0;
 }
 
-#barra-boton-top {
-  text-align: center;
-}
-
-#barra-boton-top button:first-of-type {
-  float: left;
-}
-
-#barra-boton-top a {
-  float: right;
+/*#barra-boton-top a {
   color: black;
-}
+  font-size: 25px;
+}*/
 
 #barra-boton-bottom {
   text-align: center;
@@ -96,23 +88,19 @@ body {
 
 #barra-boton-bottom #star-btn {
   float: right;
+  font-size: 25px;
+  background-color: lightgreen;
+  color: black;
 }
 
 #barra-boton-bottom #cross-btn {
   font-size: 45px;
   width: 90px;
-  height: 85px;
+  height: 90px;
   color: red;
 }
 #barra-boton-bottom #cross-btn:hover {
   background-color: #ffcccc;
-}
-#barra-boton-bottom #bolt-btn {
-  height: 48px;
-  font-size: 18px;
-  background-color: grey;
-  border-color: #e6e6e6;
-  color: yellow;
 }
 #barra-boton-bottom #heart-btn {
   font-size: 40px;
@@ -142,7 +130,7 @@ body {
 
 .carousel-caption {
   background-color: #00d667;
-  opacity: 0.35;
+  opacity: 0.40;
 }
 .carousel-caption:hover {
   opacity: 0.80;
@@ -203,6 +191,7 @@ body {
 
 .chat-convers {
   height: 390px;
+  overflow-y: scroll;
 }
 
 .chat-conver {
@@ -262,6 +251,9 @@ body {
   background-color: #e0e2e1;
   border-radius: 10px;
   display: block;
+}
+.modalsChats DONDESEMUESTRENLOSMENSAJES {
+  white-space: pre;
 }
 
 /*-----------------------------------------------------MARCO-----------------------------*/
