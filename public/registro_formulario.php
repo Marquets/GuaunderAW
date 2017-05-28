@@ -1,12 +1,18 @@
 <?php
+	//Iniciamos sesión
 	session_start();
 
+	//Comprobamos todas las variables de $_SESSION, si alguna no existe la ponemos a false
 	$error_bd=isset($_SESSION['error_bd'])? $_SESSION['error_bd']: false;
 	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
 	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
+
+	//Comprobamos si el usuario ya ha iniciado sesión, si es asi le redirigimos a pagPrincipal.html
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
 		header("Location: pagPrincipal.php");
 	}
+
+	//Comprobamos que todas las variables de error estan a false. Si alguna esta a true imprimimos un mensaje de error, tras esto las ponemos a false para que no vuelvan a aparecer el error cada vez que cargemos las página
 	elseif($error_bd==true){?>
 		<script type="text/javascript">alert("Error al conectar base de datos")</script>
 	<?php ;

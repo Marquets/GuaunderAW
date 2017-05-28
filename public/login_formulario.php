@@ -1,33 +1,22 @@
 <?php
+	//Iniciamos sesion
 	session_start();
 
+	//Comprobamos todas las variables de $_SESSION, si alguna no existe la ponemos a false
 	$no_encontrado=isset($_SESSION['no_encontrado'])? $_SESSION['no_encontrado']: false;
 	$error_bd=isset($_SESSION['error_bd'])? $_SESSION['error_bd']: false;
 	$incompletos=isset($_SESSION['incompletos'])? $_SESSION['incompletos']: false;
 	$error_post=isset($_SESSION['error_post'])? $_SESSION['error_post']: false;
+	//Comprobamos si el usuario ya ha iniciado sesión, si es asi le redirigimos a pagPrincipal.html
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
 		header("Location: pagPrincipal.php");
 	}
+
+	//Comprobamos que todas las variables de error estan a false. Si alguna esta a true imprimimos un mensaje de error, tras esto las ponemos a false para que no vuelvan a aparecer el error cada vez que cargemos las página
 	elseif($no_encontrado==true){?>
 		<script type="text/javascript">alert("Usuario y/o contraseña no encotrados")</script>
 
 	<?php ;
-
-		if(isset($_SESSION['numero_acessos'])){
-			echo $_SESSION['numero_acessos'];
-			$_SESSION['numero_acessos']++;
-			if($_SESSION['numero_acessos']>2){
-				/*echo "<script>";
-				echo "document.getElementById('captcha').style.display = 'block'";
-				echo "grecaptcha.reset();";
-				echo "document.getElementById('logear').disabled=true;";
-				echo "</script>";*/
-			}
-		}
-		else{
-			$_SESSION['numero_acessos']=0;
-		}
-
 		$_SESSION['no_encontrado']=false;
 	}
 	elseif($error_bd==true){?>
