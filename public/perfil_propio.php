@@ -124,7 +124,7 @@
 												$consulta = mysqli_query($db, $sql);
 												$cat = mysqli_fetch_assoc($consulta);
 
-												echo $cat['descripcion'];
+												echo utf8_encode($cat['descripcion']);
 
 											}
 											else {
@@ -147,7 +147,7 @@
 											if ($db) {
 												
 												if(isset($_POST["descripcion"])) {
-													$descripcion = $_POST["descripcion"];
+													$descripcion = utf8_decode($_POST["descripcion"]);
 													$usuario = $_SESSION['nick'];
 													$sql=" UPDATE usuario SET descripcion = '$descripcion' WHERE nick_us = '$usuario'";
 													$consulta = mysqli_query($db, $sql);
@@ -242,11 +242,10 @@
 											$consulta = mysqli_query($db, $sql);
 											$cat = mysqli_fetch_assoc($consulta);
 											$fecha = $cat['fecha_nacimiento'];
-											$f1 = (int) substr( $fecha, 0, 4);
-											$fecha_actual = getdate(date("U"));
-											$f2 = (int) $fecha_actual['year'];
-											$res = $f2 - $f1;
-											echo $res . " años";
+											$cumpleanos = explode("-", $fecha);
+											$edad = (date("md", date("U", mktime(0, 0, 0, $cumpleanos[2], $cumpleanos[1], $cumpleanos[0]))) > date("md") ? ((date("Y") - $cumpleanos[0]) - 1) : (date("Y") - $cumpleanos[0]));
+											
+											echo $edad . " años";
 
 										}
 										else {
@@ -408,7 +407,7 @@
 									$sql=" SELECT ubicacion FROM usuario WHERE nick_us = '$usuario'";
 									$consulta = mysqli_query($db, $sql);
 									$cat = mysqli_fetch_assoc($consulta);
-									echo  $cat['ubicacion'];
+									echo utf8_encode($cat['ubicacion']);
 								}
 								else {
 									printf('Error %d: %s.<br />',mysqli_connect_errno(),mysqli_connect_error());
@@ -436,7 +435,7 @@
 
 												if(isset($_POST["ubi"])) {
 													$usuario = $_SESSION['nick'];
-													$ubi = $_POST["ubi"];
+													$ubi = utf8_decode($_POST["ubi"]);
 													$sql=" UPDATE usuario SET ubicacion = '$ubi' WHERE nick_us = '$usuario'";
 													$consulta = mysqli_query($db, $sql);
 
