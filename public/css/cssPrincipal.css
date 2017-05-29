@@ -752,16 +752,16 @@ h1{
   color: #00d667;
 }
 
-#tituloindex{
+.tituloindex{
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-#indexh2{
+.indexh2{
   color: #333;
 }
 
-#indexp{
+.indexp{
   color: #333;
 }
 .featurette-heading {
@@ -996,7 +996,7 @@ h1{
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-#acercaimg{
+.acercaimg{
   padding-bottom: 20px;
   padding-top: 20px;
 }
@@ -1015,7 +1015,7 @@ h1{
 /*--------------------------------TOUR------------------------------------------------------*/
 
 
-#tourindex{
+.tourindex{
   padding-bottom: 20px;
   padding-top: 20px;
   padding-left: 45px;
