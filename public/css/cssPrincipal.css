@@ -293,6 +293,10 @@ body {
   margin-left: 10px;
 }
 
+#pac-input {
+  display: none;
+}
+
 .fade-in {
   background-color: rgb(0,214,102);
   border-radius: 10%;
