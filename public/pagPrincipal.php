@@ -64,7 +64,7 @@
 									<?php echo '<a href="perfil.php?nick='.utf8_encode($users_guaunder['nick_us']).'"><span class="nombre-edad">'.utf8_encode($users_guaunder['nombre_us']).', '.$edad.' años</span></a>';?>
 									<span class="localizacion">
 										<i class="fa fa-map-marker">
-										<?php echo $users_guaunder['ubicacion']; ?>
+										<?php echo utf8_encode($users_guaunder['ubicacion']); ?>
 										</i>
 									</span>
 								</div>

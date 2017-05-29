@@ -25,7 +25,11 @@
 				//Realizamos la consulta SQL
 				$sql="INSERT INTO `usuario`(`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_us`, `email`, `fecha_creacion`, `ult_conexion`) VALUES ('','$nick','$nombre_usuario','$fecha_nacimiento','$hashed_clave','$mail','$date','$date')";
 				$consulta=mysqli_query($db,$sql);
-				
+
+				$sqlAux="SELECT ID, NICK_US, NOMBRE_US, FECHA_NACIMIENTO, CLAVE_US, UBICACION, EMAIL, FECHA_CREACION, ULT_CONEXION, FOTO_PERFIL, DESCRIPCION FROM USUARIO WHERE NICK_US = '$nick'";
+				$consultaAux=mysqli_query($db,$sqlAux);
+				$fila=mysqli_fetch_assoc($consultaAux);
+
 				//El usuario se ha logeado de forma correcta, por lo tanto se guardan sus datos en variables de sesión
 				$_SESSION['estado'] = 'Autenticado';
 				$_SESSION['id']=$fila['ID'];
