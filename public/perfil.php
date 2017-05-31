@@ -33,7 +33,7 @@
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
 						<img  id ="foto_perfil" src= <?php
-						$db = @mysqli_connect('localhost','root','','guaunder');
+						$db = @mysqli_connect('localhost','root','root','guaunder');
 						if ($db) {
 								/*echo 'Conexión realizada correctamente.<br />';
 								echo 'Información sobre el servidor: ',
@@ -66,7 +66,7 @@
 								</div>
 								<div id ="desc" class="modal-body">
 									<?php
-										$db = @mysqli_connect('localhost','root','','guaunder');
+										$db = @mysqli_connect('localhost','root','root','guaunder');
 										if ($db) {
 											/*echo 'Conexión realizada correctamente.<br />';
 											echo 'Información sobre el servidor: ',
@@ -100,10 +100,10 @@
 			<div class = "row">
 				<div class="col-lg-4 col-sm-4 col-xs-4"></div>
 				<div class="col-lg-4 col-sm-4 col-xs-4" id="popover" rel="popover" data-placement="right" data-original-title="Conóceme más" data-content="Pincha en la imagen para conocerme más" data-trigger="hover">
-					<h1 id="nombre_edad"> 
+					<h1 id="nombre_edad">
 
-					<?php 
-						$db = @mysqli_connect('localhost','root','','guaunder');
+					<?php
+						$db = @mysqli_connect('localhost','root','root','guaunder');
 						if ($db) {
 
 							$usuario = $_GET['nick'];
@@ -138,14 +138,14 @@
 					<br>
 					<?php
 
-						$db = @mysqli_connect('localhost','root','','guaunder');
+						$db = @mysqli_connect('localhost','root','root','guaunder');
 						if ($db) {
 
 							$usuario = $_GET['nick'];
 							$sql=" SELECT intereses_us FROM intereses NATURAL JOIN usuario  WHERE nick_us = '$usuario'";
 							$consulta = mysqli_query($db, $sql);
 							while ($cat = mysqli_fetch_assoc($consulta)) {
-								echo '<span id="tags_intereses" class= "fade-in">' . $cat["intereses_us"] .'</span>'; 
+								echo '<span id="tags_intereses" class= "fade-in">' . $cat["intereses_us"] .'</span>';
 							}
 
 
@@ -163,7 +163,7 @@
 					<p  id="ubicacion" class = "titulo">
 
 					<?php
-						$db = @mysqli_connect('localhost','root','','guaunder');
+						$db = @mysqli_connect('localhost','root','root','guaunder');
 						if ($db) {
 							$usuario = $_GET['nick'];
 							$sql=" SELECT ubicacion FROM usuario WHERE nick_us = '$usuario'";

@@ -15,18 +15,18 @@
 		//Comprobamos que las variables que hemos cogido del formulario no están vacías
 		if($nick!=null && $clave!=null){
 			//Conectamos a la base de datos
-			$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
+			$db=@mysqli_connect('localhost', 'root', 'root', 'guaunder');
 			//Comprobamos que se ha conectado correctamente a la base de datos
 			if($db){
 				//Realizamos la consulta SQL
-				$sql="SELECT ID, NICK_US, NOMBRE_US, FECHA_NACIMIENTO, CLAVE_US, UBICACION, EMAIL, FECHA_CREACION, ULT_CONEXION, FOTO_PERFIL, DESCRIPCION FROM USUARIO";
+				$sql="SELECT ID, nick_us, nombre_us, fecha_nacimiento, clave_us, ubicacion, email, fecha_creacion, ult_conexion, foto_perfil, descripcion FROM usuario";
 				$consulta=mysqli_query($db,$sql);
 				$fila=mysqli_fetch_assoc($consulta);
 				$encontrado=false;
 
 				//Buscamos el usuario en la bd, si lo encontramos ponemos la variable $encontrado a true y salimos del bucle.
 				while(!$encontrado && $fila){
-					if($nick==$fila['NICK_US']){
+					if($nick==$fila['nick_us']){
 						$encontrado=true;
 					}
 					else{
@@ -42,21 +42,21 @@
 				//Se encontró el nick del usuario
 				else{
 					//Comprobamos si la clave introducida concuerda con la del usuario, lo realizamos con password_verify, pues la clave esta encriptada.
-					if(password_verify($clave, $fila['CLAVE_US'])){
+					if(password_verify($clave, $fila['clave_us'])){
 
 						//El usuario se ha logeado de forma correcta, se guardan sus datos en variables de sesión
 						//Iniciamos sesión con los datos del usuario
 						$_SESSION['estado'] = 'Autenticado';
 						$_SESSION['id']=$fila['ID'];
-						$_SESSION['nick']=$fila['NICK_US'];
-						$_SESSION['nombre']=$fila['NOMBRE_US'];
-						$_SESSION['fecha_nacimiento']=$fila['FECHA_NACIMIENTO'];
-						$_SESSION['ubicacion']=$fila['UBICACION'];
-						$_SESSION['email']=$fila['EMAIL'];
-						$_SESSION['fecha_creacion']=$fila['FECHA_CREACION'];
-						$_SESSION['fecha_conexion']=$fila['ULT_CONEXIÓN'];
-						$_SESSION['foto_perfil']=$fila['FOTO_PERFIL'];
-						$_SESSION['descripcion']=$fila['DESCRIPCIÓN'];
+						$_SESSION['nick']=$fila['nick_us'];
+						$_SESSION['nombre']=$fila['nombre_us'];
+						$_SESSION['fecha_nacimiento']=$fila['fecha_nacimiento'];
+						$_SESSION['ubicacion']=$fila['ubicacion'];
+						$_SESSION['email']=$fila['email'];
+						$_SESSION['fecha_creacion']=$fila['fecha_creacion'];
+						$_SESSION['fecha_conexion']=$fila['ult_conexion'];
+						$_SESSION['foto_perfil']=$fila['foto_perfil'];
+						$_SESSION['descripcion']=$fila['descripcion'];
 						header("Location: pagPrincipal.php");
 					}
 					//La clave no coincide con el nick del usuario

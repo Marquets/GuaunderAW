@@ -230,8 +230,7 @@ body {
 }
 
 .modalsChats {
-    min-width: 700px;
-
+  min-width: 600px;
 }
 .modalsChats .modal-content .modal-header{
   background-color: rgb(0,214,102);
@@ -244,20 +243,26 @@ body {
 }
 .modalChats table.chatMessages {
   overflow-y: scroll;
+  max-width: 900px;
+  min-width: 300px;
 }
-
 .modalsChats .sentMessage {
-  white-space: pre;
-  overflow: scroll;
-  text-overflow: ellipsis;
   background-color: rgba(183, 255, 183, 0.4);
 }
-.modalsChats .receivedMessage {
+.modalsChats .sentMessage td{
   white-space: pre;
-  overflow: scroll;
-  text-overflow: ellipsis;
+  overflow: auto;
+  text-overflow: clip;
+}
+.modalsChats .receivedMessage {
   background-color: rgba(183, 255, 183, 0.8);
 }
+.modalsChats .receivedMessage td {
+  white-space: pre;
+  overflow: auto;
+  text-overflow: clip;
+}
+
 
 /*-----------------------------------------------------MARCO-----------------------------*/
 /*--------------------------------------------------------------------------------------*/
@@ -282,7 +287,7 @@ body {
 .titulo {
   color: rgb(0,214,102);
   font-size: 50px;
-  
+
 }
 
 #etiquetas {

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$db = @mysqli_connect('localhost', 'root', '', 'guaunder');
+	$db = @mysqli_connect('localhost', 'root', 'root', 'guaunder');
 
 	if ($db) {
 		var_dump($_POST);

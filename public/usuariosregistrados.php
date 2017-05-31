@@ -1,6 +1,6 @@
 <?php
 
-$db = @mysqli_connect('localhost','root','','guaunder');
+$db = @mysqli_connect('localhost','root','root','guaunder');
 if ($db) {
 	$usuario = $_SESSION['nick'];
 	$sql="SELECT * FROM usuario WHERE nick_us = '$usuario'";
@@ -9,7 +9,7 @@ if ($db) {
 }
 
 if ($_POST['Editar']) {
-	
+
 mysql_query("UPDATE usuarios SET email='$email' WHERE id_usuario='$id'");
 mysql_query("UPDATE usuarios SET nick_us='$nick_us' WHERE id_usuario='$id'");
 mysql_query("UPDATE usuarios SET nombre_us='$nombre_us' WHERE id_usuario='$id'");
@@ -22,7 +22,7 @@ mysql_query("UPDATE usuarios SET descrpcion='$descrpcion' WHERE id_usuario='$id'
 }
 
 if ($_POST['Borrar']){
-	
+
 mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 
 }
@@ -113,7 +113,7 @@ mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 						<span class="glyphicon glyphicon-remove"></span></button> </td>
 					</tr>
 				</table>
-			</form>	
+			</form>
 
 			</div>
 
@@ -129,12 +129,12 @@ mysql_query("DELETE FROM usuario WHERE id_usuario='$id'");
 					</ul>
 				<?php
 
-					$db = @mysqli_connect('localhost','root','','guaunder');
-					mysql_select_db("ult_conexion",$ult_conexion); 
+					$db = @mysqli_connect('localhost','root','root','guaunder');
+					mysql_select_db("ult_conexion",$ult_conexion);
 					mysql_query("SELECT ult_conexion FROM usuario WHERE nick_us='$nick_us'");
 					print''.$nick_us['usuario'].''
 
-				?>	
+				?>
 			</div>
 
 

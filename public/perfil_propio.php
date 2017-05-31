@@ -35,7 +35,7 @@
 					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
 						<img  id ="foto_perfil" src=
 						<?php
-						$db = @mysqli_connect('localhost','root','','guaunder');
+						$db = @mysqli_connect('localhost','root','root','guaunder');
 						if ($db) {
 								/*echo 'Conexión realizada correctamente.<br />';
 								echo 'Información sobre el servidor: ',
@@ -73,9 +73,9 @@
 												<input type="submit" value="Upload Image" name="submit">
 											</form>
 											<?php
-											$db = @mysqli_connect('localhost','root','','guaunder');
+											$db = @mysqli_connect('localhost','root','root','guaunder');
 											if ($db) {
-												
+
 
 												if(isset($_FILES["fileToUpload"]["name"])) {
 													$target_dir = "img/";
@@ -111,7 +111,7 @@
 										</div>
 										<div id="desc" class="modal-body">
 											<?php
-											$db = @mysqli_connect('localhost','root','','guaunder');
+											$db = @mysqli_connect('localhost','root','root','guaunder');
 											if ($db) {
 												/*echo 'Conexión realizada correctamente.<br />';
 												echo 'Información sobre el servidor: ',
@@ -143,15 +143,15 @@
 												<input type="submit" value="Cambiar" name="submit">
 											</form>
 											<?php
-											$db = @mysqli_connect('localhost','root','','guaunder');
+											$db = @mysqli_connect('localhost','root','root','guaunder');
 											if ($db) {
-												
+
 												if(isset($_POST["descripcion"])) {
 													$descripcion = utf8_decode($_POST["descripcion"]);
 													$usuario = $_SESSION['nick'];
 													$sql=" UPDATE usuario SET descripcion = '$descripcion' WHERE nick_us = '$usuario'";
 													$consulta = mysqli_query($db, $sql);
-													
+
 												}
 
 											}
@@ -173,8 +173,8 @@
 						<div class="col-lg-4 col-sm-4 col-xs-4"></div>
 						<div class="col-lg-4 col-sm-4 col-xs-4">
 							<div id="data_name_age">
-								<h1 id="nombre"><?php 
-									$db = @mysqli_connect('localhost','root','','guaunder');
+								<h1 id="nombre"><?php
+									$db = @mysqli_connect('localhost','root','root','guaunder');
 									if ($db) {
 
 										$usuario = $_SESSION['nick'];
@@ -205,7 +205,7 @@
 														<input type="submit" value="Cambiar" name="submit">
 													</form>
 													<?php
-													$db = @mysqli_connect('localhost','root','','guaunder');
+													$db = @mysqli_connect('localhost','root','root','guaunder');
 													if ($db) {
 
 
@@ -232,9 +232,9 @@
 											</div>
 										</div>
 									</div>
-									<h1 id="edad"> 
-										<?php 
-										$db = @mysqli_connect('localhost','root','','guaunder');
+									<h1 id="edad">
+										<?php
+										$db = @mysqli_connect('localhost','root','root','guaunder');
 										if ($db) {
 
 											$usuario = $_SESSION['nick'];
@@ -244,7 +244,7 @@
 											$fecha = $cat['fecha_nacimiento'];
 											$cumpleanos = explode("-", $fecha);
 											$edad = (date("md", date("U", mktime(0, 0, 0, $cumpleanos[2], $cumpleanos[1], $cumpleanos[0]))) > date("md") ? ((date("Y") - $cumpleanos[0]) - 1) : (date("Y") - $cumpleanos[0]));
-											
+
 											echo $edad . " años";
 
 										}
@@ -270,7 +270,7 @@
 														<input type="submit" value="Cambiar" name="submit">
 													</form>
 													<?php
-													$db = @mysqli_connect('localhost','root','','guaunder');
+													$db = @mysqli_connect('localhost','root','root','guaunder');
 													if ($db) {
 
 														if (isset($_POST["fecha"])) {
@@ -278,7 +278,7 @@
 															$usuario = $_SESSION['nick'];
 															$sql=" UPDATE usuario SET fecha_nacimiento = '$fecha' WHERE nick_us = '$usuario' ";
 															$consulta = mysqli_query($db, $sql);
-															
+
 														}
 
 													}
@@ -310,7 +310,7 @@
 					<div class = "row">
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<p title= "Añade tus intereses" intereses" class = "titulo"> Intereses </p>
-							<span id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span> 
+							<span id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>
 
 							<div class="modal fade" id="ModalSettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
 								<div class="modal-dialog" role="document">
@@ -327,13 +327,13 @@
 												<button name="delete"> Borrar intereses </button>
 											</form>
 											<?php
-											$db = @mysqli_connect('localhost','root','','guaunder');
+											$db = @mysqli_connect('localhost','root','root','guaunder');
 											if ($db) {
 												$usuario = $_SESSION['nick'];
 
 												if (isset($_POST["intereses"])) {
 													$intereses = $_POST["intereses"];
-													
+
 													$sql=" SELECT ID from usuario WHERE nick_us = '$usuario'";
 													$consulta = mysqli_query($db, $sql);
 													$cat = mysqli_fetch_assoc($consulta);
@@ -378,13 +378,13 @@
 						<div class ="row">
 							<?php
 
-							$db = @mysqli_connect('localhost','root','','guaunder');
+							$db = @mysqli_connect('localhost','root','root','guaunder');
 							if ($db) {
 								$usuario = $_SESSION['nick'];
 								$sql=" SELECT intereses_us FROM intereses NATURAL JOIN usuario  WHERE nick_us = '$usuario'";
 								$consulta = mysqli_query($db, $sql);
 								while ($cat = mysqli_fetch_assoc($consulta)) {
-									echo '<span id="tags_intereses" class= "fade-in">' . $cat["intereses_us"] .'</span>'; 
+									echo '<span id="tags_intereses" class= "fade-in">' . $cat["intereses_us"] .'</span>';
 								}
 
 
@@ -401,7 +401,7 @@
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<p id="ubicacion" class = "titulo">
 								<?php
-								$db = @mysqli_connect('localhost','root','','guaunder');
+								$db = @mysqli_connect('localhost','root','root','guaunder');
 								if ($db) {
 									$usuario = $_SESSION['nick'];
 									$sql=" SELECT ubicacion FROM usuario WHERE nick_us = '$usuario'";
@@ -430,7 +430,7 @@
 												<input type="submit" value="Cambiar" name="submit">
 											</form>
 											<?php
-											$db = @mysqli_connect('localhost','root','','guaunder');
+											$db = @mysqli_connect('localhost','root','root','guaunder');
 											if ($db) {
 
 												if(isset($_POST["ubi"])) {

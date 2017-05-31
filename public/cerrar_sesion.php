@@ -5,7 +5,7 @@ session_start();
 $date=date('Y-m-d H:i:s');
 $id_usuario=$_SESSION['id'];
 //Abrimos la base de datos
-$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
+$db=@mysqli_connect('localhost', 'root', 'root', 'guaunder');
 //comprobamos que la bd se haya abierto correctamente
 	if($db){
 		//Actualizamos el atributo ult_conexion del usuario con la fecha actual
