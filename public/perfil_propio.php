@@ -78,13 +78,27 @@
 
 
 												if(isset($_FILES["fileToUpload"]["name"])) {
+													$uploadOk = 1;
 													$target_dir = "img/";
 													$target_file = utf8_decode($target_dir . $_FILES["fileToUpload"]["name"]);
-													move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
-													$ruta = '"'. $target_file . '"';
-													$usuario = $_SESSION['nick'];
-													$sql=" UPDATE usuario SET foto_perfil = '$ruta' WHERE nick_us = '$usuario'";
-													$consulta = mysqli_query($db, $sql);
+													$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+													if ($_FILES["fileToUpload"]["size"] > 500000) {
+													    echo "Sorry, your file is too large.";
+													    $uploadOk = 0;
+													}
+
+													if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
+														    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+														    $uploadOk = 0;
+														}
+
+													if($uploadOk == 1){
+														move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+														$ruta = '"'. $target_file . '"';
+														$usuario = $_SESSION['nick'];
+														$sql=" UPDATE usuario SET foto_perfil = '$ruta' WHERE nick_us = '$usuario'";
+														$consulta = mysqli_query($db, $sql);
+													}
 
 												}
 
@@ -107,7 +121,7 @@
 										<div class="modal-header">
 											<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
 											<h4 class="modal-title" id="myModalLabel2">Conóceme más</h4>
-											<span id="rueda_modal" class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+											
 										</div>
 										<div id="desc" class="modal-body">
 											<?php
