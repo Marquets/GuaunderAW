@@ -61,10 +61,10 @@
 									<?php echo '<img src='.$users_guaunder['foto_perfil'].' class="img-responsive img-rounded centro" alt="'.$users_guaunder['nick_us'].'">'; ?>
 								</div>
 								<div class="carousel-caption">
-									<?php echo '<a href="perfil.php?nick='.utf8_encode($users_guaunder['nick_us']).'"><span class="nombre-edad">'.utf8_encode($users_guaunder['nombre_us']).', '.$edad.' años</span></a>';?>
+									<?php echo '<a href="perfil.php?nick='.$users_guaunder['nick_us'].'"><span class="nombre-edad">'.$users_guaunder['nombre_us'].', '.$edad.' años</span></a>';?>
 									<span class="localizacion">
 										<i class="fa fa-map-marker">
-										<?php echo utf8_encode($users_guaunder['ubicacion']); ?>
+										<?php echo $users_guaunder['ubicacion']; ?>
 										</i>
 									</span>
 								</div>

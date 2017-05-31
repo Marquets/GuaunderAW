@@ -78,7 +78,7 @@
 											$consulta = mysqli_query($db, $sql);
 											$cat = mysqli_fetch_assoc($consulta);
 
-											echo utf8_encode($cat['descripcion']);
+											echo $cat['descripcion'];
 
 										}
 										else {
@@ -169,7 +169,7 @@
 							$sql=" SELECT ubicacion FROM usuario WHERE nick_us = '$usuario'";
 							$consulta = mysqli_query($db, $sql);
 							$cat = mysqli_fetch_assoc($consulta);
-							echo utf8_encode($cat['ubicacion']);
+							echo $cat['ubicacion'];
 						}
 						else {
 							printf('Error %d: %s.<br />',mysqli_connect_errno(),mysqli_connect_error());

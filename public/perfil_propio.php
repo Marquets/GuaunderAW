@@ -80,7 +80,7 @@
 												if(isset($_FILES["fileToUpload"]["name"])) {
 													$uploadOk = 1;
 													$target_dir = "img/";
-													$target_file = utf8_decode($target_dir . $_FILES["fileToUpload"]["name"]);
+													$target_file = $target_dir . $_FILES["fileToUpload"]["name"];
 													$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 													if ($_FILES["fileToUpload"]["size"] > 500000) {
 													    echo "Sorry, your file is too large.";
@@ -121,7 +121,7 @@
 										<div class="modal-header">
 											<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
 											<h4 class="modal-title" id="myModalLabel2">Conóceme más</h4>
-											
+
 										</div>
 										<div id="desc" class="modal-body">
 											<?php
@@ -138,7 +138,7 @@
 												$consulta = mysqli_query($db, $sql);
 												$cat = mysqli_fetch_assoc($consulta);
 
-												echo utf8_encode($cat['descripcion']);
+												echo $cat['descripcion'];
 
 											}
 											else {
@@ -161,7 +161,7 @@
 											if ($db) {
 
 												if(isset($_POST["descripcion"])) {
-													$descripcion = utf8_decode($_POST["descripcion"]);
+													$descripcion = $_POST["descripcion"];
 													$usuario = $_SESSION['nick'];
 													$sql=" UPDATE usuario SET descripcion = '$descripcion' WHERE nick_us = '$usuario'";
 													$consulta = mysqli_query($db, $sql);
@@ -421,7 +421,7 @@
 									$sql=" SELECT ubicacion FROM usuario WHERE nick_us = '$usuario'";
 									$consulta = mysqli_query($db, $sql);
 									$cat = mysqli_fetch_assoc($consulta);
-									echo utf8_encode($cat['ubicacion']);
+									echo $cat['ubicacion'];
 								}
 								else {
 									printf('Error %d: %s.<br />',mysqli_connect_errno(),mysqli_connect_error());
@@ -449,7 +449,7 @@
 
 												if(isset($_POST["ubi"])) {
 													$usuario = $_SESSION['nick'];
-													$ubi = utf8_decode($_POST["ubi"]);
+													$ubi = $_POST["ubi"];
 													$sql=" UPDATE usuario SET ubicacion = '$ubi' WHERE nick_us = '$usuario'";
 													$consulta = mysqli_query($db, $sql);
 

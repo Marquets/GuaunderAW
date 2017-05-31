@@ -114,7 +114,7 @@
 										$sql2="select Cuerpo, fecha from mensajes where (Destinatario='".$_SESSION['nick']."' and Remitente='".$remitente."') or (Destinatario='".$remitente."' and Remitente='".$_SESSION['nick']."') order by fecha desc limit 1";
 										$consulta2=mysqli_query($db,$sql2);
 										$ultMensaje = mysqli_fetch_assoc($consulta2);
-										echo utf8_encode($ultMensaje['Cuerpo']);
+										echo $ultMensaje['Cuerpo'];
 									?>
 								</span>
 							</div>
@@ -147,7 +147,7 @@
 														<tr class="sentMessage">
 															<td class="fechaChats"></td>
 															<td></td>
-															<td><?php echo utf8_encode($chatMensaje['Cuerpo']) ?></td>
+															<td><?php echo $chatMensaje['Cuerpo'] ?></td>
 															<td class="fechaChats"><?php echo $chatMensaje['fecha'] ?></td>
 														</tr>
 														<?php
@@ -155,7 +155,7 @@
 														?>
 														<tr class="receivedMessage">
 															<td class="fechaChats"><?php echo $chatMensaje['fecha'] ?></td>
-															<td><?php echo utf8_encode($chatMensaje['Cuerpo']) ?></td>
+															<td><?php echo $chatMensaje['Cuerpo'] ?></td>
 															<td></td>
 															<td class="fechaChats"></td>
 														</tr>
