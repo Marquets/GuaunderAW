@@ -1,10 +1,18 @@
 <?php
 	//Cargamos todos los valores que nos llegan del formulario, si hay alguno vacio lo cargamos con un null
-	$nick=isset($_POST['nick'])? $_POST['nick']: null;
-	$mail=isset($_POST['mail'])? $_POST['mail']: null;
-	$nombre_usuario=isset($_POST['usuario'])? $_POST['usuario']: null;
-	$clave=isset($_POST['clave'])? $_POST['clave']: null;
-	$fecha_nacimiento=isset($_POST['fecha'])? $_POST['fecha']: null;
+	$nick_sin_comprobar=isset($_POST['nick'])? $_POST['nick']: null;
+	$mail_sin_comprobar=isset($_POST['mail'])? $_POST['mail']: null;
+	$nombre_usuario_sin_comprobar=isset($_POST['usuario'])? $_POST['usuario']: null;
+	$clave_sin_comprobar=isset($_POST['clave'])? $_POST['clave']: null;
+	$fecha_nacimiento_sin_comprobar=isset($_POST['fecha'])? $_POST['fecha']: null;
+
+	//Con htmlspecialchars convertimos el string que entra por parametro en caracteres especiales HTML, con trim borramos espacios en blanco del HTML y con strip_tags retiramos las etiquetas HTML y PHP del string. De esta forma impedimos que nos introduzcan un documento HTML y PHP que pueda provocar daños en nuestra aplicación.
+	$nick=htmlspecialchars(trim(strip_tags($nick_sin_comprobar)));
+	$mail=htmlspecialchars(trim(strip_tags($mail_sin_comprobar)));
+	$nombre_usuario=htmlspecialchars(trim(strip_tags($nombre_usuario_sin_comprobar)));
+	$clave=htmlspecialchars(trim(strip_tags($clave_sin_comprobar)));
+	$fecha_nacimiento=htmlspecialchars(trim(strip_tags($fecha_nacimiento_sin_comprobar)));
+
 	//Encriptamos la contraseña introducida para introducirla en la base de datos encriptada
 	$hashed_clave = password_hash($clave, PASSWORD_BCRYPT);
 	//Obtenemos la fecha y la hora actual, para introducirla en la base de datos tanto en ult_conexion como en fecha de _creación

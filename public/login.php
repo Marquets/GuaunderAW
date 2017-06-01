@@ -1,7 +1,11 @@
 <?php
 	//Nos aseguramos de que las variables no estan vacías, si están vacías las ponemos a null
-	$nick=isset($_POST['nick'])? $_POST['nick']: null;
-	$clave=isset($_POST['contrasenia'])? $_POST['contrasenia']: null;
+	$nick_sin_comprobar=isset($_POST['nick'])? $_POST['nick']: null;
+	$clave_sin_comprobar=isset($_POST['contrasenia'])? $_POST['contrasenia']: null;
+
+	//Con htmlspecialchars convertimos el string que entra por parametro en caracteres especiales HTML, con trim borramos espacios en blanco del HTML y con strip_tags retiramos las etiquetas HTML y PHP del string. De esta forma impedimos que nos introduzcan un documento HTML y PHP que pueda provocar daños en nuestra aplicación.
+	$nick=htmlspecialchars(trim(strip_tags($nick_sin_comprobar)));
+	$clave=htmlspecialchars(trim(strip_tags($clave_sin_comprobar)));
 
 	//Ponemos al principio todas las variables de error a false
 	session_start();
