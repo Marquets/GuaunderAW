@@ -1,3 +1,13 @@
+<?php
+	//Iniciamos sesión
+	session_start();
+
+	//Comprobamos si el usuario ya ha iniciado sesión, si es asi le redirigimos a pagPrincipal.html
+	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
+		if($_SESSION['nick']!='admin')
+			header("Location: pagPrincipal.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
