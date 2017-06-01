@@ -9,7 +9,7 @@
 		//Si no esta vacía
 		else{
 			//Hacemos la consulta a la base de datos y comprobamos cual es el número de resultados
-			$db=@mysqli_connect('localhost', 'root', '', 'guaunder');
+			$db=@mysqli_connect('localhost', 'root', 'root', 'guaunder');
 			$sql="SELECT * FROM usuario WHERE email='$correo'";
 			$consulta=mysqli_query($db,$sql);
 			$numero=mysqli_num_rows($consulta);

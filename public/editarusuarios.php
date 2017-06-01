@@ -29,7 +29,8 @@
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 										</div>
-										<input type="text" class="form-control" id="nick" placeholder="Pon tu nuevo nick" name="nick" value="" />
+										<?php echo '<input type="text" class="form-control" id="nick" placeholder="Pon tu nuevo nick" name="nick" value="'.$_GET['nick'].'" />';
+										?>
 									</div>
 								</div>
 								<br>
@@ -39,7 +40,8 @@
 										<div class="input-group-addon">
 												<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 										</div>
-										<input id ="mail" type="text" class="form-control" placeholder="Pon tu nuevo mail" name="mail" value="" />
+									<?php echo '<input id ="mail" type="text" class="form-control" placeholder="Pon tu nuevo mail" name="mail" value="'.$_GET['email'].'" />';
+									?>
 									</div>
 								</div>
 								<br>
@@ -49,28 +51,8 @@
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
 										</div>
-										<input type="text" class="form-control" id="usuario" placeholder="Pon nuevo nombre de usuario" name="usuario" value="" />
-									</div>
-								</div>
-								<br>
-								<div class="form-group">
-									<br>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-										</div>
-										<input type="password" class="form-control" id="clave" placeholder="Pon tu nueva contraseña" name="clave" value="" />
-									</div>
-								</div>
-								<br>
-								<div class="form-group">
-									<label for="Confirma"><!-- Confirma tu contraseña AA --></label>
-									<br>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-										</div>
-										<input type="password" class="form-control" id="clave_repetida" placeholder="Confirma nueva contraseña" name="clave_repetida" value="" />
+									<?php echo	'<input type="text" class="form-control" id="usuario" placeholder="Pon nuevo nombre de usuario" name="usuario" value="'.$_GET['nombre'].'" />';
+									?>
 									</div>
 								</div>
 								<br>
@@ -80,7 +62,8 @@
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 										</div>
-										<input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d");?>"/>
+									<?php echo	'<input type="date" class="form-control" id="fecha" name="fecha" value="'.$_GET['fecha_nacimiento'].'"/>';
+									?>
 									</div>
 								</div>
 								<br>
@@ -91,30 +74,30 @@
 								<!--<a  id = "link_inicio" href=""> Iniciar Sesión </a>-->
 							</form>
 							<?php
-							$db = @mysqli_connect('localhost','root','','guaunder');
+							$db = @mysqli_connect('localhost','root','root','guaunder');
 							if ($db) {
+								$nick = $_GET['nick'];
 								if(isset($_POST["nick"])) {
-										$nick = $_POST["nick"];
-										$sql=" UPDATE usuario SET nick = '$nick_us' WHERE nick_us = '$usuario'";
-										$consulta = mysqli_query($db, $sql);
+									$sql=" UPDATE usuario SET nick_us = '$nick' WHERE nick_us = '$nick'";
+									$consulta = mysqli_query($db, $sql);
+								}
 								if(isset($_POST["nick"])) {
-										$email = $_POST["email"];
-										$sql=" UPDATE usuario SET email = '$email' WHERE email = '$usuario'";
-										$consulta = mysqli_query($db, $sql);
+									$email = $_POST["email"];
+									$sql=" UPDATE usuario SET email = '$email' WHERE nick_us = '$nick'";
+									$consulta = mysqli_query($db, $sql);
+								}
 								if(isset($_POST["nombre"])) {
-										$nick = $_POST["nombre"];
-										$sql=" UPDATE usuario SET nombre = '$nombre_us' WHERE nombre_us = '$usuario'";
-										$consulta = mysqli_query($db, $sql);
-								if(isset($_POST["contrasenia"])) {
-										$nick = $_POST["contrasenia"];
-										$sql=" UPDATE usuario SET contrasenia = '$contrasenia' WHERE contrasenia = '$usuario'";
-										$consulta = mysqli_query($db, $sql);
+									$nombre = $_POST["nombre"];
+									$sql=" UPDATE usuario SET nombre_us = '$nombre' WHERE nick_us = '$nick'";
+									$consulta = mysqli_query($db, $sql);
+								}
 								if(isset($_POST["fecha_nacimiento"])) {
-										$nick = $_POST["fecha_nacimiento"];
-										$sql=" UPDATE usuario SET fecha_nacimiento = '$fecha_nacimiento' WHERE fecha_nacimiento = '$usuario'";
-										$consulta = mysqli_query($db, $sql);
-
-													
+									$fecha = $_POST["fecha_nacimiento"];
+									$sql=" UPDATE usuario SET fecha_nacimiento = '$fecha' WHERE nick_us = '$nick'";
+									$consulta = mysqli_query($db, $sql);
+								}
+								if (isset($_POST['nick'])) {
+									header("Location: usuariosregistrados.php");
 								}
 							}
 							?>

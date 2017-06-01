@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,28 +32,30 @@
 						<td><h2>Editar/Borrar</h2></td>
 					</tr>
 					<?php
-					$db = @mysqli_connect('localhost','root','','guaunder');
+					$db = @mysqli_connect('localhost','root','root','guaunder');
 					if ($db) {
 						$sql="SELECT * FROM usuario";
 						$consulta = mysqli_query($db, $sql);
 						while ($usuario=mysqli_fetch_assoc($consulta)) { ?>
+
 							<tr>
 								<td><?php echo $usuario['nick_us']; ?></td>
 								<td><?php echo $usuario['email']; ?></td>
 								<td><?php echo $usuario['ult_conexion']; ?></td>
-								<td><?php echo '<a href="editarusuarios.php?nick='.$usuario['nick_us'].'&nombre='.$usuario['nombre_us'].'&email='$usuario['email'].'&fecha_nacimiento='.$usuario['fecha_nacimiento'].'&contrasenia='.$usuario['contrasenia'].'" role="button" class="btn btn-warning" title="Editar">';?>
+								<td><?php $ref="editarusuarios.php?nick=".$usuario['nick_us']."&nombre=".$usuario['nombre_us']."&email=".$usuario['email']."&fecha_nacimiento=".$usuario['fecha_nacimiento'];
+								 echo '<a href="'.$ref.'" role="button" class="btn btn-warning" title="Editar">';?>
 								<span class="glyphicon glyphicon-pencil"></span></a>
 								<a href="borrarusuario.php" role="button" class="btn btn-danger" title="Borrar">
 								<span class="glyphicon glyphicon-remove"></span></a> </td>
 							</tr>
-						<?php	
+						<?php
 						}
 
 					}
 					?>
-					
+
 				</table>
-			</form>	
+			</form>
 
 			</div>
 
@@ -66,7 +67,6 @@
 					<ul class="dropdown-menu">
 					<li><a href="filtrar.php">Conectados Hoy</a></li>
 					</ul>
-	
 			</div>
 
 
