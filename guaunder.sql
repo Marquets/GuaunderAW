@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 31, 2017 at 01:32 PM
--- Server version: 10.1.20-MariaDB
--- PHP Version: 7.0.8
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 01-06-2017 a las 13:34:09
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,26 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `id1425199_guaunder`
+-- Base de datos: `guaunder`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `ID` int(11) NOT NULL,
-  `nick_ad` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `clave_ad` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
-  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `intereses`
+-- Estructura de tabla para la tabla `intereses`
 --
 
 CREATE TABLE `intereses` (
@@ -47,7 +34,7 @@ CREATE TABLE `intereses` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matches_guau`
+-- Estructura de tabla para la tabla `matches_guau`
 --
 
 CREATE TABLE `matches_guau` (
@@ -56,7 +43,7 @@ CREATE TABLE `matches_guau` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `matches_guau`
+-- Volcado de datos para la tabla `matches_guau`
 --
 
 INSERT INTO `matches_guau` (`us_like`, `us_target`) VALUES
@@ -67,7 +54,7 @@ INSERT INTO `matches_guau` (`us_like`, `us_target`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mensajes`
+-- Estructura de tabla para la tabla `mensajes`
 --
 
 CREATE TABLE `mensajes` (
@@ -79,7 +66,7 @@ CREATE TABLE `mensajes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mensajes`
+-- Volcado de datos para la tabla `mensajes`
 --
 
 INSERT INTO `mensajes` (`ID_MS`, `Destinatario`, `Remitente`, `Cuerpo`, `fecha`) VALUES
@@ -95,7 +82,7 @@ INSERT INTO `mensajes` (`ID_MS`, `Destinatario`, `Remitente`, `Cuerpo`, `fecha`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `multimedia`
+-- Estructura de tabla para la tabla `multimedia`
 --
 
 CREATE TABLE `multimedia` (
@@ -107,7 +94,7 @@ CREATE TABLE `multimedia` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -125,10 +112,11 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_us`, `ubicacion`, `email`, `fecha_creacion`, `ult_conexion`, `foto_perfil`, `descripcion`) VALUES
+(1, 'admin', '', '', '$2a$09$fMhDegELfCJyIJ1CinM4gOB2Z.1IQxU8LImg0h4UojYtuD78kJBK2', '', 'guaunderinfo@gmail.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (13, 'samgar01', 'Samuel', '1996-12-25', '$2y$10$fqtBgvg3Q106F2KO7dLkT.GCGlu.afaT02bW/D5YpnRRPIORYLVd6', 'Sitges', 'samugarcia9696@gmail.com', '2017-05-28 00:00:00', '2017-05-29 16:54:23', '\"img/DSC00130.JPG\"', 'Soy divino'),
 (14, 'prueba', 'Prueba', '1990-05-10', '$2y$10$J5lAuWCojRm63bhz.ErHv.bb0AzxbIXCd4rg2yXQncoDlMBkTNe/W', 'Vigo', 'prueba@gmail.com', '2017-05-28 02:01:55', '2017-05-28 02:01:55', '\"img/foto_defecto.jpg\"', 'holahola'),
 (15, 'rober', 'Roberto', '1997-10-12', '$2y$10$r22TGZk7EyAN2CD1EUAlbuKlwGU.0KnvudubMGQ.eMna/8BaOrLo2', 'Matalascañas, Murcia', 'rober14@gmail.com', '2017-05-28 21:48:32', '2017-05-29 17:49:46', '\"img/foto_defecto.jpg\"', 'aloha'),
@@ -137,30 +125,24 @@ INSERT INTO `usuario` (`ID`, `nick_us`, `nombre_us`, `fecha_nacimiento`, `clave_
 (20, 'samuprueba', 'Samuprueba', '2001-03-30', '$2y$10$ad4z.DSE2QrR9W1ViGVCqOrhJRUVD7LiDuAm6A3mNXdnEVNCcjLn6', 'Añade tu ubicación', 'samugarcia@yahoo.es', '2017-05-31 07:30:20', '2017-05-31 07:32:13', '\"img/foto_defecto.jpg\"', 'Añade una descripción para que la gente te conozca más');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `intereses`
+-- Indices de la tabla `intereses`
 --
 ALTER TABLE `intereses`
   ADD PRIMARY KEY (`ID`,`intereses_us`);
 
 --
--- Indexes for table `matches_guau`
+-- Indices de la tabla `matches_guau`
 --
 ALTER TABLE `matches_guau`
   ADD KEY `like` (`us_like`),
   ADD KEY `target` (`us_target`);
 
 --
--- Indexes for table `mensajes`
+-- Indices de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
   ADD PRIMARY KEY (`ID_MS`),
@@ -168,13 +150,13 @@ ALTER TABLE `mensajes`
   ADD KEY `Remitente` (`Remitente`);
 
 --
--- Indexes for table `multimedia`
+-- Indices de la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
   ADD PRIMARY KEY (`ID`,`referencia`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`ID`),
@@ -182,50 +164,45 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `mensajes`
+-- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
   MODIFY `ID_MS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `intereses`
+-- Filtros para la tabla `intereses`
 --
 ALTER TABLE `intereses`
   ADD CONSTRAINT `intereses_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`);
 
 --
--- Constraints for table `matches_guau`
+-- Filtros para la tabla `matches_guau`
 --
 ALTER TABLE `matches_guau`
   ADD CONSTRAINT `like` FOREIGN KEY (`us_like`) REFERENCES `usuario` (`nick_us`) ON DELETE CASCADE,
   ADD CONSTRAINT `target` FOREIGN KEY (`us_target`) REFERENCES `usuario` (`nick_us`) ON DELETE CASCADE;
 
 --
--- Constraints for table `mensajes`
+-- Filtros para la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
   ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`Destinatario`) REFERENCES `usuario` (`nick_us`) ON DELETE CASCADE,
   ADD CONSTRAINT `mensajes_ibfk_2` FOREIGN KEY (`Remitente`) REFERENCES `usuario` (`nick_us`) ON DELETE CASCADE;
 
 --
--- Constraints for table `multimedia`
+-- Filtros para la tabla `multimedia`
 --
 ALTER TABLE `multimedia`
   ADD CONSTRAINT `multimedia_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `usuario` (`ID`);

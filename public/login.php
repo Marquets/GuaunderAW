@@ -57,7 +57,11 @@
 						$_SESSION['fecha_conexion']=$fila['ult_conexion'];
 						$_SESSION['foto_perfil']=$fila['foto_perfil'];
 						$_SESSION['descripcion']=$fila['descripcion'];
-						header("Location: pagPrincipal.php");
+
+						if($_SESSION['nick']=='admin')
+							header("Location: usuariosregistrados.php");
+						else
+							header("Location: pagPrincipal.php");
 					}
 					//La clave no coincide con el nick del usuario
 					else{
