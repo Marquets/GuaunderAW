@@ -9,7 +9,10 @@
 
 	//Comprobamos si el usuario ya ha iniciado sesión, si es asi le redirigimos a pagPrincipal.html
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
-		header("Location: pagPrincipal.php");
+		if($_SESSION['nick']=='admin')
+			header("Location: usuariosregistrados.php");
+		else
+			header("Location: pagPrincipal.php");
 	}
 
 	//Comprobamos que todas las variables de error estan a false. Si alguna esta a true imprimimos un mensaje de error, tras esto las ponemos a false para que no vuelvan a aparecer el error cada vez que cargemos las página
