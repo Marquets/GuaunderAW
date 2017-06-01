@@ -65,7 +65,7 @@
 				  	</button>
 
 					<ul class="dropdown-menu">
-					<li><a href="filtrar.php">Conectados Hoy</a></li>
+					<li><a href="">Conectados Hoy</a></li>
 					</ul>
 			</div>
 
