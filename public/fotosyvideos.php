@@ -97,12 +97,13 @@
             <?php 
             if ($_SESSION["nick"] == $_GET["nick"]) {
                 echo "Mis Fotos y Videos";
+                echo '<button id="btn_f_v" class="btn-group" data-toggle="modal" data-target="#modal-foto-video">Subir foto o video </button>'; 
             }
             else {
                 echo "Fotos y Videos";
             }
             ?>
-              <button id="btn_f_v" class="btn-group" data-toggle="modal" data-target="#modal-foto-video">Subir foto o video </button> </h1>
+              </h1>
 
         </div>
 
