@@ -7,6 +7,9 @@
 	<?php ;
 		$_SESSION['error_bd']=false;
 	}
+	if (!isset($_SESSION['nick'])) {
+		header("Location: index.html");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -47,11 +50,14 @@
                 			$cumpleanos = explode("-", $users_guaunder['fecha_nacimiento']);
 							$edad = (date("md", date("U", mktime(0, 0, 0, $cumpleanos[2], $cumpleanos[1], $cumpleanos[0]))) > date("md") ? ((date("Y") - $cumpleanos[0]) - 1) : (date("Y") - $cumpleanos[0]));
 
-                			if ($b) { ?>
+							if ($i==1 && $numUsers==1) { ?>
+                			<div class="item ultimo active">
+                			<?php
+                			} elseif ($b) { ?>
                 			<div class="item active">
                 			<?php
                 				$b = false;
-                			} elseif ($i == $numUsers) { ?>
+                			} elseif ($i == $numUsers && $i!=1) { ?>
                 			<div class="item ultimo">
                 			<?php
                 			} else { ?>
@@ -71,6 +77,11 @@
 							</div>
 							<?php
 							$i++;
+                		}
+                		if ($i == 1) {
+                			echo '<span id="noUsers" class="ultimo active negrita">
+                				Ya no hay más usuarios :( ...Eso significa que has dado like a TODOS jeje, ahora toca esperar!
+							</span>';
                 		}
                 	?>
 				</div>

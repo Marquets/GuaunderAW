@@ -81,7 +81,8 @@ body {
 #barra-boton-bottom {
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
+  -webkit-margin-bottom: 60px;
 }
 
 #barra-boton-bottom #cross-btn {

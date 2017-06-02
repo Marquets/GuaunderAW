@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if (!isset($_SESSION['nick'])) {
+		header("Location: index.html");
+	}
 
 	$db=@mysqli_connect('localhost', 'root', 'root', 'guaunder');
 	$nick = $_SESSION['nick'];

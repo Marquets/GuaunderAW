@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	if (!isset($_SESSION['nick'])) {
+		header("Location: index.html");
+	}
+?>
 <!DOCTYPE html>
 <html lang= "es">
 <head>
