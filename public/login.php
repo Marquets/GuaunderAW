@@ -23,7 +23,7 @@
 			//Comprobamos que se ha conectado correctamente a la base de datos
 			if($db){
 				//Realizamos la consulta SQL
-				$sql="SELECT ID, nick_us, nombre_us, fecha_nacimiento, clave_us, ubicacion, email, fecha_creacion, ult_conexion, foto_perfil, descripcion FROM usuario";
+				$sql="SELECT ID, nick_us, nombre_us, fecha_nacimiento, clave_us, ubicacion, email, fecha_creacion, ult_conexion, foto_perfil, descripcion, num_matches FROM usuario";
 				$consulta=mysqli_query($db,$sql);
 				$fila=mysqli_fetch_assoc($consulta);
 				$encontrado=false;

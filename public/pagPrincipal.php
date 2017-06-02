@@ -37,7 +37,7 @@
 				<div class="carousel-inner" role="listbox">
 					<?php
                 		$db=@mysqli_connect('localhost', 'root', 'root', 'guaunder');
-                		$sql="select * from usuario u where u.nick_us<>'".$_SESSION['nick']."' and not exists (select * from matches_guau where u.nick_us=matches_guau.us_target and matches_guau.us_like='".$_SESSION['nick']."')";
+                		$sql="select * from usuario u where u.nick_us<>'".$_SESSION['nick']."' and u.nick_us<>'admin' and not exists (select * from matches_guau where u.nick_us=matches_guau.us_target and matches_guau.us_like='".$_SESSION['nick']."')";
                 		$consulta=mysqli_query($db,$sql);
                 		$numUsers = mysqli_num_rows($consulta);
                 		$b=true;
@@ -98,6 +98,7 @@
 	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/pagPrincipal.js"></script>
+	<script src="js/guaunder.js"></script>
 
 </body>
 </html>

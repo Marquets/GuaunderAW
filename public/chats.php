@@ -51,7 +51,7 @@
                                                     <select type="select" class="form-control" id="select_destinatary" name="select_destinatary">
                                                     	<?php
                                                     		$db=@mysqli_connect('localhost', 'root', 'root', 'guaunder');
-                                                    		$sql="select distinct g1.us_like as g1Like from matches_guau g1, matches_guau g2 where g1.us_like=g2.us_target and g1.us_target=g2.us_like and g1.us_like <> '".$_SESSION['nick']."'";
+                                                    		$sql="select distinct g1.us_like as g1Like from matches_guau g1, matches_guau g2 where g1.us_like=g2.us_target and g1.us_target=g2.us_like and g1.us_target='".$_SESSION['nick']."' and g1.us_like <> '".$_SESSION['nick']."'";
                                                     		$consulta=mysqli_query($db,$sql);
 
                                                     		echo '<option value="" disabled selected>Selecciona el destinatario</option>';
@@ -209,6 +209,7 @@
 	</script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chats.js"></script>
+	<script src="js/guaunder.js"></script>
 
 </body>
 </html>

@@ -34,7 +34,7 @@
 				$sql="INSERT INTO usuario(nick_us, nombre_us, fecha_nacimiento, clave_us, email, fecha_creacion, ult_conexion) VALUES ('$nick','$nombre_usuario','$fecha_nacimiento','$hashed_clave','$mail','$date','$date')";
 				$consulta=mysqli_query($db,$sql);
 
-				$sqlAux="SELECT ID, nick_us, nombre_us, fecha_nacimiento, clave_us, ubicacion, email, fecha_creacion, ult_conexion, foto_perfil, descripcion FROM usuario WHERE nick_us = '$nick'";
+				$sqlAux="SELECT ID, nick_us, nombre_us, fecha_nacimiento, clave_us, ubicacion, email, fecha_creacion, ult_conexion, foto_perfil, descripcion, num_matches FROM usuario WHERE nick_us = '$nick'";
 				$consultaAux=mysqli_query($db,$sqlAux);
 				$fila=mysqli_fetch_assoc($consultaAux);
 
@@ -50,6 +50,7 @@
 				$_SESSION['fecha_conexion']=$fila['ult_conexion'];
 				$_SESSION['foto_perfil']=$fila['foto_perfil'];
 				$_SESSION['descripcion']=$fila['descripcion'];
+				$_SESSION['num_matches']=$fila['num_matches'];
 				header("Location: perfil_propio.php");
 			}
 			//La base de datos no se ha abierto correctamente. Cargamos en la variable $_SESSION['error_bd'] true para que se trate el error en registro_formulario.php.

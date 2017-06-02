@@ -88,6 +88,9 @@
 					</div>
 				</div>
 				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<a href=  <?php echo "fotosyvideos.php?nick=" . $_SESSION["nick"]?> >
+						<span title="Fotos y Videos" id="icon_multimedia" class="glyphicon glyphicon-film" aria-hidden="true"></span>
+					</a>
 					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
 						<img  id ="foto_perfil" src=
 						<?php
@@ -116,7 +119,7 @@
 							@mysqli_close($db);
 							?>  alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
 							<span id="rueda_foto" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-foto"></span>
-							
+
 							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
@@ -288,7 +291,7 @@
 									@mysqli_close($db);
 									?></h1>
 									<span id="rueda_nombre" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-nombre"></span>
-									
+
 									<h1 id="edad">
 										<?php
 										$db = @mysqli_connect('localhost','root','root','guaunder');
@@ -473,7 +476,7 @@
 								?>
 							</p>
 							<span id="rueda_ubi" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-ubi"></span>
-							
+
 						</div>
 					</div>
 
@@ -495,7 +498,7 @@
 
 	<script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmOcKc6wTUdeM3H82I2QwljLDTPIL0hck&libraries=places&callback=initAutocomplete"></script>
 
-
+	<script src="js/guaunder.js"></script>
 
 </body>
 </html>

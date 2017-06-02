@@ -21,7 +21,7 @@ $(document).ready(function() {
 		if($('.carousel-inner .ultimo').hasClass('active')) {
 			$('#heart-btn').attr( "disabled", true );
 			$('#cross-btn').attr( "disabled", true );
-			alert("No hay más usuarios de Guaunder, 'ALEA IACTA EST!'");
+			alert("No hay más usuarios de Guaunder, 'ALEA IACTA EST!'\n\nRecarga para volver a ver usuarios");
 		} else
 	    	$("#carousel-usuario").carousel("next");
 	});
