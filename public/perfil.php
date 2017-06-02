@@ -31,6 +31,9 @@
 			<div class = "row">
 				<!-- Modal -->
 				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<a href=  <?php echo "fotosyvideos.php?nick=" . $_GET["nick"]?> >
+					<span title="Fotos y Videos" id="icon_multimedia" class="glyphicon glyphicon-film" aria-hidden="true"></span>
+					</a>
 					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
 						<img  id ="foto_perfil" src= <?php
 						$db = @mysqli_connect('localhost','root','root','guaunder');

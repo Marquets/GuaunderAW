@@ -275,13 +275,24 @@ body {
   text-align: center;
 }
 
+#btn_f_v {
+  margin-left: 700px;
+}
+
+
 #foto_perfil {
   width: 230px;
   height: 230px;
   border-radius: 70%;
-  margin-top: 146px;
+  margin-top: 68px;
   cursor: pointer;
 
+}
+
+#icon_multimedia {
+  margin-left: 818px;
+  margin-top: 87px;
+  font-size: 439%;
 }
 
 .titulo {
