@@ -6,7 +6,7 @@
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
 		if($_SESSION['nick']!='admin')
 			header("Location: pagPrincipal.php");
-		if($_SESSION['error_borrar_usr']){
+		if(isset($_SESSION['error_borrar_usr']) && $_SESSION['error_borrar_usr']){
 			alert("Error al borrar usuario");
 			$_SESSION['error_borrar_usr']=false;
 		}
@@ -48,7 +48,10 @@
 					<?php
 					$db = @mysqli_connect('localhost','root','root','guaunder');
 					if ($db) {
-						$sql="SELECT * FROM usuario";
+						if (!isset($_SESSION['sqlAdmin'])) {
+							$_SESSION['sqlAdmin']="SELECT * FROM usuario";
+						}
+						$sql = $_SESSION['sqlAdmin'];
 						$consulta = mysqli_query($db, $sql);
 						while ($usuario=mysqli_fetch_assoc($consulta)) { ?>
 
@@ -101,7 +104,8 @@
 				  	</button>
 
 					<ul class="dropdown-menu">
-					<li><a href="">Conectados Hoy</a></li>
+						<li><a href="filtrar.php">Conectados Hoy</a></li>
+						<li><a href="nofiltrar.php">Todos</a></li>
 					</ul>
 			</div>
 

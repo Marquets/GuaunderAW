@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	echo $_SESSION['nick'];
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
 		if($_SESSION['nick']!='admin')
 			header("Location: pagPrincipal.php");
@@ -48,7 +47,7 @@
 										<div class="input-group-addon">
 												<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 										</div>
-									<?php echo '<input id ="mail" type="text" class="form-control" placeholder="Pon tu nuevo mail" name="mail" value="'.$_GET['email'].'" />';
+									<?php echo '<input id ="email" type="text" class="form-control" placeholder="Pon tu nuevo mail" name="email" value="'.$_GET['email'].'" />';
 									?>
 									</div>
 								</div>
@@ -84,27 +83,14 @@
 							<?php
 							$db = @mysqli_connect('localhost','root','root','guaunder');
 							if ($db) {
-								$nick = $_GET['nick'];
-								if(isset($_POST["nick"])) {
-									$sql=" UPDATE usuario SET nick_us = '$nick' WHERE nick_us = '$nick'";
-									$consulta = mysqli_query($db, $sql);
-								}
-								if(isset($_POST["nick"])) {
+								if (!isset($_GET['nick'])) {
+									$nick = $_POST['nick'];
 									$email = $_POST["email"];
-									$sql=" UPDATE usuario SET email = '$email' WHERE nick_us = '$nick'";
-									$consulta = mysqli_query($db, $sql);
-								}
-								if(isset($_POST["nombre"])) {
-									$nombre = $_POST["nombre"];
-									$sql=" UPDATE usuario SET nombre_us = '$nombre' WHERE nick_us = '$nick'";
-									$consulta = mysqli_query($db, $sql);
-								}
-								if(isset($_POST["fecha_nacimiento"])) {
-									$fecha = $_POST["fecha_nacimiento"];
-									$sql=" UPDATE usuario SET fecha_nacimiento = '$fecha' WHERE nick_us = '$nick'";
-									$consulta = mysqli_query($db, $sql);
-								}
-								if (isset($_POST['nick'])) {
+									$nombre = $_POST["usuario"];
+									$fecha = $_POST["fecha"];
+									$sql=" UPDATE usuario SET nick_us = '$nick', email = '$email', nombre_us = '$nombre', fecha_nacimiento = '$fecha' WHERE nick_us = '$nick'";
+									$consulta=mysqli_query($db,$sql);
+
 									header("Location: usuariosregistrados.php");
 								}
 							}
