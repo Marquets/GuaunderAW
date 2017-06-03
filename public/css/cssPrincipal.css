@@ -286,6 +286,11 @@ body {
   margin-left: 700px;
 }
 
+.tam {
+  max-height: 400px;
+  max-width: 300px;
+}
+
 #foto_perfil {
   width: 230px;
   height: 230px;

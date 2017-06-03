@@ -335,7 +335,7 @@
 							<span title="Fotos y Videos" id="icon_multimedia" class="glyphicon glyphicon-film" aria-hidden="true"></span>
 						</a>
 						<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
-							<img  id ="foto_perfil" src=
+							<img title="Foto de perfil" id ="foto_perfil" src=
 							<?php
 							$db = @mysqli_connect('localhost','root','root','guaunder');
 							if ($db) {
@@ -361,7 +361,7 @@
 							}
 							@mysqli_close($db);
 							?>  alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
-							<span id="rueda_foto" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-foto"></span>
+							<span title="Cambia tu foto" id="rueda_foto" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-foto"></span>
 
 							
 						</div>
@@ -387,7 +387,7 @@
 									}
 									@mysqli_close($db);
 									?></h1>
-									<span id="rueda_nombre" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-nombre"></span>
+									<span title="Cambia tu nombre" id="rueda_nombre" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-nombre"></span>
 
 									<h1 id="edad">
 										<?php
@@ -412,7 +412,7 @@
 										?>
 
 									</h1>
-									<span id="rueda_edad" class="glyphicon glyphicon-cog" aria-hidden="true"  data-toggle="modal" data-target="#ModalEdad"> </span>
+									<span title="Cambia tu edad" id="rueda_edad" class="glyphicon glyphicon-cog" aria-hidden="true"  data-toggle="modal" data-target="#ModalEdad"> </span>
 
 								</div>
 							</div>
@@ -427,8 +427,8 @@
 
 					<div class = "row">
 						<div class="col-lg-12 col-sm-12 col-xs-12">
-							<p title= "Añade tus intereses" intereses" class = "titulo"> Intereses </p>
-							<span id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>
+							<p intereses" class = "titulo"> Intereses </p>
+							<span title= "Añade tus intereses" id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>
 						</div>
 					</div>
 
@@ -477,7 +477,7 @@
 								@mysqli_close($db);
 								?>
 							</p>
-							<span id="rueda_ubi" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-ubi"></span>
+							<span title="Cambia de ubicación" id="rueda_ubi" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-ubi"></span>
 
 						</div>
 					</div>

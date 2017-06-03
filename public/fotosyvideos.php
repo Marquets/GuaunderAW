@@ -101,8 +101,8 @@
             <h1 class="page-header">
             <?php
             if ($_SESSION["nick"] == $_GET["nick"]) {
-                echo "Mis Fotos y Videos";
-                echo '<button id="btn_f_v" class="btn-group" data-toggle="modal" data-target="#modal-foto-video">Subir foto o video </button>';
+                echo "Mis Fotos y Videos   ";
+                echo '<span title="Subir Nuevo Archivo" class="glyphicon glyphicon-upload" aria-hidden="true" data-toggle="modal" data-target="#modal-foto-video"></span>';
             }
             else {
                 echo "Fotos y Videos";
@@ -133,25 +133,21 @@
                         if( $cat["tipo"] == "foto") {
                             echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
                             echo  '<a class="thumbnail" href="#">';
-                            echo  '<img class="img-responsive " src=' . $cat["referencia"] . ' alt="">';
+                            echo  '<img title="Foto" class="img-responsive tam" src=' . $cat["referencia"] . ' alt="">';
                             echo  '</a>';
                             echo  '</div>';
                         }
                         else {
                             echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
                             echo  '<a class="thumbnail" href="#">';
-                            echo '<video controls>';
+                            echo '<video title="Video" controls class="tam">';
                             echo '<source src= '. $cat["referencia"] .' type="video/mp4">';
                             echo ' </video>';
                             echo  '</a>';
                             echo  '</div>';
                         }
 
-
                     }
-
-
-
 
                 }
                 else {
