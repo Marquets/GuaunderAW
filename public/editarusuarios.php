@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	echo $_SESSION['nick'];
+	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
+		if($_SESSION['nick']!='admin')
+			header("Location: pagPrincipal.php");
+	}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

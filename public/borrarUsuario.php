@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
+		if($_SESSION['nick']!='admin')
+			header("Location: pagPrincipal.php");
+	}
 	if(isset($_GET['nick'])){
 		$nick=$_GET['nick'];
 		$db = @mysqli_connect('localhost','root','root','guaunder');
