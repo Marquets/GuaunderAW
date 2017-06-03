@@ -1,7 +1,7 @@
 <?php session_start();
-	if (!isset($_SESSION['nick'])) {
-		header("Location: index.html");
-	}
+if (!isset($_SESSION['nick'])) {
+	header("Location: index.html");
+}
 ?>
 <!DOCTYPE html>
 <html lang= "es">
@@ -35,12 +35,12 @@
 		<div class = "container">
 			<div class = "row">
 				<!-- Modal -->
-				<div class="modal fade" id="modal-foto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+				<div class="modal fade" id="modal-foto" tabindex="-1" role="dialog" aria-labelledby="ModalSubirFoto">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel1">Subir Foto de perfil</h4>
+								<h4 class="modal-title" id="ModalSubirFoto">Subir Foto de perfil</h4>
 							</div>
 							<div class="modal-body">
 								<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
@@ -91,12 +91,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="ModalMuestraDescripción">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Conóceme más</h4>
+								<h4 class="modal-title" id="ModalMuestraDescripción">Conóceme más</h4>
 							</div>
 							<div id ="desc" class="modal-body">
 								<?php
@@ -126,7 +126,7 @@
 								</div>
 								<div class="modal-footer">
 									<form id="form_des" action="perfil_propio.php" method="post" enctype="multipart/form-data">
-										<input id="input_des" type="text" name="descripcion" class="form-control" placeholder="Descripción" aria-describedby="sizing-addon1">
+										<input id="input_des" type="text" name="descripcion" class="form-control" placeholder="Descripción">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
 									</form>
@@ -156,16 +156,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="modal fade" id="modal-nombre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+					<div class="modal fade" id="modal-nombre" tabindex="-1" role="dialog" aria-labelledby="ModalCambiaNombre">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="myModalLabel1">Cambiar nombre</h4>
+									<h4 class="modal-title" id="ModalCambiaNombre">Cambiar nombre</h4>
 								</div>
 								<div class="modal-body">
 									<form id="form_name" action="perfil_propio.php" method="post" enctype="multipart/form-data">
-										<input id="input_name" type="text" name="nombre" class="form-control" placeholder="Usuario" aria-describedby="sizing-addon1">
+										<input id="input_name" type="text" name="nombre" class="form-control" placeholder="Usuario">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
 									</form>
@@ -195,12 +195,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="modal fade" id="ModalEdad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+					<div class="modal fade" id="ModalEdad" tabindex="-1" role="dialog" aria-labelledby="ModalCambiaEdad">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="myModalLabel3">Cambia tu fecha de nacimiento</h4>
+									<h4 class="modal-title" id="ModalCambiaEdad">Cambia tu fecha de nacimiento</h4>
 								</div>
 								<div class="modal-body">
 									<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
@@ -217,7 +217,7 @@
 											$usuario = $_SESSION['nick'];
 											$sql=" UPDATE usuario SET fecha_nacimiento = '$fecha' WHERE nick_us = '$usuario' ";
 											$consulta = mysqli_query($db, $sql);
-											header("Location:perfil_propio.php");
+											@header("Location:perfil_propio.php");
 
 										}
 
@@ -231,21 +231,19 @@
 
 									?>
 								</div>
-								<div id="modal-footer" class="modal-footer">
-								</div>
 							</div>
 						</div>
 					</div>
-					<div class="modal fade" id="ModalSettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+					<div class="modal fade" id="ModalSettings" tabindex="-1" role="dialog" aria-labelledby="ModalCambiaIntereses">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="myModalLabel3">Cambiar intereses</h4>
+									<h4 class="modal-title" id="ModalCambiaIntereses">Cambiar intereses</h4>
 								</div>
 								<div class="modal-body">
 									<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
-										<input type="text" name="intereses" class="form-control" placeholder="Intereses" aria-describedby="sizing-addon1">
+										<input type="text" name="intereses" class="form-control" placeholder="Intereses">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
 										<button name="delete"> Borrar intereses </button>
@@ -287,21 +285,19 @@
 
 									?>
 								</div>
-								<div id="modal-footer" class="modal-footer">
-								</div>
 							</div>
 						</div>
 					</div>
-					<div class="modal fade" id="modal-ubi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
+					<div class="modal fade" id="modal-ubi" tabindex="-1" role="dialog" aria-labelledby="ModalCambiaUbicación">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
 									<button type="button" class="close" aria-label="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-									<h4 class="modal-title" id="myModalLabel1">Cambiar ubicación</h4>
+									<h4 class="modal-title" id="ModalCambiaUbicación">Cambiar ubicación</h4>
 								</div>
 								<div class="modal-body">
 									<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
-										<input type="text" name="ubi" class="form-control" placeholder="Ubicación" aria-describedby="sizing-addon1">
+										<input type="text" name="ubi" class="form-control" placeholder="Ubicación">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
 									</form>
@@ -427,7 +423,7 @@
 
 					<div class = "row">
 						<div class="col-lg-12 col-sm-12 col-xs-12">
-							<p intereses" class = "titulo"> Intereses </p>
+							<p class = "titulo"> Intereses </p>
 							<span title= "Añade tus intereses" id="rueda_intereses" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#ModalSettings"></span>
 						</div>
 					</div>
@@ -445,7 +441,7 @@
 								$sql=" SELECT intereses_us FROM intereses NATURAL JOIN usuario  WHERE nick_us = '$usuario'";
 								$consulta = mysqli_query($db, $sql);
 								while ($cat = mysqli_fetch_assoc($consulta)) {
-									echo '<span id="tags_intereses" class= "fade-in">' . $cat["intereses_us"] .'</span>';
+									echo '<span class= "fade-in tags_intereses">' . $cat["intereses_us"] .'</span>';
 								}
 
 
