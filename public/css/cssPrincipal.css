@@ -81,7 +81,8 @@ body {
 #barra-boton-bottom {
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
+  -webkit-margin-bottom: 60px;
 }
 
 #barra-boton-bottom #cross-btn {
@@ -1043,5 +1044,8 @@ h1{
   padding-right: 45px;
 }
 
+.reducir{
+  width: 1000px;
+}
 /*--------------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------------*/

@@ -13,6 +13,10 @@ $(document).ready(function() {
 	    	$("#carousel-usuario").carousel("next");
 	    likeGuau(nick);
 	});
+	if ($('#noUsers').length) {
+		$('#heart-btn').attr( "disabled", true );
+		$('#cross-btn').attr( "disabled", true );
+	}
 });
 //avance del carrusel cuando el botón de NoMeGusta es pulsado, gestionando la desactivación de botones
 $(document).ready(function() {

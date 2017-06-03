@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+    session_start();
+    if (!isset($_SESSION['nick'])) {
+        header("Location: index.html");
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,10 +99,10 @@
         </div>
         <div class="col-lg-12">
             <h1 class="page-header">
-            <?php 
+            <?php
             if ($_SESSION["nick"] == $_GET["nick"]) {
                 echo "Mis Fotos y Videos";
-                echo '<button id="btn_f_v" class="btn-group" data-toggle="modal" data-target="#modal-foto-video">Subir foto o video </button>'; 
+                echo '<button id="btn_f_v" class="btn-group" data-toggle="modal" data-target="#modal-foto-video">Subir foto o video </button>';
             }
             else {
                 echo "Fotos y Videos";
@@ -145,7 +150,7 @@
 
                     }
 
-                    
+
 
 
                 }
