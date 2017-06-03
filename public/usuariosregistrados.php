@@ -31,19 +31,21 @@
 <body>
 
 	<div id="header"></div>
-	<form action="usuariosregistrados.php" method="post">
+
 
 
 	<div class="container-fluid bloque-admin">
 		<div class="row">
 			<div class="col-md-2 col-sm-2 col-xs-1"></div>
 			<div class="col-md-8 col-sm-8 col-xs-10 table-responsive" >
+				<form action="usuariosregistrados.php" method="post">
 				<table class="table table-bordered">
 					<tr>
 						<td><h2>Nick</h2></td>
 						<td><h2>Email</h2></td>
 						<td><h2>Última Conexión</h2></td>
 						<td><h2>Editar/Borrar</h2></td>
+						<td class="hidden"></td>
 					</tr>
 					<?php
 					$db = @mysqli_connect('localhost','root','root','guaunder');
@@ -66,6 +68,7 @@
 								$usr=$usuario['nick_us'];
 								echo '<a role="button" class="btn btn-danger" title="Borrar" data-toggle="modal" data-target="#modalBorrar'.$usr.'">';?>
 								<span class="glyphicon glyphicon-remove"></span></a> </td>
+								<td class="hidden">
 								<?php
 								echo '<div class="modal fade" id="modalBorrar'.$usr.'" role="dialog">';?>
 						    		<div class="modal-dialog">
@@ -85,7 +88,7 @@
 								      </div>
 						    		</div>
 						    	</div>
-
+						    	</td>
 							</tr>
 						<?php
 						}
