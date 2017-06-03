@@ -103,7 +103,6 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<label for="Confirma"><!-- Confirma tu contraseña AA --></label>
 									<br>
 									<div class="input-group">
 										<div class="input-group-addon">
@@ -124,7 +123,7 @@
 								</div>
 								<br>
 								<br>
-								<input type="submit" class="btn btn-success" value="Acceder" id="registrarse" name="registrarse" value="Registrarse">
+								<input type="submit" class="btn btn-success" id="registrarse" name="registrarse" value="Registrarse">
 								<br>
 								<!-- Linkear a inicio de sesión -->
 								<!--<a  id = "link_inicio" href=""> Iniciar Sesión </a>-->
