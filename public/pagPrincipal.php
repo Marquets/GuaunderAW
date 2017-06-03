@@ -69,9 +69,9 @@
 								<div class="carousel-caption">
 									<?php echo '<a href="perfil.php?nick='.$users_guaunder['nick_us'].'"><span class="nombre-edad">'.$users_guaunder['nombre_us'].', '.$edad.' años</span></a>';?>
 									<span class="localizacion">
-										<i class="fa fa-map-marker">
+										<span class="fa fa-map-marker">
 										<?php echo $users_guaunder['ubicacion']; ?>
-										</i>
+										</span>
 									</span>
 								</div>
 							</div>

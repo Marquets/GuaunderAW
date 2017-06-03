@@ -28,8 +28,7 @@
 </head>
 <body>
 
-	<div id="header">
-	</div>
+	<div id="header"></div>
 
 	<!-- Contenido -->
 	<div id = "contenido">
@@ -37,7 +36,9 @@
 			<div class = "row">
 				<!-- Modal -->
 				<div class="col-lg-12 col-sm-12 col-xs-12">
-					<a href=  <?php echo "fotosyvideos.php?nick=" . $_GET["nick"]?> >
+					<a href=<?php $url = "fotosyvideos.php?nick=".$_GET["nick"];
+								echo '"'.$url.'"';
+						?> >
 						<span title="Fotos y Videos" id="icon_multimedia" class="glyphicon glyphicon-film" aria-hidden="true"></span>
 					</a>
 					<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
@@ -149,12 +150,12 @@
 
 						$db = @mysqli_connect('localhost','root','root','guaunder');
 						if ($db) {
-
 							$usuario = $_GET['nick'];
 							$sql=" SELECT intereses_us FROM intereses NATURAL JOIN usuario  WHERE nick_us = '$usuario'";
 							$consulta = mysqli_query($db, $sql);
+
 							while ($cat = mysqli_fetch_assoc($consulta)) {
-								echo '<span id="tags_intereses" class= "fade-in">' . $cat["intereses_us"] .'</span>';
+								echo '<span class="fade-in tags_intereses">' . $cat["intereses_us"] .'</span>';
 							}
 
 
@@ -191,6 +192,7 @@
 
 			<div class = "row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<label class="hidden" for="pac-input">Search Box</label>
 					<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 					<div id="map">
 					</div>

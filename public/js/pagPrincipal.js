@@ -31,6 +31,7 @@ $(document).ready(function() {
 	});
 });
 
+//función que llama a un php mediante ajax para marcar el like dado por el usuario
 function likeGuau(liker) {
     $.ajax({
         type: 'POST',

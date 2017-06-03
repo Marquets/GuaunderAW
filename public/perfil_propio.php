@@ -44,7 +44,8 @@ if (!isset($_SESSION['nick'])) {
 							</div>
 							<div class="modal-body">
 								<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
-									<input type="file" name="fileToUpload">
+									<label for="fileToUpload">Escoger foto de perfil</label>
+									<input id="fileToUpload" type="file" name="fileToUpload">
 									<input type="submit" value="Upload Image" name="submit">
 								</form>
 								<?php
@@ -126,6 +127,7 @@ if (!isset($_SESSION['nick'])) {
 								</div>
 								<div class="modal-footer">
 									<form id="form_des" action="perfil_propio.php" method="post" enctype="multipart/form-data">
+										<label for="input_des">Cambia tu descripción</label>
 										<input id="input_des" type="text" name="descripcion" class="form-control" placeholder="Descripción">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
@@ -165,6 +167,7 @@ if (!isset($_SESSION['nick'])) {
 								</div>
 								<div class="modal-body">
 									<form id="form_name" action="perfil_propio.php" method="post" enctype="multipart/form-data">
+										<label for="input_name">Cambia tu nombre de usuario</label>
 										<input id="input_name" type="text" name="nombre" class="form-control" placeholder="Usuario">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
@@ -204,6 +207,7 @@ if (!isset($_SESSION['nick'])) {
 								</div>
 								<div class="modal-body">
 									<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
+										<label for="fecha">Cambiar fecha de nacimiento</label>
 										<input type="date" class="form-control" id="fecha" name="fecha" value="<?php echo date("Y-m-d");?>"/>
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
@@ -243,7 +247,8 @@ if (!isset($_SESSION['nick'])) {
 								</div>
 								<div class="modal-body">
 									<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
-										<input type="text" name="intereses" class="form-control" placeholder="Intereses">
+										<label for="intereses">Cambia tus intereses</label>
+										<input type="text" id="intereses" name="intereses" class="form-control" placeholder="Intereses">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
 										<button name="delete"> Borrar intereses </button>
@@ -297,7 +302,8 @@ if (!isset($_SESSION['nick'])) {
 								</div>
 								<div class="modal-body">
 									<form action="perfil_propio.php" method="post" enctype="multipart/form-data">
-										<input type="text" name="ubi" class="form-control" placeholder="Ubicación">
+										<label for="ubi">Cmbia tu ubicación</label>
+										<input type="text" id="ubi" name="ubi" class="form-control" placeholder="Ubicación">
 										<br>
 										<input type="submit" value="Cambiar" name="submit">
 									</form>
@@ -327,7 +333,8 @@ if (!isset($_SESSION['nick'])) {
 					</div>
 
 					<div class="col-lg-12 col-sm-12 col-xs-12">
-						<a href=  <?php echo "fotosyvideos.php?nick=" . $_SESSION["nick"]?> >
+						<a href=  <?php $url = "fotosyvideos.php?nick=".$_SESSION["nick"];
+								echo '"'.$url.'"'?> >
 							<span title="Fotos y Videos" id="icon_multimedia" class="glyphicon glyphicon-film" aria-hidden="true"></span>
 						</a>
 						<div id ="hand" class="col-lg-12 col-sm-12 col-xs-12">
@@ -359,7 +366,7 @@ if (!isset($_SESSION['nick'])) {
 							?>  alt="Foto de perfil" data-toggle="modal" data-target="#myModal">
 							<span title="Cambia tu foto" id="rueda_foto" class="glyphicon glyphicon-cog" aria-hidden="true" data-toggle="modal" data-target="#modal-foto"></span>
 
-							
+
 						</div>
 					</div>
 					<div class = "row">
@@ -412,10 +419,8 @@ if (!isset($_SESSION['nick'])) {
 
 								</div>
 							</div>
-
-						</div>
-
 						<div class="col-lg-4 col-sm-4 col-xs-4"></div>
+						</div>
 					</div>
 
 					<br>
@@ -455,7 +460,7 @@ if (!isset($_SESSION['nick'])) {
 					</div>
 
 					<div class = "row">
-						
+
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<p id="ubicacion" class = "titulo">
 								<?php
@@ -481,15 +486,13 @@ if (!isset($_SESSION['nick'])) {
 					<br>
 					<div class = "row">
 						<div class="col-lg-12 col-sm-12 col-xs-12">
+							<label class="hidden" for="pac-input">Search Box</label>
 							<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 							<div id="map"> </div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
 
 	<div id="footer">
 	</div>

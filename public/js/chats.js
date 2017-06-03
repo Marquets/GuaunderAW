@@ -8,12 +8,6 @@ $(document).ready(function(){
     	}
 	});
 
-    /*$('#chatModal')on('show.bs.modal', function (event) {
-    	console.log($(this).attr("data-id"));
-    	var remitente = $(this).attr("data-id");
-    	$('#chatModal .modal-dialog .modal-content .modal-header .modal-title').text(remitente);
-    });*/
-
 });
 
 

@@ -64,6 +64,7 @@
 						<div class="center-block">
 							<form id="formulario" name="formulario" action="registro.php" class="form" method="post">
 								<div class="form-group">
+									<label for="nick">Nick</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -73,7 +74,7 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<br>
+									<label for="mail">Email</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 												<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
@@ -83,7 +84,7 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<br>
+									<label for="usuario">Nombre de usuario</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
@@ -93,7 +94,7 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<br>
+									<label for="clave">Contraseña</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
@@ -103,7 +104,7 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<br>
+									<label for="clave_repetida">Confirme la contraseña</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
@@ -113,7 +114,7 @@
 								</div>
 								<br>
 								<div class="form-group">
-									<label>Fecha de nacimiento</label>
+									<label for="fecha">Fecha de nacimiento</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>

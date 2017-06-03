@@ -71,24 +71,20 @@
 						<div class="panel-heading"> INICIE SESION </div>
 						<div class="panel-body">
 							<div class="form-group">
+								<label for="nick">Nick de usuario</label>
 								<input type="text" name ="nick" id="nick" placeholder="Nick" class="form-control">
 								<span id="okIconEmail" class="glyphicon glyphicon-ok pull-right"></span>
 								<span id="errorIconEmail" class="glyphicon glyphicon-remove pull-right"></span>
 								<br>
 							</div>
 							<div class="form-group">
+								<label for="contrasenia">Contraseña</label>
 								<input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" class="form-control">
 								<span id="okIconPass" class="glyphicon glyphicon-ok pull-right"></span>
 								<span id="errorIconPass" class="glyphicon glyphicon-remove pull-right"></span>
 								<br>
 							</div>
-						 	<div class="checkbox">
-							 	<label>
-									<input type="checkbox" id="checkbox" value="contraseniaOlvidada">
-									Olvidé mi contraseña
-								</label><br>
-							</div>
-							<!--<div class="g-recaptcha" id="captcha" data-callback="noRobot" data-sitekey="6LcncB4UAAAAACgbQNpjy7Qr-UiXAVRufuLjWSbV"></div><br>-->
+						 	<!--<div class="g-recaptcha" id="captcha" data-callback="noRobot" data-sitekey="6LcncB4UAAAAACgbQNpjy7Qr-UiXAVRufuLjWSbV"></div><br>-->
 							<input type="submit" class="btn btn-success" value="Acceder" id="logear" name="logear">
 						</div>
 					</div>

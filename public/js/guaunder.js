@@ -1,4 +1,4 @@
-//comprobar cada 3 segundos si ha habido match con algún usuario
+//comprobar cada 3 segundos si ha habido match con algún usuario mediante AJAX
 $(document).ready(function() {
 	setInterval(function(){
 		$.ajax({

@@ -5,7 +5,7 @@ if (!isset($_SESSION['nick'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang= "es">
 <head>
 	<title>Fotos y Vídeos</title>
 	<meta charset="UTF-8">
@@ -36,8 +36,13 @@ if (!isset($_SESSION['nick'])) {
                             <h4 class="modal-title" id="myModalLabel1">Subir Archivo</h4>
                         </div>
                         <div class="modal-body">
-                            <form action=<?php echo "fotosyvideos.php?nick=" . $_GET["nick"]?> method="post" enctype="multipart/form-data">
-                                <input type="file" name="fileToUpload">
+                            <form action=<?php
+                                if (isset($_GET['nick'])) {
+                                    $url = "fotosyvideos.php?nick=".$_GET['nick'];echo '"'.$url.'"';
+                                }
+                                    ?> method="post" enctype="multipart/form-data">
+                                <label for="fileToUpload">Subir foto o vídeo</label>
+                                <input type="file" id="fileToUpload" name="fileToUpload">
                                 <br>
                                 <input type="submit" value="Upload File" name="submit">
                             </form>
@@ -102,7 +107,7 @@ if (!isset($_SESSION['nick'])) {
                     <?php
                         if ($_SESSION["nick"] == $_GET["nick"]) {
                             echo "Mis Fotos y Videos   ";
-                            echo '<span title="Subir Nuevo Archivo" class="glyphicon glyphicon-upload" aria-hidden="true" data-toggle="modal" data-target="#modal-foto-video"></span>';
+                            echo '<span title="Subir Nuevo Archivo" id="subir_archivo" class="glyphicon glyphicon-upload" aria-hidden="true" data-toggle="modal" data-target="#modal-foto-video"></span>';
                         }
                         else {
                             echo "Fotos y Videos";
@@ -125,7 +130,7 @@ if (!isset($_SESSION['nick'])) {
                             if( $cat["tipo"] == "foto") {
                                 echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
                                 echo  '<a class="thumbnail" href="#">';
-                                echo  '<img title="Foto" class="img-responsive tam" src=' . $cat["referencia"] . ' alt="">';
+                                echo  '<img title="Foto" class="img-responsive tam" src=' . $cat["referencia"] . ' alt="Foto de '.$_GET['nick'].'">';
                                 echo  '</a>';
                                 echo  '</div>';
                             }
@@ -133,7 +138,7 @@ if (!isset($_SESSION['nick'])) {
                                 echo '<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
                                 echo  '<div class="thumbnail">';
                                 echo '<video title="Video" controls class="tam">';
-                                echo '<source src= '. $cat["referencia"] .' type="video/mp4">';
+                                echo '<source src= '. $cat["referencia"] .' type="video/mp4" alt="Vídeo de '.$_GET['nick'].'">';
                                 echo ' </video>';
                                 echo  '</div>';
                                 echo  '</div>';
