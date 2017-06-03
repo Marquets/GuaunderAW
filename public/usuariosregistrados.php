@@ -6,6 +6,10 @@
 	if(isset($_SESSION['id']) and $_SESSION['estado'] == 'Autenticado'){
 		if($_SESSION['nick']!='admin')
 			header("Location: pagPrincipal.php");
+		if($_SESSION['error_borrar_usr']){
+			alert("Error al borrar usuario");
+			$_SESSION['error_borrar_usr']=false;
+		}
 	}
 ?>
 <!DOCTYPE html>
@@ -55,8 +59,30 @@
 								<td><?php $ref="editarusuarios.php?nick=".$usuario['nick_us']."&nombre=".$usuario['nombre_us']."&email=".$usuario['email']."&fecha_nacimiento=".$usuario['fecha_nacimiento'];
 								 echo '<a href="'.$ref.'" role="button" class="btn btn-warning" title="Editar">';?>
 								<span class="glyphicon glyphicon-pencil"></span></a>
-								<a href="borrarusuario.php" role="button" class="btn btn-danger" title="Borrar">
+								<?php
+								$usr=$usuario['nick_us'];
+								echo '<a role="button" class="btn btn-danger" title="Borrar" data-toggle="modal" data-target="#modalBorrar'.$usr.'">';?>
 								<span class="glyphicon glyphicon-remove"></span></a> </td>
+								<?php
+								echo '<div class="modal fade" id="modalBorrar'.$usr.'" role="dialog">';?>
+						    		<div class="modal-dialog">
+						    			<div class="modal-content">
+									        <div class="modal-header">
+									          <button type="button" class="close" data-dismiss="modal">&times;</button>
+									          <h4 class="modal-title">Borrar usuario</h4>
+									        </div>
+									        <div class="modal-body">
+									          <p>¿Esta seguro de que desea borrar el usuario?</p>
+									        </div>
+									        <div class="modal-footer">
+									        <?php
+									    		echo '<a href="borrarUsuario.php?nick='.$usr.'" role="button" class="btn btn-default">Si</a>';?>
+									        	<a role="button" class="btn btn-default" data-dismiss="modal">No</a>
+									        </div>
+								      </div>
+						    		</div>
+						    	</div>
+
 							</tr>
 						<?php
 						}
@@ -81,10 +107,24 @@
 
 
 		</div>
-
+		<div class="modal fade" id="modalBorrar" role="dialog">
+    		<div class="modal-dialog">
+    			<div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">Borrar usuario</h4>
+			        </div>
+			        <div class="modal-body">
+			          <p>¿Esta seguro de que desea borrar el usuario?</p>
+			        </div>
+			        <div class="modal-footer">
+			        	<a href="borrarUsuario.php" role="button" class="btn btn-default">Si</a>
+			        	<a role="button" class="btn btn-default" data-dismiss="modal">No</a>
+			        </div>
+		      </div>
+    		</div>
+    	</div>
 	</div>
-
 	<script src="js/bootstrap.min.js"></script>
 </body>
-
 </html>
