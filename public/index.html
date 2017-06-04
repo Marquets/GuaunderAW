@@ -14,35 +14,29 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/cssAlex.css">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/cssPrincipal.css">
 
     <script src="js/jquery-3.2.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
     <script>
-      $(document).ready(function(){
-        $( "#header" ).load('navegadores/noLoginHome.html');
+      $(document).ready(function(){  //Cargar el nav generico de noLoginhome.html
+        $( "#header" ).load('noLoginHome.html');
       });
     </script>
 
 </head>
-<!-- NAVBAR
-================================================== -->
-<body>
 
+<body>
+    <!-- NAVBAR
+    ================================================== -->
     <div id="header"></div>
 
+    <!-- GUAUNDER
+    ================================================== -->
     <div class="cuerpo container-fluid">
 
 
-      <!-- GUAUNDER
-      ================================================== -->
 
       <div class="row">
         <div class="col-md-2 col-sm-0 col-xs-0"></div>
@@ -54,17 +48,17 @@
 
       <div class="guaudos">
         <h1 class="guau-heading">Contenidos</h1>
-        <div class="mini-separator center"></div>
+        <div class="mini-separator center separador"></div>
         <p class="lead">No te pierdas nada de lo que sucede en Guaunder.</p>
       </div>
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider" id="borde">
 
       <div class="row featurette">
         <div class="col-md-1 col-sm-0 col-xs-0"></div>
-        <div class="titulo col-md-5 col-sm-12 col-xs-12">
-          <h2 class="featurette-heading">Como se adquieren perros y gatos en España. <span class="text-muted">Te sorprenderá.</span></h2>
-          <p class="pegato">Veamos las cifras oficiales de donde proceden los perros y gatos que integramos en las familias, de como adquirimos el nuevo miembro del hogar.</p>
+        <div class="titulo tituloindex col-md-5 col-sm-12 col-xs-12">
+          <h2 class="indexh2 featurette-heading">¡Es hora de que tu perro socialice <span class="text-muted">igual que tú</span>!</h2>
+          <p class="pegato indexp"> Si lo que estás buscando son nuevas experiencias para tu mejor amigo, Guaunder te ayudará a encontrar nuevas compañías para él. Seguro que aquí, ¡encontrará a la pareja perfecta!</p>
         </div>
         <div class="col-md-5 col-sm-12 col-xs-12">
           <img id="perrogato" class="featurette-image img-responsive center-block" src="img/perro_gato.jpg" alt="Generic placeholder image">
@@ -76,9 +70,9 @@
 
       <div class="row featurette ultimo">
         <div class="col-md-1 col-sm-0 col-xs-0"></div>
-        <div class="titulo col-md-5 col-md-push-5 col-sm-12 col-xs-12">
-          <h2 class="featurette-heading">Quiero un Perro de Agua Español, <span class="text-muted">qué necesito saber.</span></h2>
-          <p class="pegato">Un perro muy alegre, vivo, fiel y equilibrado. Es inteligente, obediente y aprende con facilidad. Le encanta jugar, que le acaricien y podría pasarse horas correteando y brincando a orillas del mar. Se lleva especialmente bien con los niños..</p>
+        <div class="titulo tituloindex col-md-5 col-md-push-5 col-sm-12 col-xs-12">
+          <h2 class="indexh2 featurette-heading"> Con sólo unos pocos clicks, puede que tu mascota sea <span class="text-muted">la más feliz del mundo.</span></h2>
+          <p class="pegato indexp">Un perro muy alegre, vivo, y equilibrado. Eso es lo que conseguirás introduciéndole al mundo Guaunder. Quien sabe, lo mismo los dos acabáis encontrando a vuestra media naranja...</p>
         </div>
         <div class="col-md-5 col-md-pull-5 col-sm-12 col-xs-12">
           <img class="featurette-image img-responsive center-block perroagua" src="img/perro-de-agua.jpg" alt="Generic placeholder image">
@@ -101,71 +95,15 @@
       </div>
 
     </div>
-
-    <footer>
-
-      <div class="footers row">
-        <div class="col-md-1 col-sm-0 col-xs-0"></div>
-        <div class="footeruno col-md-3 col-sm-12 col-xs-12">
-          <h3 class="final">Bienvenidos a Guaunder</h3>
-          <div class="contenido"><p>Es momento de estar unidos. Es momento de mejorar las cosas. Únete a la plataforma social Guaunder y comparte con tus vecinos acontecimientos de interés. Alerta de peligros, comunica novedades positivas, entérate de eventos relacionados con aquello que más importa, tu mascota. Encuentra cualquier servicio disponible en la zona con nuestro directorio de empresas basado en la proximidad. Participa en campañas sociales que mejoren su calidad de vida. Todo útil, fácil y divertido.</p>
-          <p class="negrito">Cuenta con nosotros, contamos contigo.</p>
-          </div>
-
-        </div>
-        <div class="footerdos col-md-3 col-sm-12 col-xs-12">
-          <h3 class="final">Contacta con nosotros</h3>
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" placeholder="e-mail">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="asunto" placeholder="Asunto">
-            </div>
-            <div class="form-group">
-            <textarea class="form-control" id="mensaje" placeholder="Mensaje" rows="4"></textarea>
-            </div>
-            <div class="button">
-              <button type="submit" class="btn boton">Enviar</button>
-            </div>
-
-          </form>
-        </div>
-        <div class="footertres col-md-3 col-sm-12 col-xs-12">
-          <h3 class="final">Más información</h3>
-          <nav>
-            <ul class="nav nav-stacked navegadorultimo">
-              <li class="liultimo active" role="presentation"><a class="aguau" href="#">&gt; Acerca de Guaunder</a></li>
-              <li class="liultimo" role="presentation"><a class="aguau" href="#">&gt; ¿Cómo funciona?</a></li>
-              <li class="liultimo" role="presentation"><a class="aguau" href="#">&gt; Descarga Guaunder App</a></li>
-              <li class="liultimo" role="presentation"><a class="aguau" href="#">&gt; Blog</a></li>
-              <li class="liultimo" role="presentation"><a class="aguau" href="#">&gt; Encuesta Protectoras</a></li>
-              <li role="presentation"><a class="aguau" href="#">&gt; Terminos y Condiciones</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <hr class="linea">
-
-      <div class="inner creadores">
-        <p class="aguau">Creado por alumnos de <a class="acreadores" href="https://www.ucm.es">UCM</a>, by <a class="acreadores">@GrupoGuaunder</a>.</p>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript
+    <!-- FOOTER
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <div id="footer"></div>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script> -->
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <script>
+      $(document).ready(function(){  //Cargar el footer generico de footer.html
+        $( "#footer" ).load('footer.html');
+      });
+    </script>
 
 </body>
 
