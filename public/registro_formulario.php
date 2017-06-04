@@ -64,22 +64,22 @@
 						<div class="center-block">
 							<form id="formulario" name="formulario" action="registro.php" class="form" method="post">
 								<div class="form-group">
-									<label for="nick">Nick</label>
+									<label for="nick">Pon tu nick</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 										</div>
-										<input type="text" class="form-control" id="nick" placeholder="Pon tu nick" name="nick" value="" />
+										<input type="text" class="form-control" id="nick" placeholder="Nick" name="nick" value="" />
 									</div>
 								</div>
 								<br>
 								<div class="form-group">
-									<label for="mail">Email</label>
+									<label for="mail">Pon tu email</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 												<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 										</div>
-										<input id ="mail" type="text" class="form-control" placeholder="Pon tu mail" name="mail" value="" />
+										<input id ="mail" type="text" class="form-control" placeholder="Email" name="mail" value="" />
 									</div>
 								</div>
 								<br>
@@ -89,17 +89,17 @@
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
 									</div>
-									<input type="text" class="form-control" id="usuario" placeholder="Pon tu nombre de usuario" name="usuario" value="" />
+									<input type="text" class="form-control" id="usuario" placeholder="Nombre de usuario" name="usuario" value="" />
 									</div>
 								</div>
 								<br>
 								<div class="form-group">
-									<label for="clave">Contraseña</label>
+									<label for="clave">Pon tu contraseña</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
 									</div>
-									<input type="password" class="form-control" id="clave" placeholder="Pon tu contraseña" name="clave" value="" />
+									<input type="password" class="form-control" id="clave" placeholder="Contraseña" name="clave" value="" />
 									</div>
 								</div>
 								<br>
