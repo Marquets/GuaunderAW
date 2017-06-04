@@ -68,7 +68,7 @@
 								$usr=$usuario['nick_us'];
 								echo '<a role="button" class="btn btn-danger" title="Borrar" data-toggle="modal" data-target="#modalBorrar'.$usr.'">';?>
 								<span class="glyphicon glyphicon-remove"></span></a> </td>
-								<td class="hidden">
+								<td>
 								<?php
 								echo '<div class="modal fade" id="modalBorrar'.$usr.'" role="dialog">';?>
 						    		<div class="modal-dialog">
